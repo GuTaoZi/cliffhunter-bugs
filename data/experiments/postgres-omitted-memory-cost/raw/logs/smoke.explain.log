@@ -1,0 +1,70 @@
+===== S rep 0
+Aggregate (actual rows=1 loops=1)
+  ->  Hash Join (actual rows=20000 loops=1)
+        Hash Cond: (o.k = i.k)
+        ->  Seq Scan on outer_t o (actual rows=60000 loops=1)
+        ->  Hash (actual rows=30000 loops=1)
+              Buckets: 2048 (originally 2048)  Batches: 32768 (originally 32)  Memory Usage: 352kB
+              ->  Seq Scan on inner_t i (actual rows=30000 loops=1)
+Planning Time: 0.167 ms
+Execution Time: 27.866 ms
+
+===== S rep 0
+Aggregate (actual rows=1 loops=1)
+  ->  Hash Join (actual rows=20000 loops=1)
+        Hash Cond: (o.k = i.k)
+        ->  Seq Scan on outer_t o (actual rows=60000 loops=1)
+        ->  Hash (actual rows=30000 loops=1)
+              Buckets: 2048 (originally 2048)  Batches: 16384 (originally 32)  Memory Usage: 368kB
+              ->  Seq Scan on inner_t i (actual rows=30000 loops=1)
+Planning Time: 0.213 ms
+Execution Time: 762.186 ms
+
+===== P rep 0
+SET
+SET
+SET
+SET
+SET
+SET
+Aggregate (actual rows=1 loops=1)
+  Buffers: shared hit=399, temp read=23119 written=27541
+  ->  Hash Join (actual rows=20000 loops=1)
+        Hash Cond: (o.k = i.k)
+        Buffers: shared hit=399, temp read=23119 written=27541
+        ->  Seq Scan on outer_t o (actual rows=60000 loops=1)
+              Buffers: shared hit=266
+        ->  Hash (actual rows=30000 loops=1)
+              Buckets: 4096 (originally 4096)  Batches: 16384 (originally 16)  Memory Usage: 384kB
+              Buffers: shared hit=133, temp written=46
+              ->  Seq Scan on inner_t i (actual rows=30000 loops=1)
+                    Buffers: shared hit=133
+Planning:
+  Buffers: shared hit=105
+Planning Time: 0.276 ms
+Execution Time: 525.617 ms
+
+===== F rep 0
+SET
+SET
+SET
+SET
+SET
+SET
+Aggregate (actual rows=1 loops=1)
+  Buffers: shared hit=399, temp read=260 written=260
+  ->  Hash Join (actual rows=20000 loops=1)
+        Hash Cond: (o.k = i.k)
+        Buffers: shared hit=399, temp read=260 written=260
+        ->  Seq Scan on outer_t o (actual rows=60000 loops=1)
+              Buffers: shared hit=266
+        ->  Hash (actual rows=30000 loops=1)
+              Buckets: 8192 (originally 8192)  Batches: 16 (originally 8)  Memory Usage: 459kB
+              Buffers: shared hit=133, temp written=52
+              ->  Seq Scan on inner_t i (actual rows=30000 loops=1)
+                    Buffers: shared hit=133
+Planning:
+  Buffers: shared hit=105
+Planning Time: 0.251 ms
+Execution Time: 14.633 ms
+

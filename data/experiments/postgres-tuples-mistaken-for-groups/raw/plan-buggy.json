@@ -1,0 +1,46 @@
+[
+  {
+    "Plan": {
+      "Node Type": "Aggregate",
+      "Strategy": "Hashed",
+      "Partial Mode": "Simple",
+      "Parallel Aware": false,
+      "Startup Cost": 70000.00,
+      "Total Cost": 70002.50,
+      "Plan Rows": 200,
+      "Plan Width": 12,
+      "Actual Startup Time": 729.440,
+      "Actual Total Time": 3099.514,
+      "Actual Rows": 200000,
+      "Actual Loops": 1,
+      "Group Key": ["(i.i % 200000)"],
+      "Planned Partitions": 0,
+      "HashAgg Batches": 199770,
+      "Peak Memory Usage": 101,
+      "Disk Usage": 99584,
+      "Plans": [
+        {
+          "Node Type": "Function Scan",
+          "Parent Relationship": "Outer",
+          "Parallel Aware": false,
+          "Function Name": "generate_series",
+          "Alias": "i",
+          "Startup Cost": 0.00,
+          "Total Cost": 50000.00,
+          "Plan Rows": 4000000,
+          "Plan Width": 4,
+          "Actual Startup Time": 150.983,
+          "Actual Total Time": 371.829,
+          "Actual Rows": 4000000,
+          "Actual Loops": 1
+        }
+      ]
+    },
+    "Planning": {
+      "Planning Time": 0.103
+    },
+    "Triggers": [
+    ],
+    "Execution Time": 3118.988
+  }
+]
