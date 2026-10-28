@@ -1,0 +1,26 @@
+# redis wrong-scaling-formula: parent 1ccc270a2cb3 vs fix 2ab51a644d3d
+
+2,000,000 keys made logically expired with active expire off, then active expire on; a 1 ms PING probe on its own core over the window (raw: round trip; cor: from the scheduled send time). expire_cycle_*: the server's LATENCY HISTORY expire-cycle (cycles over 10 ms). mean, sd [min, max].
+
+| metric | parent | fix | parent / fix |
+|---|---|---|---|
+| raw_p50_ms | 0.044 sd 0.0013 [0.043, 0.046] (n=5) | 0.0438 sd 0.00075 [0.043, 0.045] (n=5) | 1.00 |
+| raw_p99_ms | 0.0898 sd 0.0069 [0.082, 0.101] (n=5) | 1.496 sd 0.024 [1.458, 1.528] (n=5) | 0.06 |
+| raw_p999_ms | 29.65 sd 4.3 [27.42, 38.31] (n=5) | 26.58 sd 0.015 [26.56, 26.6] (n=5) | 1.12 |
+| raw_max_ms | 277.5 sd 0.072 [277.4, 277.6] (n=5) | 28.46 sd 0.13 [28.29, 28.61] (n=5) | 9.75 |
+| cor_p99_ms | 269.9 sd 0.58 [269.5, 271.1] (n=5) | 25.35 sd 0.33 [25.03, 25.91] (n=5) | 10.65 |
+| cor_p999_ms | 298.2 sd 0.4 [297.9, 299] (n=5) | 29.64 sd 4.1 [27.03, 37.58] (n=5) | 10.06 |
+| cor_max_ms | 303.7 sd 0.088 [303.7, 303.9] (n=5) | 32.02 sd 5.2 [28.36, 42.16] (n=5) | 9.49 |
+| raw_over_10ms | 14 sd 0 [14, 14] (n=5) | 33.4 sd 2.1 [31, 37] (n=5) | 0.42 |
+| raw_over_100ms | 5 sd 0 [5, 5] (n=5) | 0 sd 0 [0, 0] (n=5) | inf |
+| blocked_ms | 1462 sd 29 [1422, 1511] (n=5) | 869.2 sd 52 [801.2, 960.2] (n=5) | 1.68 |
+| expire_cycle_events | 4.2 sd 0.4 [4, 5] (n=5) | 5.6 sd 0.49 [5, 6] (n=5) | 0.75 |
+| expire_cycle_max_ms | 250 sd 0 [250, 250] (n=5) | 25 sd 0 [25, 25] (n=5) | 10.00 |
+| drain_s | 3.908 sd 0.2 [3.5, 4.03] (n=5) | 5.514 sd 0.32 [5.01, 6.01] (n=5) | 0.71 |
+| server_cpu_s | 1.594 sd 0.035 [1.54, 1.65] (n=5) | 2.638 sd 0.13 [2.46, 2.85] (n=5) | 0.60 |
+| main_thread_cpu_s | 1.57 sd 0.038 [1.51, 1.63] (n=5) | 2.622 sd 0.14 [2.43, 2.84] (n=5) | 0.60 |
+| server_peak_rss_mb | 247.1 sd 0.04 [247, 247.1] (n=5) | 246.7 sd 0.78 [245.1, 247.1] (n=5) | 1.00 |
+
+parent, rep 1: keyspace before `keys=1999126,expires=1999126,avg_ttl=0`; expire-cycle events (ms) `[27, 250, 250, 240, 27]`; expired_keys 1999126, time cap reached 14
+
+fix, rep 1: keyspace before `keys=1999150,expires=1999150,avg_ttl=0`; expire-cycle events (ms) `[25, 25, 25, 25, 25, 25]`; expired_keys 1999150, time cap reached 1262

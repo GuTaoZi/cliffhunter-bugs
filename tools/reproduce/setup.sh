@@ -1,11 +1,11 @@
 #!/bin/sh
 # Clone the upstream repositories the builds need into $CLIFF_DATA/src (full clones: builds check out old commits).
 #
-#   tools/reproduce/setup.sh [SYSTEM...]     default: all five
+#   tools/reproduce/setup.sh [SYSTEM...]     default: postgres redis rocksdb valkey (the kit's; any of memcached postgres redis rocksdb valkey)
 set -eu
 ROOT=${CLIFF_DATA:-$HOME/.cache/cliffhunter-bugs}
 mkdir -p "$ROOT/src" "$ROOT/build" "$ROOT/locks"
-SYSTEMS="$*"; [ -n "$SYSTEMS" ] || SYSTEMS="memcached postgres redis rocksdb valkey"
+SYSTEMS="$*"; [ -n "$SYSTEMS" ] || SYSTEMS="postgres redis rocksdb valkey"
 for s in $SYSTEMS; do
   case $s in
     memcached) url=https://github.com/memcached/memcached.git ;;

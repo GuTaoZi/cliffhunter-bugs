@@ -1,5 +1,0 @@
-link 6dbb6f30e604 rc=0
-link f7b791b213b2 rc=0
-2026-10-27T15:53:58-04:00 r8b-smoke-parent {"wall_s": 30.000, "cpu_s": 0.001, "peak_rss_mb": 21.4, "compactions_in_window": 2, "compactions_total": 6, "compaction_output_mb_in_window": 0.0, "compact_write_mb_total": 2.3, "manifest_bytes_before
-2026-10-27T15:54:49-04:00 r8b-smoke-fix {"wall_s": 30.000, "cpu_s": 0.001, "peak_rss_mb": 21.4, "compactions_in_window": 0, "compactions_total": 6, "compaction_output_mb_in_window": 0.0, "compact_write_mb_total": 2.3, "manifest_bytes_before
-rank 8b: wall 132.14 s, CPU 11.10+2.94 s, peak 350544 KB

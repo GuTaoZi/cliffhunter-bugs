@@ -1,0 +1,209 @@
+RocksDB:    version 4.11
+Date:       Wed Oct 28 12:37:13 2026
+CPU:        48 * Intel(R) Xeon(R) 6521P
+CPUCache:   147456 KB
+... finished 100 ops                              ... finished 200 ops                              ... finished 300 ops                              ... finished 400 ops                              ... finished 500 ops                              ... finished 600 ops                              ... finished 700 ops                              ... finished 800 ops                              ... finished 900 ops                              ... finished 1000 ops                              ... finished 1500 ops                              ... finished 2000 ops                              ... finished 2500 ops                              ... finished 3000 ops                              ... finished 3500 ops                              ... finished 4000 ops                              ... finished 4500 ops                              ... finished 5000 ops                              ... finished 6000 ops                              ... finished 7000 ops                              ... finished 8000 ops                              ... finished 9000 ops                              ... finished 10000 ops                              ... finished 15000 ops                              ... finished 20000 ops                              ... finished 25000 ops                              ... finished 30000 ops                              ... finished 35000 ops                              ... finished 40000 ops                              ... finished 45000 ops                              ... finished 50000 ops                              ... finished 60000 ops                              ... finished 70000 ops                              ... finished 80000 ops                              Initializing RocksDB Options from the specified file
+Initializing RocksDB Options from command-line flags
+Keys:       16 bytes each
+Values:     1000 bytes each (500 bytes after compression)
+Entries:    80000
+Prefix:    0 bytes
+Keys per prefix:    0
+RawSize:    77.5 MB (estimated)
+FileSize:   39.4 MB (estimated)
+Write rate: 0 bytes/second
+Compression: NoCompression
+Memtablerep: skip_list
+Perf Level: 1
+------------------------------------------------
+Initializing RocksDB Options from the specified file
+Initializing RocksDB Options from command-line flags
+DB path: [/dev/shm/ch-rdb37-parent/db]
+fillseq      :     506.433 micros/op 1974 ops/sec;    1.9 MB/s
+Microseconds per write:
+Count: 80000 Average: 506.4300  StdDev: 544.63
+Min: 0  Median: 1.7279  Max: 9638
+Percentiles: P50: 1.73 P75: 1092.41 P99: 1195.73 P99.9: 1199.60 P99.99: 1199.99
+------------------------------------------------------
+[       0,       1 )    37130  46.413%  46.413% #########
+[       1,       2 )     3943   4.929%  51.341% #
+[       2,       3 )     1472   1.840%  53.181% 
+[       3,       4 )      160   0.200%  53.381% 
+[       4,       5 )       50   0.062%  53.444% 
+[       5,       6 )       29   0.036%  53.480% 
+[       6,       7 )       15   0.019%  53.499% 
+[       7,       8 )        7   0.009%  53.508% 
+[       9,      10 )        1   0.001%  53.509% 
+[      10,      12 )        3   0.004%  53.513% 
+[      12,      14 )        2   0.003%  53.515% 
+[      14,      16 )        1   0.001%  53.516% 
+[      16,      18 )        3   0.004%  53.520% 
+[      18,      20 )        3   0.004%  53.524% 
+[      20,      25 )        4   0.005%  53.529% 
+[      30,      35 )        1   0.001%  53.530% 
+[      60,      70 )        1   0.001%  53.531% 
+[      70,      80 )        1   0.001%  53.532% 
+[     100,     120 )        1   0.001%  53.534% 
+[     450,     500 )        1   0.001%  53.535% 
+[    1000,    1200 )    37166  46.458%  99.993% #########
+[    1200,    1400 )        1   0.001%  99.994% 
+[    1600,    1800 )        1   0.001%  99.995% 
+[    3000,    3500 )        1   0.001%  99.996% 
+[    6000,    7000 )        1   0.001%  99.998% 
+[    8000,    9000 )        1   0.001%  99.999% 
+[    9000,   10000 )        1   0.001% 100.000% 
+
+
+
+** Compaction Stats [default] **
+Level    Files   Size(MB) Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0     17/0      76.74   4.2      0.0     0.0      0.0       0.1      0.1       0.0   0.0      0.0    364.5         0        17    0.012       0      0
+ Sum     17/0      76.74   0.0      0.0     0.0      0.0       0.1      0.1       0.0   1.0      0.0    364.5         0        17    0.012       0      0
+ Int      0/0       0.00   0.0      0.0     0.0      0.0       0.1      0.1       0.0   1.0      0.0    302.4         0        13    0.014       0      0
+Uptime(secs): 40.5 total, 40.5 interval
+AddFile(GB): cumulative 0.000, interval 0.000
+Cumulative compaction: 0.07 GB write, 1.89 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.2 seconds
+Interval compaction: 0.05 GB write, 1.33 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.2 seconds
+Stalls(count): 22 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 6 memtable_compaction, 0 memtable_slowdown, interval 24 total count
+
+** DB Stats **
+Uptime(secs): 40.5 total, 40.5 interval
+Cumulative writes: 80K writes, 80K keys, 80K batches, 1.0 writes per batch, ingest: 0.00 GB, 0.00 MB/s
+Cumulative WAL: 0 writes, 0 syncs, 0.00 writes per sync, written: 0.00 GB, 0.00 MB/s
+Cumulative stall: 00:00:40.382 H:M:S, 99.7 percent
+Interval writes: 52K writes, 52K keys, 52K batches, 1.0 writes per batch, ingest: 0.00 MB, 0.00 MB/s
+Interval WAL: 0 writes, 0 syncs, 0.00 writes per sync, written: 0.00 MB, 0.00 MB/s
+Interval stall: 00:00:40.370 H:M:S, 99.7 percent
+** Level 0 read latency histogram (micros):
+Count: 68 Average: 2.6029  StdDev: 3.14
+Min: 0  Median: 1.1538  Max: 19
+Percentiles: P50: 1.15 P75: 3.50 P99: 18.64 P99.9: 19.00 P99.99: 19.00
+------------------------------------------------------
+[       0,       1 )       32  47.059%  47.059% #########
+[       1,       2 )       13  19.118%  66.176% ####
+[       2,       3 )        5   7.353%  73.529% #
+[       3,       4 )        2   2.941%  76.471% #
+[       4,       5 )        8  11.765%  88.235% ##
+[       5,       6 )        1   1.471%  89.706% 
+[       6,       7 )        2   2.941%  92.647% #
+[       7,       8 )        3   4.412%  97.059% #
+[       9,      10 )        1   1.471%  98.529% 
+[      18,      20 )        1   1.471% 100.000% 
+
+
+STATISTICS:
+rocksdb.block.cache.miss COUNT : 0
+rocksdb.block.cache.hit COUNT : 0
+rocksdb.block.cache.add COUNT : 0
+rocksdb.block.cache.add.failures COUNT : 0
+rocksdb.block.cache.index.miss COUNT : 0
+rocksdb.block.cache.index.hit COUNT : 0
+rocksdb.block.cache.index.bytes.insert COUNT : 0
+rocksdb.block.cache.index.bytes.evict COUNT : 0
+rocksdb.block.cache.filter.miss COUNT : 0
+rocksdb.block.cache.filter.hit COUNT : 0
+rocksdb.block.cache.filter.bytes.insert COUNT : 0
+rocksdb.block.cache.filter.bytes.evict COUNT : 0
+rocksdb.block.cache.data.miss COUNT : 0
+rocksdb.block.cache.data.hit COUNT : 0
+rocksdb.block.cache.bytes.read COUNT : 0
+rocksdb.block.cache.bytes.write COUNT : 0
+rocksdb.bloom.filter.useful COUNT : 0
+rocksdb.persistent.cache.hit COUNT : 0
+rocksdb.persistent.cache.miss COUNT : 0
+rocksdb.memtable.hit COUNT : 0
+rocksdb.memtable.miss COUNT : 0
+rocksdb.l0.hit COUNT : 0
+rocksdb.l1.hit COUNT : 0
+rocksdb.l2andup.hit COUNT : 0
+rocksdb.compaction.key.drop.new COUNT : 0
+rocksdb.compaction.key.drop.obsolete COUNT : 0
+rocksdb.compaction.key.drop.user COUNT : 0
+rocksdb.number.keys.written COUNT : 80000
+rocksdb.number.keys.read COUNT : 0
+rocksdb.number.keys.updated COUNT : 0
+rocksdb.bytes.written COUNT : 0
+rocksdb.bytes.read COUNT : 0
+rocksdb.number.db.seek COUNT : 0
+rocksdb.number.db.next COUNT : 0
+rocksdb.number.db.prev COUNT : 0
+rocksdb.number.db.seek.found COUNT : 0
+rocksdb.number.db.next.found COUNT : 0
+rocksdb.number.db.prev.found COUNT : 0
+rocksdb.db.iter.bytes.read COUNT : 0
+rocksdb.no.file.closes COUNT : 0
+rocksdb.no.file.opens COUNT : 17
+rocksdb.no.file.errors COUNT : 0
+rocksdb.l0.slowdown.micros COUNT : 0
+rocksdb.memtable.compaction.micros COUNT : 0
+rocksdb.l0.num.files.stall.micros COUNT : 0
+rocksdb.stall.micros COUNT : 40381833
+rocksdb.db.mutex.wait.micros COUNT : 0
+rocksdb.rate.limit.delay.millis COUNT : 0
+rocksdb.num.iterators COUNT : 0
+rocksdb.number.multiget.get COUNT : 0
+rocksdb.number.multiget.keys.read COUNT : 0
+rocksdb.number.multiget.bytes.read COUNT : 0
+rocksdb.number.deletes.filtered COUNT : 0
+rocksdb.number.merge.failures COUNT : 0
+rocksdb.sequence.number COUNT : 80000
+rocksdb.bloom.filter.prefix.checked COUNT : 0
+rocksdb.bloom.filter.prefix.useful COUNT : 0
+rocksdb.number.reseeks.iteration COUNT : 0
+rocksdb.getupdatessince.calls COUNT : 0
+rocksdb.block.cachecompressed.miss COUNT : 0
+rocksdb.block.cachecompressed.hit COUNT : 0
+rocksdb.block.cachecompressed.add COUNT : 0
+rocksdb.block.cachecompressed.add.failures COUNT : 0
+rocksdb.wal.synced COUNT : 0
+rocksdb.wal.bytes COUNT : 0
+rocksdb.write.self COUNT : 80000
+rocksdb.write.other COUNT : 0
+rocksdb.write.timeout COUNT : 0
+rocksdb.write.wal COUNT : 0
+rocksdb.compact.read.bytes COUNT : 0
+rocksdb.compact.write.bytes COUNT : 0
+rocksdb.flush.write.bytes COUNT : 80467690
+rocksdb.number.direct.load.table.properties COUNT : 0
+rocksdb.number.superversion_acquires COUNT : 0
+rocksdb.number.superversion_releases COUNT : 0
+rocksdb.number.superversion_cleanups COUNT : 0
+rocksdb.number.block.compressed COUNT : 0
+rocksdb.number.block.decompressed COUNT : 0
+rocksdb.number.block.not_compressed COUNT : 0
+rocksdb.merge.operation.time.nanos COUNT : 0
+rocksdb.filter.operation.time.nanos COUNT : 0
+rocksdb.row.cache.hit COUNT : 0
+rocksdb.row.cache.miss COUNT : 0
+rocksdb.db.get.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.db.write.micros statistics Percentiles :=> 50 : 1.010522 95 : 1178.483560 99 : 1195.718237
+rocksdb.compaction.times.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.subcompaction.setup.times.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.table.sync.micros statistics Percentiles :=> 50 : 10.500000 95 : 40.750000 99 : 43.000000
+rocksdb.compaction.outfile.sync.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.wal.file.sync.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.manifest.file.sync.micros statistics Percentiles :=> 50 : 0.527778 95 : 1.050000 99 : 1.810000
+rocksdb.table.open.io.micros statistics Percentiles :=> 50 : 62.500000 95 : 190.000000 99 : 190.000000
+rocksdb.db.multiget.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.read.block.compaction.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.read.block.get.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.write.raw.block.micros statistics Percentiles :=> 50 : 3.536918 95 : 15.036588 99 : 15.913266
+rocksdb.l0.slowdown.count statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.memtable.compaction.count statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.num.files.stall.count statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.hard.rate.limit.delay.count statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.soft.rate.limit.delay.count statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.numfiles.in.singlecompaction statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.db.seek.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.db.write.stall statistics Percentiles :=> 50 : 1089.520273 95 : 1188.971399 99 : 1197.811499
+rocksdb.sst.read.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.num.subcompactions.scheduled statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.bytes.per.read statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.bytes.per.write statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.bytes.per.multiget statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.bytes.compressed statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.bytes.decompressed statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.compression.times.nanos statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.decompression.times.nanos statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+

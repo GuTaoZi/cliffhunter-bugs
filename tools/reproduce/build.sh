@@ -18,8 +18,11 @@
 # GCC >= 10 defaults to -fno-common, which breaks old code that defines globals in headers; C builds
 # pass -fcommon. Old memcached builds with -Werror; it is stripped. GCC >= 13 no longer includes
 # <cstdint> transitively, which breaks 2022-2023 RocksDB headers, nor <system_error>, which 2020 RocksDB's bundled
-# folly needs; both are force-included. The same flags serve older compilers (Ubuntu 24.04's gcc 13). RocksDB is
-# built without io_uring (ROCKSDB_USE_IO_URING=0, and no liburing in either toolchain), as the recorded builds were.
+# folly needs, nor <functional>, which 2016-2017 RocksDB's util/thread_local.h needs; all three are force-included.
+# RocksDB trees committed before 2018 also get <array> (table/plain_table_key_coding.h) and <sys/sysmacros.h>, which
+# glibc >= 2.28 no longer pulls in through <sys/types.h> (util/io_posix.cc's major()/minor()); newer trees do not, as
+# a function-like major() macro would clash with their own names. The same flags serve older compilers (Ubuntu
+# 24.04's gcc 13). RocksDB is built without io_uring (ROCKSDB_USE_IO_URING=0, and no liburing in either toolchain), as the recorded builds were.
 # None of these change program code.
 set -eu
 SYS=$1; REV=$2; PATCH=${3:-}
@@ -53,8 +56,11 @@ if ! {
       "$TOOLS/inenv.sh" "gcc gnumake bison flex perl pkg-config zlib" \
         "gcc --version | head -1; ./configure --prefix=$OUT/install --without-readline --without-icu --without-zlib CFLAGS='-O2 -std=$CSTD -fcommon' && make -j$J && make install" ;;
     rocksdb)
+      INC='-include cstdint -include system_error -include functional'
+      [ "$(git -C "$REPO" show -s --format=%cd --date=format:%Y "$SHA")" -lt 2018 ] && INC="$INC -include array -include sys/sysmacros.h"
+      echo "extra_cxxflags=$INC"
       "$TOOLS/inenv.sh" "gcc gnumake gflags snappy lz4 zstd zlib bzip2 pkg-config perl" \
-        "g++ --version | head -1; DEBUG_LEVEL=0 PORTABLE=1 DISABLE_WARNING_AS_ERROR=1 ROCKSDB_USE_IO_URING=0 EXTRA_CXXFLAGS='-include cstdint -include system_error' make -j$J db_bench cache_bench" ;;
+        "g++ --version | head -1; DEBUG_LEVEL=0 PORTABLE=1 DISABLE_WARNING_AS_ERROR=1 ROCKSDB_USE_IO_URING=0 EXTRA_CXXFLAGS='$INC' make -j$J db_bench cache_bench" ;;
     *) echo "unknown system $SYS"; exit 2 ;;
   esac
 } > "$OUT/build.log" 2>&1; then
@@ -64,6 +70,7 @@ if ! {
 fi
 grep -m1 -oE '(-O[0-3s]|-Og)' "$OUT/build.log" > "$OUT/flags.txt" || true
 grep -m1 '^toolchain=' "$OUT/build.log" >> "$OUT/flags.txt" || true
+grep -m1 '^extra_cxxflags=' "$OUT/build.log" >> "$OUT/flags.txt" || true
 grep -m1 -E '^gcc|^g\+\+' "$OUT/build.log" >> "$OUT/flags.txt" || true
 # RocksDB's make output does not echo compile lines; record the flags stored in the binary instead.
 # db_bench embeds "Assertions are enabled" only when built without NDEBUG.
