@@ -1,0 +1,8 @@
+{"arm": "buggy", "hz": 10, "seconds": 10, "calls": 259, "calls_timeout_0": 161, "calls_per_s": 25.9}
+{"arm": "fixed", "hz": 10, "seconds": 10, "calls": 98, "calls_timeout_0": 0, "calls_per_s": 9.8}
+{"arm": "buggy", "hz": 10, "seconds": 10, "calls": 249, "calls_timeout_0": 151, "calls_per_s": 24.9}
+{"arm": "fixed", "hz": 10, "seconds": 10, "calls": 98, "calls_timeout_0": 0, "calls_per_s": 9.8}
+{"arm": "buggy", "hz": 100, "seconds": 10, "calls": 3067, "calls_timeout_0": 2081, "calls_per_s": 306.7}
+{"arm": "fixed", "hz": 100, "seconds": 10, "calls": 986, "calls_timeout_0": 0, "calls_per_s": 98.6}
+{"arm": "buggy", "hz": 100, "seconds": 10, "calls": 2975, "calls_timeout_0": 1988, "calls_per_s": 297.5}
+{"arm": "fixed", "hz": 100, "seconds": 10, "calls": 986, "calls_timeout_0": 0, "calls_per_s": 98.6}
