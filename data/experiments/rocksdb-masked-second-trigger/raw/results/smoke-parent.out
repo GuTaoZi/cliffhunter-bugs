@@ -1,0 +1,1 @@
+{"ops":264207,"mb_written":256.0,"wall_s":8.000,"write_mb_s":32.00,"lat_mean_us":12.55,"lat_p50_us":10.24,"lat_p99_us":20.48,"lat_p999_us":32.77,"lat_max_ms":94.17,"cpu_s":3.546,"cpu_us_per_op":13.422,"peak_rss_mb":240.4,"peak_rss_sampled_mb":237.4,"peak_memtables_mb":227.6,"end_memtables_mb":230.5,"peak_num_immutable":20,"stall_s":0.000,"errors":0,"db_write_buffer_mb":64.0}

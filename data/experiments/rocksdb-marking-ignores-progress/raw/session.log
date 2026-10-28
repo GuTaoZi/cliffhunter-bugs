@@ -1,0 +1,19 @@
+2026-10-27T15:32:39-04:00 start
+$CLIFF_DATA/build/rocksdb-00d697bdc532
+build 00d697bdc532: wall 60.76 s, CPU 981.19+73.52 s, peak 936900 KB
+$CLIFF_DATA/build/rocksdb-eca47fb6960e
+build eca47fb6960e: wall 61.51 s, CPU 961.71+73.90 s, peak 936628 KB
+$CLIFF_DATA/build/rocksdb-6dbb6f30e604
+build 6dbb6f30e604: wall 89.52 s, CPU 1734.21+125.55 s, peak 1536596 KB
+$CLIFF_DATA/build/rocksdb-f7b791b213b2
+build f7b791b213b2: wall 89.85 s, CPU 1727.99+125.19 s, peak 1536684 KB
+link 00d697bdc532 rc=0
+link eca47fb6960e rc=0
+link 6dbb6f30e604 rc=1
+link f7b791b213b2 rc=1
+{"wall_s": 20.000, "cpu_s": 13.361, "peak_rss_mb": 19.6, "compactions_in_window": 136, "compactions_total": 137, "compaction_output_mb_in_window": 859.1, "compact_write_mb_total": 867.4, "manifest_bytes_before": 881, "manifest_bytes_after": 17690, "reasons_total": "1:1,11:136"}
+{"wall_s": 20.000, "cpu_s": 0.000, "peak_rss_mb": 16.7, "compactions_in_window": 0, "compactions_total": 1, "compaction_output_mb_in_window": 0.0, "compact_write_mb_total": 6.3, "manifest_bytes_before": 881, "manifest_bytes_after": 881, "reasons_total": "1:1"}
+$CLIFF_DATA/repro/rocksdb-bottommost-loop/session.sh: line 18: $CLIFF_DATA/repro/rocksdb-bottommost-loop/bottom_loop-6dbb6f30e604: No such file or directory
+$CLIFF_DATA/repro/rocksdb-bottommost-loop/session.sh: line 18: $CLIFF_DATA/repro/rocksdb-bottommost-loop/bottom_loop-f7b791b213b2: No such file or directory
+2026-10-27T15:38:53-04:00 end
+ranks 8-9 session: wall 591.43 s, CPU 5428.83+403.20 s, peak 1536684 KB

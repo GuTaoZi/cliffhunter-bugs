@@ -1,0 +1,10 @@
+{"arm": "parent", "sha": "924616526a14", "rep": 1, "rc": 0, "micros_per_op": 306500.755, "ops_per_s": 3, "mb_per_s": 166.4, "wall_s": 30.12, "user_s": 10.55, "sys_s": 0.89, "peak_rss_mb": 27.6171875, "tickers": {}}
+{"arm": "fix", "sha": "04b2c16f9b81", "rep": 1, "rc": 0, "micros_per_op": 210655.958, "ops_per_s": 4, "mb_per_s": 242.7, "wall_s": 30.19, "user_s": 21.29, "sys_s": 0.29, "peak_rss_mb": 27.3828125, "tickers": {}}
+{"arm": "fix", "sha": "04b2c16f9b81", "rep": 2, "rc": 0, "micros_per_op": 209838.182, "ops_per_s": 4, "mb_per_s": 243.7, "wall_s": 30.06, "user_s": 21.17, "sys_s": 0.33, "peak_rss_mb": 27.62890625, "tickers": {}}
+{"arm": "parent", "sha": "924616526a14", "rep": 2, "rc": 0, "micros_per_op": 259121.402, "ops_per_s": 3, "mb_per_s": 197.4, "wall_s": 30.37, "user_s": 11.05, "sys_s": 1.11, "peak_rss_mb": 27.5859375, "tickers": {}}
+{"arm": "parent", "sha": "924616526a14", "rep": 3, "rc": 0, "micros_per_op": 265866.779, "ops_per_s": 3, "mb_per_s": 192.3, "wall_s": 30.09, "user_s": 11.29, "sys_s": 0.99, "peak_rss_mb": 27.421875, "tickers": {}}
+{"arm": "fix", "sha": "04b2c16f9b81", "rep": 3, "rc": 0, "micros_per_op": 202916.216, "ops_per_s": 4, "mb_per_s": 252.1, "wall_s": 30.13, "user_s": 21.09, "sys_s": 0.31, "peak_rss_mb": 27.33203125, "tickers": {}}
+{"arm": "fix", "sha": "04b2c16f9b81", "rep": 4, "rc": 0, "micros_per_op": 207530.234, "ops_per_s": 4, "mb_per_s": 246.4, "wall_s": 30.18, "user_s": 21.45, "sys_s": 0.33, "peak_rss_mb": 27.265625, "tickers": {}}
+{"arm": "parent", "sha": "924616526a14", "rep": 4, "rc": 0, "micros_per_op": 264503.991, "ops_per_s": 3, "mb_per_s": 193.3, "wall_s": 30.49, "user_s": 11.65, "sys_s": 1.1, "peak_rss_mb": 27.671875, "tickers": {}}
+{"arm": "parent", "sha": "924616526a14", "rep": 5, "rc": 0, "micros_per_op": 264660.652, "ops_per_s": 3, "mb_per_s": 193.2, "wall_s": 30.51, "user_s": 11.66, "sys_s": 1.05, "peak_rss_mb": 28.515625, "tickers": {}}
+{"arm": "fix", "sha": "04b2c16f9b81", "rep": 5, "rc": 0, "micros_per_op": 189151.906, "ops_per_s": 5, "mb_per_s": 269.1, "wall_s": 30.17, "user_s": 19.38, "sys_s": 0.31, "peak_rss_mb": 27.640625, "tickers": {}}

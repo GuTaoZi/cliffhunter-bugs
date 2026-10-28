@@ -1,0 +1,11 @@
+{"wall_s": 76.477, "cpu_s": 905.338, "peak_rss_mb": 2337.9, "exit": 0, "arm": "buggy", "rep": 0, "ops_per_s": 317497, "cpu_per_mop_s": 37.72241666666667, "total_ops": 24000000}
+{"wall_s": 6.16, "cpu_s": 62.431, "peak_rss_mb": 2302.9, "exit": 0, "arm": "fixed", "rep": 0, "ops_per_s": 4525708, "cpu_per_mop_s": 2.6012916666666666, "total_ops": 24000000}
+{"wall_s": 6.122, "cpu_s": 62.41, "peak_rss_mb": 2197.9, "exit": 0, "arm": "fixed", "rep": 1, "ops_per_s": 4556013, "cpu_per_mop_s": 2.6004166666666664, "total_ops": 24000000}
+{"wall_s": 78.536, "cpu_s": 930.832, "peak_rss_mb": 2249.3, "exit": 0, "arm": "buggy", "rep": 1, "ops_per_s": 308909, "cpu_per_mop_s": 38.784666666666666, "total_ops": 24000000}
+{"wall_s": 86.764, "cpu_s": 1029.146, "peak_rss_mb": 2326.3, "exit": 0, "arm": "buggy", "rep": 2, "ops_per_s": 279361, "cpu_per_mop_s": 42.88108333333333, "total_ops": 24000000}
+{"wall_s": 6.083, "cpu_s": 62.416, "peak_rss_mb": 2253.0, "exit": 0, "arm": "fixed", "rep": 2, "ops_per_s": 4586803, "cpu_per_mop_s": 2.6006666666666667, "total_ops": 24000000}
+{"wall_s": 6.131, "cpu_s": 62.612, "peak_rss_mb": 2317.6, "exit": 0, "arm": "fixed", "rep": 3, "ops_per_s": 4539527, "cpu_per_mop_s": 2.6088333333333336, "total_ops": 24000000}
+{"wall_s": 79.919, "cpu_s": 946.911, "peak_rss_mb": 2348.5, "exit": 0, "arm": "buggy", "rep": 3, "ops_per_s": 303515, "cpu_per_mop_s": 39.454625, "total_ops": 24000000}
+{"wall_s": 83.039, "cpu_s": 984.529, "peak_rss_mb": 2254.7, "exit": 0, "arm": "buggy", "rep": 4, "ops_per_s": 292056, "cpu_per_mop_s": 41.02204166666667, "total_ops": 24000000}
+{"wall_s": 6.112, "cpu_s": 62.231, "peak_rss_mb": 2093.1, "exit": 0, "arm": "fixed", "rep": 4, "ops_per_s": 4545216, "cpu_per_mop_s": 2.5929583333333333, "total_ops": 24000000}
+{"wall_s": 81.913, "cpu_s": 971.019, "peak_rss_mb": 2057.3, "exit": 0, "arm": "buggy", "rep": 5, "ops_per_s": 295997, "cpu_per_mop_s": 40.459125, "total_ops": 24000000}
