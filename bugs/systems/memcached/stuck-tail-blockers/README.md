@@ -8,9 +8,9 @@ Reproduced, a fixed bug (parent vs fix): referenced items stuck at the LRU tail 
 
 ## Run it
 
-Paths are relative to the kit's root; `tools/reproduce/setup.sh` first (see the top README).
+Paths are relative to the kit's root. First the set-up of the top README: the build tools (`tools/reproduce/deps-ubuntu.sh` on Ubuntu or Debian, or Nix) and `tools/reproduce/setup.sh`.
 
-**Needs:** Nix; loopback port 15440
+**Needs:** build tools (Nix, or the Ubuntu packages of deps-ubuntu.sh); loopback port 15440
 
 **Build:**
 
@@ -30,7 +30,7 @@ python3 bugs/systems/memcached/stuck-tail-blockers/repro/tables.py
 
 **Minutes:** about 8 (6 of the runs wait 63 s for items to age)
 
-**Notes:** memcached 1.4.20's autogen.sh only looks for versioned automake, hence AUTOMAKE=automake. campaign.sh appends to data/runs.jsonl: delete repro/data before a re-run. session.sh runs both builds, campaign.sh and tables.py in one go.
+**Notes:** memcached 1.4.20's autogen.sh only looks for versioned automake, hence AUTOMAKE=automake. campaign.sh appends to data/runs.jsonl: delete repro/data before a re-run. session.sh runs both builds, campaign.sh and tables.py in one go. Run as a normal user: memcached refuses to run as root without -u.
 
 ## The report
 

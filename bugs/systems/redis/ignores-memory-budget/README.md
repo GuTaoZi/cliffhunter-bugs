@@ -8,9 +8,9 @@ Reproduced, a fixed bug (parent vs fix): the keyspace dict expands past maxmemor
 
 ## Run it
 
-Paths are relative to the kit's root; `tools/reproduce/setup.sh` first (see the top README).
+Paths are relative to the kit's root. First the set-up of the top README: the build tools (`tools/reproduce/deps-ubuntu.sh` on Ubuntu or Debian, or Nix) and `tools/reproduce/setup.sh`.
 
-**Needs:** Nix; about 2 GB of free RAM
+**Needs:** build tools (Nix, or the Ubuntu packages of deps-ubuntu.sh); about 2 GB of free RAM
 
 **Build:**
 

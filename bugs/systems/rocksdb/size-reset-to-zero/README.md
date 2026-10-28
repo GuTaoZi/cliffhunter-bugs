@@ -8,9 +8,9 @@ Reproduced, a fixed bug (parent vs fix): automatic readahead never starts, so lo
 
 ## Run it
 
-Paths are relative to the kit's root; `tools/reproduce/setup.sh` first (see the top README).
+Paths are relative to the kit's root. First the set-up of the top README: the build tools (`tools/reproduce/deps-ubuntu.sh` on Ubuntu or Debian, or Nix) and `tools/reproduce/setup.sh`.
 
-**Needs:** Nix; GNU time on PATH; a filesystem with O_DIRECT (not tmpfs) and 0.6 GB in the repro directory
+**Needs:** build tools (Nix, or the Ubuntu packages of deps-ubuntu.sh); GNU time on PATH; a filesystem with O_DIRECT (not tmpfs) and 0.6 GB in the repro directory
 
 **Build:**
 

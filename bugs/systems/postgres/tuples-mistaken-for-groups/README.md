@@ -8,9 +8,9 @@ Hash aggregate sized from input tuples instead of groups (parent of 9878b643f37b
 
 ## Run it
 
-Paths are relative to the kit's root; `tools/reproduce/setup.sh` first (see the top README).
+Paths are relative to the kit's root. First the set-up of the top README: the build tools (`tools/reproduce/deps-ubuntu.sh` on Ubuntu or Debian, or Nix) and `tools/reproduce/setup.sh`.
 
-**Needs:** Nix; an idle machine for the time ratio (the batch count is deterministic)
+**Needs:** build tools (Nix, or the Ubuntu packages of deps-ubuntu.sh); an idle machine for the time ratio (the batch count is deterministic)
 
 **Build:**
 

@@ -8,9 +8,9 @@ A threshold that blocks freeing when idle (parent of 0a9377535b6f vs the fix): a
 
 ## Run it
 
-Paths are relative to the kit's root; `tools/reproduce/setup.sh` first (see the top README).
+Paths are relative to the kit's root. First the set-up of the top README: the build tools (`tools/reproduce/deps-ubuntu.sh` on Ubuntu or Debian, or Nix) and `tools/reproduce/setup.sh`.
 
-**Needs:** Nix; an open-file limit above 5,100
+**Needs:** build tools (Nix, or the Ubuntu packages of deps-ubuntu.sh); an open-file limit above 5,100
 
 **Build:**
 
