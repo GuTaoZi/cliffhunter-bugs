@@ -8,9 +8,9 @@ LRU crawler backoff stuck at zero (parent of 675d89d784df vs the fix): idle CPU 
 
 ## Run it
 
-Paths are relative to the kit's root; `tools/reproduce/setup.sh` first (see the top README).
+Paths are relative to the kit's root. First the set-up of the top README: the build tools (`tools/reproduce/deps-ubuntu.sh` on Ubuntu or Debian, or Nix) and `tools/reproduce/setup.sh`.
 
-**Needs:** Nix; an otherwise idle machine (the measure is the idle CPU of one core)
+**Needs:** build tools (Nix, or the Ubuntu packages of deps-ubuntu.sh); an otherwise idle machine (the measure is the idle CPU of one core)
 
 **Build:**
 
@@ -30,7 +30,7 @@ python3 tools/reproduce/summarize.py experiments/reproductions/memcached-zero-st
 
 **Minutes:** about 7
 
-**Notes:** Port 15401. fix/ holds the upstream diff for reading; the fixed arm is built from its own commit.
+**Notes:** Port 15401. fix/ holds the upstream diff for reading; the fixed arm is built from its own commit. Run as a normal user: memcached refuses to run as root without -u.
 
 ## The report
 

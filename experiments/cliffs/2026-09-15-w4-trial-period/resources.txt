@@ -1,0 +1,19 @@
+phase                                 CPU ms/q  cache pages/q  disk->cache MB/q  peak RSS MB   rise MB
+------------------------------------------------------------------------------------------------------
+hint {b:1}  optimal plan, forced          42.4             66               0.0       2183.9       0.2
+hint {a:1}  plan the trial picks        1433.7          3,731               0.0       2183.2       0.5
+unhinted, maxResults=101 (default)      1524.8          3,744               0.0       2182.9       0.1
+unhinted, maxResults=102                  85.2            162               0.0       2183.4       0.2
+
+the plan the trial period picks costs 33.8x the CPU of the plan it discarded
+  and 56.5x the cache page requests
+peak RSS: 2183.9 MB vs 2183.2 MB (-0.6 MB)
+  -- both plans are streaming IXSCAN+FETCH with no blocking stage, so there is no
+     per-query structure to grow. The wrong decision buys NOTHING in memory:
+     it is 33.8x the CPU for a 0 MB saving.
+
+Caveats: peak RSS is dominated by the pinned WiredTiger cache, so per-query
+structures below a few MB sit under the measurement floor -- reported, not assumed
+away. disk->cache traffic is ~0 because the collection is cache-resident, which makes
+the CPU ratio a LOWER bound on the cliff.
+[{"label": "hint {b:1}  optimal plan, forced", "cpu_ms": 42.3928, "peak_mb": 2183.8671875, "peak_rise_mb": 0.25, "wt_read_mb": 0.0, "wt_pages_req": 66.0}, {"label": "hint {a:1}  plan the trial picks", "cpu_ms": 1433.7238, "peak_mb": 2183.23046875, "peak_rise_mb": 0.49609375, "wt_read_mb": 0.0, "wt_pages_req": 3730.8}, {"label": "unhinted, maxResults=101 (default)", "cpu_ms": 1524.826, "peak_mb": 2182.9453125, "peak_rise_mb": 0.07421875, "wt_read_mb": 0.0, "wt_pages_req": 3744.4}, {"label": "unhinted, maxResults=102", "cpu_ms": 85.1784, "peak_mb": 2183.37890625, "peak_rise_mb": 0.22265625, "wt_read_mb": 0.0, "wt_pages_req": 162.0}]

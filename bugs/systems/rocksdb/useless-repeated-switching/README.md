@@ -8,9 +8,9 @@ Useless repeated switching (parent of 91166012c848 vs the fix): write stops 283-
 
 ## Run it
 
-Paths are relative to the kit's root; `tools/reproduce/setup.sh` first (see the top README).
+Paths are relative to the kit's root. First the set-up of the top README: the build tools (`tools/reproduce/deps-ubuntu.sh` on Ubuntu or Debian, or Nix) and `tools/reproduce/setup.sh`.
 
-**Needs:** Nix; a tmpfs at /dev/shm with room for 8 small databases (1-2 GB)
+**Needs:** build tools (Nix, or the Ubuntu packages of deps-ubuntu.sh); a tmpfs at /dev/shm with room for 8 small databases (1-2 GB)
 
 **Build:**
 

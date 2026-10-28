@@ -8,9 +8,9 @@ Reproduced, a fixed bug (parent vs fix): with auto compactions disabled every sn
 
 ## Run it
 
-Paths are relative to the kit's root; `tools/reproduce/setup.sh` first (see the top README).
+Paths are relative to the kit's root. First the set-up of the top README: the build tools (`tools/reproduce/deps-ubuntu.sh` on Ubuntu or Debian, or Nix) and `tools/reproduce/setup.sh`.
 
-**Needs:** Nix; host make and ar; about 1 GB of disk in the repro directory and 5 free cores
+**Needs:** build tools (Nix, or the Ubuntu packages of deps-ubuntu.sh); host make and ar; about 1 GB of disk in the repro directory and 5 free cores
 
 **Build:**
 

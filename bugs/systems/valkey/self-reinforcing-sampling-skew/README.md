@@ -8,9 +8,9 @@ Self-reinforcing sampling skew (parent of 45d03e616421 vs the fix): 2.2x CPU, bu
 
 ## Run it
 
-Paths are relative to the kit's root; `tools/reproduce/setup.sh` first (see the top README).
+Paths are relative to the kit's root. First the set-up of the top README: the build tools (`tools/reproduce/deps-ubuntu.sh` on Ubuntu or Debian, or Nix) and `tools/reproduce/setup.sh`.
 
-**Needs:** Nix; an idle machine (the effect is 2.2x and its interval nearly touches 1)
+**Needs:** build tools (Nix, or the Ubuntu packages of deps-ubuntu.sh); an idle machine (the effect is 2.2x and its interval nearly touches 1)
 
 **Build:**
 

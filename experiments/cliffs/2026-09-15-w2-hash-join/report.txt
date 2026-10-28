@@ -1,0 +1,14 @@
+foreign_docs  plan                                join           keys examined       docs   median ms    rsd
+------------------------------------------------------------------------------------------------------------
+    9998                                      HASH_LOOKUP                0     11,998       16.15   0.08
+    9999                                      HASH_LOOKUP                0     11,999       12.83   0.03
+   10000                                      HASH_LOOKUP                0     12,000       11.41   0.02
+   10001                                      NESTED_LOOP                0  20,004,000     2479.86   0.00
+   10002                                      NESTED_LOOP                0  20,006,000     2481.53   0.00
+   10010                                      NESTED_LOOP                0  20,022,000     2473.55   0.00
+
+Sharpest step: foreign_docs 10000 -> 10001 (workload differs by 0.01%)
+  plan    : HASH_LOOKUP
+         -> NESTED_LOOP
+  work    : 12,000 -> 20,004,000 docs examined  (1,667x)
+  latency : 11.41 ms -> 2479.86 ms  (217x)

@@ -8,8 +8,8 @@
 # mongod runs in a systemd user unit (its own cgroup) on port 15451 with a fresh dbpath under the data root. Each arm
 # runs one order alone, with more epochs than the recorded runs so that a profile holds enough samples:
 # SERVER-79039 alternating (slow) vs blocked_EC (fast); SERVER-107471 P_first (the skip query caches its plan first:
-# slow) vs R_first (fast), skip 5000. Arms alternate per repetition. perf comes from nix-shell -p perf unless PERF
-# is set; frame-pointer call graphs need a mongod built with -fno-omit-frame-pointer (MongoDB's default).
+# slow) vs R_first (fast), skip 5000. Arms alternate per repetition. perf is PERF, else perf on PATH (on Ubuntu:
+# tools/reproduce/deps-ubuntu.sh perf), else nix-shell -p perf; frame-pointer call graphs need a mongod built with -fno-omit-frame-pointer (MongoDB's default).
 # Writes $OUT: buildinfo.json, <bug>-<arm>-r<rep>.{log,perf.data,self.txt,children.txt,folded}, runs.jsonl.
 set -eu
 HERE=$(cd "$(dirname "$0")" && pwd)
@@ -24,7 +24,7 @@ E79=${E79:-120}
 E107=${E107:-150}
 RUN=$D/mongo/run/profiles
 O=${OUT:-$D/repro/mongodb-profiles/out}
-PERF=${PERF:-$(nix-shell -p perf --run 'command -v perf')}
+PERF=${PERF:-$(command -v perf || nix-shell -p perf --run 'command -v perf')}
 rm -rf "$RUN"; mkdir -p "$RUN/db" "$O"
 : > "$O/runs.jsonl"
 

@@ -3,12 +3,13 @@
 SERVER-79039 and SERVER-107471 on master (mongod 9.1, 6d990baca59c), profiled with perf: alternating arrival multi-plans all 1,440 queries (719 replans, server CPU 1.9x on the same 36.0 M documents), the symptom MultiPlanStage::runTrials at 95% of samples vs 1%; the skip query's cached plan makes each selective query read 20,000 documents instead of 1 with 0 replans (8.6x documents, CPU 1.4x), the symptom CachedPlanStage::pickBestPlan at 92% of samples
 
 - **Upstream:** declined upstream (<https://jira.mongodb.org/browse/SERVER-79039>)
-- **Effect:** latency, strong: 48 vs 2 query plannings, 23 vs 0 replans, optimizer CPU 12.3x by arrival order alone
+- **Effect:** latency, strong: expensive queries p50/p99 68.1/133.5 vs 28.8/78.6 ms, server CPU 1,767.2 vs 819.0 ms per run, peak 3,447.5 vs 3,420.7 MB; 23 vs 0 replans, by arrival order alone
 - **Experiment:** N3, N4, P29, report: [experiments/existing-tools/2026-09-21-jira-repro/README.md](../../../../experiments/existing-tools/2026-09-21-jira-repro/README.md)
+- **Side by side with the other MongoDB latency bugs**, with where the time goes and where a timer belongs: [`docs/mongodb-latency-bugs.md`](../../../../docs/mongodb-latency-bugs.md#1-server-79039-continuous-replanning-of-one-plan)
 
 ## Run it
 
-Paths are relative to the kit's root; `tools/reproduce/setup.sh` first (see the top README).
+Paths are relative to the kit's root. First the set-up of the top README: the build tools (`tools/reproduce/deps-ubuntu.sh` on Ubuntu or Debian, or Nix) and `tools/reproduce/setup.sh`.
 
 **Needs:** mongod 8.2.12 and mongosh 2.9.1 on PATH; systemd-run --user with the cgroup v2 cpu and memory controllers delegated (the start script and the resource pass use them); about 4 GB of free RAM
 

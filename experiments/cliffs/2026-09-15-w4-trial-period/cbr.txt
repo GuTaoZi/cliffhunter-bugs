@@ -1,0 +1,21 @@
+Does the cost-based ranker rescue W4's regime?  (bugs/systems/mongodb/trial-period/repro/w4_cbr_probe.js)
+
+ranker         collection   winner                        keys        docs    ret   median ms
+----------------------------------------------------------------------------------------------
+multiPlanning  docs         a_1                      2,950,000   2,950,000    101      1498.8
+multiPlanning  docs_k1000   a_1                      2,950,000   2,950,000   1000      1504.6
+multiPlanning  docs_mirror  b_1                      2,950,000   2,950,000    101      1503.2
+automaticCE    docs         a_1+b_1                     50,203         101    101        14.1
+automaticCE    docs_k1000   a_1+b_1                     52,001       1,000   1000        28.6
+automaticCE    docs_mirror  a_1+b_1                     50,202         101    101        28.2
+
+speedup of automaticCE over the default multiPlanning:
+  docs          106.6x latency,   29207.9x fewer documents examined
+  docs_k1000     52.6x latency,    2950.0x fewer documents examined
+  docs_mirror    53.4x latency,   29207.9x fewer documents examined
+
+CBR picks the AND_SORTED index-intersection plan, which the multi-planner ranks LAST
+(score 1.0001): noIxisectBonus penalises it, and round-robin charges it two work()
+calls per output, halving its trial productivity. The trial metric penalises the best
+plan precisely because it does less redundant work per result.
+

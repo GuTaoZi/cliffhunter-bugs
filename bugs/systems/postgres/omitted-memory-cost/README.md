@@ -8,9 +8,9 @@ Reproduced, a fixed bug (parent vs fix): hash-join batch doubling ignores 8 KiB 
 
 ## Run it
 
-Paths are relative to the kit's root; `tools/reproduce/setup.sh` first (see the top README).
+Paths are relative to the kit's root. First the set-up of the top README: the build tools (`tools/reproduce/deps-ubuntu.sh` on Ubuntu or Debian, or Nix) and `tools/reproduce/setup.sh`.
 
-**Needs:** Nix; flock; about 5 GB of disk and 3.3 GB of RAM
+**Needs:** build tools (Nix, or the Ubuntu packages of deps-ubuntu.sh); flock; about 5 GB of disk and 3.3 GB of RAM
 
 **Build:**
 

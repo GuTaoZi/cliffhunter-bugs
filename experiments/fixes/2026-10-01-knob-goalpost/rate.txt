@@ -1,0 +1,21 @@
+
+=== w4   internalQueryPlanEvaluationMaxResults
+    trial period; optimum = hint the plan the full observation prefers
+    shipped default = 101
+      knob=       101  docs=  2950000  keys=  2950000      29 ms
+      knob=       202  docs=    50101  keys=    50101      27 ms
+      knob=       505  docs=    50101  keys=    50101      26 ms
+      knob=      1010  docs=    50101  keys=    50101      26 ms
+      knob=      5050  docs=    50101  keys=    50101      26 ms
+      knob=     50101  docs=    50101  keys=    50101      26 ms
+      FORCED OPTIMUM          docs=    50101  keys=    50101      26 ms
+
+    stock docs 2950000  best-knob docs 50101 (at 202)  optimum docs 50101
+    headroom = 2899899 docs;  knob recovers 2899899 docs
+    OPTIMIZATION RATE = 100.0%
+
+--- summary -------------------------------------------------
+site   knob                                          rate
+w4     internalQueryPlanEvaluationMaxResults          100.0%
+
+JSON [{"site":"w4","knob":"internalQueryPlanEvaluationMaxResults","stock":{"docs":2950000,"keys":2950000,"ms":29,"ms_med":29},"best":{"knob":202,"docs":50101,"keys":50101,"ms":27,"ms_med":27},"opt":{"docs":50101,"keys":50101,"ms":26,"ms_med":26},"rate":1,"arms":[{"knob":101,"docs":2950000,"keys":2950000,"ms":29,"ms_med":29},{"knob":202,"docs":50101,"keys":50101,"ms":27,"ms_med":27},{"knob":505,"docs":50101,"keys":50101,"ms":26,"ms_med":27},{"knob":1010,"docs":50101,"keys":50101,"ms":26,"ms_med":26},{"knob":5050,"docs":50101,"keys":50101,"ms":26,"ms_med":26},{"knob":50101,"docs":50101,"keys":50101,"ms":26,"ms_med":26}]}]
