@@ -1,0 +1,13 @@
+D-Bus property CPUAccounting is deprecated, ignoring assignment: CPUAccounting=yes
+Running as unit: mongod-prof.service; invocation ID: 5c5ca3ca149a4f70a743503cf24fdae6
+mongod pid 102752, cgroup /sys/fs/cgroup/user.slice/user-1001.slice/user@1001.service/app.slice/mongod-prof.service
+{"bug": "s79039", "arm": "alternating", "rep": 1, "wall_s": 45.19, "server_cpu_s": 40.66, "server_peak_rss_mb": 771}
+{"bug": "s79039", "arm": "blocked_EC", "rep": 1, "wall_s": 26.08, "server_cpu_s": 21.29, "server_peak_rss_mb": 728}
+{"bug": "s107471", "arm": "P_first", "rep": 1, "wall_s": 24.66, "server_cpu_s": 19.07, "server_peak_rss_mb": 753}
+{"bug": "s107471", "arm": "R_first", "rep": 1, "wall_s": 18.87, "server_cpu_s": 13.35, "server_peak_rss_mb": 816}
+{"bug": "s79039", "arm": "blocked_EC", "rep": 2, "wall_s": 25.68, "server_cpu_s": 21.18, "server_peak_rss_mb": 811}
+{"bug": "s79039", "arm": "alternating", "rep": 2, "wall_s": 44.9, "server_cpu_s": 40.48, "server_peak_rss_mb": 810}
+{"bug": "s107471", "arm": "R_first", "rep": 2, "wall_s": 18.97, "server_cpu_s": 13.41, "server_peak_rss_mb": 811}
+{"bug": "s107471", "arm": "P_first", "rep": 2, "wall_s": 23.57, "server_cpu_s": 18.63, "server_peak_rss_mb": 817}
+done 2026-10-27T20:57:10-04:00
+profiles: wall 538.04 s, CPU 118.58+36.07 s, peak 492812 KB

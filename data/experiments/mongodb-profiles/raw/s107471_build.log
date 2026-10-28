@@ -1,0 +1,5 @@
+building 1000000 docs into ch_s107471.docs
+  inserted 500000
+  inserted 1000000
+creating indexes {indexField1:1} and {indexField10:1}
+@@JSON@@{"kind":"s107471_build","db":"ch_s107471","coll":"docs","n":1000000,"f1_hot":7,"n_hot":20000,"if10_zero":999000,"n_rare":1000,"rare_base":93333,"p_match":19000,"r_match":1,"disparity":999000,"wrong_plan_ratio":20000,"size_bytes":123000000,"storage_bytes":8105984,"index_bytes":14716928}

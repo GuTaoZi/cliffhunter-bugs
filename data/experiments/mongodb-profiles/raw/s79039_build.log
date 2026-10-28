@@ -1,0 +1,5 @@
+building 1000000 docs into ch_s79039.docs
+  inserted 500000
+  inserted 1000000
+creating indexes {a:1} and {b:1}
+@@JSON@@{"kind":"s79039_build","db":"ch_s79039","coll":"docs","n":1000000,"ncheap":1000,"per_cheap":5,"eval_a":900001,"n_e":50000,"e_hits":3,"c_hits":5,"b0_count":950003,"works_ratio":8333.333333333334,"size_bytes":102000000,"storage_bytes":4276224,"index_bytes":15896576}
