@@ -1,0 +1,84 @@
+1759404:M 06 Oct 2026 17:11:00.178 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1759404:M 06 Oct 2026 17:11:00.179 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+1759404:M 06 Oct 2026 17:11:00.179 * Valkey version=255.255.255, bits=64, commit=00000000, modified=1, pid=1759404, just started
+1759404:M 06 Oct 2026 17:11:00.179 * Configuration loaded
+1759404:M 06 Oct 2026 17:11:00.179 * monotonic clock: POSIX clock_gettime
+1759404:M 06 Oct 2026 17:11:00.179 * Running mode=standalone, port=15422.
+1759404:M 06 Oct 2026 17:11:00.180 * Server initialized
+1759404:M 06 Oct 2026 17:11:00.180 * Ready to accept connections tcp
+1759404:M 06 Oct 2026 17:11:07.485 # WARNING: the new maxmemory value set via CONFIG SET (209715200) is smaller than the current memory usage (1339133296). This will result in key eviction and/or the inability to accept new write commands depending on the maxmemory-policy.
+1759404:signal-handler (1791321097) Received SIGTERM scheduling shutdown...
+1759404:M 06 Oct 2026 17:11:37.698 * User requested shutdown...
+1759404:M 06 Oct 2026 17:11:37.698 # Valkey is now ready to exit, bye bye...
+1772407:M 06 Oct 2026 17:11:37.797 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1772407:M 06 Oct 2026 17:11:37.797 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+1772407:M 06 Oct 2026 17:11:37.797 * Valkey version=255.255.255, bits=64, commit=00000000, modified=1, pid=1772407, just started
+1772407:M 06 Oct 2026 17:11:37.797 * Configuration loaded
+1772407:M 06 Oct 2026 17:11:37.797 * monotonic clock: POSIX clock_gettime
+1772407:M 06 Oct 2026 17:11:37.798 * Running mode=standalone, port=15422.
+1772407:M 06 Oct 2026 17:11:37.798 * Server initialized
+1772407:M 06 Oct 2026 17:11:37.798 * Ready to accept connections tcp
+1772407:M 06 Oct 2026 17:11:45.091 # WARNING: the new maxmemory value set via CONFIG SET (209715200) is smaller than the current memory usage (1339208624). This will result in key eviction and/or the inability to accept new write commands depending on the maxmemory-policy.
+1772407:signal-handler (1791321135) Received SIGTERM scheduling shutdown...
+1772407:M 06 Oct 2026 17:12:15.258 * User requested shutdown...
+1772407:M 06 Oct 2026 17:12:15.258 # Valkey is now ready to exit, bye bye...
+1786166:M 06 Oct 2026 17:12:15.400 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1786166:M 06 Oct 2026 17:12:15.400 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+1786166:M 06 Oct 2026 17:12:15.400 * Valkey version=255.255.255, bits=64, commit=00000000, modified=1, pid=1786166, just started
+1786166:M 06 Oct 2026 17:12:15.400 * Configuration loaded
+1786166:M 06 Oct 2026 17:12:15.401 * monotonic clock: POSIX clock_gettime
+1786166:M 06 Oct 2026 17:12:15.401 * Running mode=standalone, port=15422.
+1786166:M 06 Oct 2026 17:12:15.402 * Server initialized
+1786166:M 06 Oct 2026 17:12:15.402 * Ready to accept connections tcp
+1786166:M 06 Oct 2026 17:12:23.265 # WARNING: the new maxmemory value set via CONFIG SET (209715200) is smaller than the current memory usage (1339212976). This will result in key eviction and/or the inability to accept new write commands depending on the maxmemory-policy.
+1786166:signal-handler (1791321173) Received SIGTERM scheduling shutdown...
+1786166:M 06 Oct 2026 17:12:53.423 * User requested shutdown...
+1786166:M 06 Oct 2026 17:12:53.423 # Valkey is now ready to exit, bye bye...
+1800379:M 06 Oct 2026 17:12:53.529 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1800379:M 06 Oct 2026 17:12:53.529 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+1800379:M 06 Oct 2026 17:12:53.529 * Valkey version=255.255.255, bits=64, commit=00000000, modified=1, pid=1800379, just started
+1800379:M 06 Oct 2026 17:12:53.529 * Configuration loaded
+1800379:M 06 Oct 2026 17:12:53.529 * monotonic clock: POSIX clock_gettime
+1800379:M 06 Oct 2026 17:12:53.529 * Running mode=standalone, port=15422.
+1800379:M 06 Oct 2026 17:12:53.530 * Server initialized
+1800379:M 06 Oct 2026 17:12:53.530 * Ready to accept connections tcp
+1800379:M 06 Oct 2026 17:13:01.252 # WARNING: the new maxmemory value set via CONFIG SET (209715200) is smaller than the current memory usage (1339100144). This will result in key eviction and/or the inability to accept new write commands depending on the maxmemory-policy.
+1800379:signal-handler (1791321211) Received SIGTERM scheduling shutdown...
+1800379:M 06 Oct 2026 17:13:31.457 * User requested shutdown...
+1800379:M 06 Oct 2026 17:13:31.457 # Valkey is now ready to exit, bye bye...
+1809790:M 06 Oct 2026 17:13:31.573 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1809790:M 06 Oct 2026 17:13:31.573 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+1809790:M 06 Oct 2026 17:13:31.573 * Valkey version=255.255.255, bits=64, commit=00000000, modified=1, pid=1809790, just started
+1809790:M 06 Oct 2026 17:13:31.573 * Configuration loaded
+1809790:M 06 Oct 2026 17:13:31.573 * monotonic clock: POSIX clock_gettime
+1809790:M 06 Oct 2026 17:13:31.574 * Running mode=standalone, port=15422.
+1809790:M 06 Oct 2026 17:13:31.574 * Server initialized
+1809790:M 06 Oct 2026 17:13:31.574 * Ready to accept connections tcp
+1809790:M 06 Oct 2026 17:13:38.391 # WARNING: the new maxmemory value set via CONFIG SET (209715200) is smaller than the current memory usage (1339144816). This will result in key eviction and/or the inability to accept new write commands depending on the maxmemory-policy.
+1809790:signal-handler (1791321248) Received SIGTERM scheduling shutdown...
+1809790:M 06 Oct 2026 17:14:08.591 * User requested shutdown...
+1809790:M 06 Oct 2026 17:14:08.591 # Valkey is now ready to exit, bye bye...
+1816661:M 06 Oct 2026 17:14:08.666 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1816661:M 06 Oct 2026 17:14:08.667 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+1816661:M 06 Oct 2026 17:14:08.667 * Valkey version=255.255.255, bits=64, commit=00000000, modified=1, pid=1816661, just started
+1816661:M 06 Oct 2026 17:14:08.667 * Configuration loaded
+1816661:M 06 Oct 2026 17:14:08.667 * monotonic clock: POSIX clock_gettime
+1816661:M 06 Oct 2026 17:14:08.667 * Running mode=standalone, port=15422.
+1816661:M 06 Oct 2026 17:14:08.667 * Server initialized
+1816661:M 06 Oct 2026 17:14:08.667 * Ready to accept connections tcp
+1816661:M 06 Oct 2026 17:14:16.165 # WARNING: the new maxmemory value set via CONFIG SET (209715200) is smaller than the current memory usage (1339173360). This will result in key eviction and/or the inability to accept new write commands depending on the maxmemory-policy.
+1816661:signal-handler (1791321286) Received SIGTERM scheduling shutdown...
+1816661:M 06 Oct 2026 17:14:46.314 * User requested shutdown...
+1816661:M 06 Oct 2026 17:14:46.314 # Valkey is now ready to exit, bye bye...
+1821913:M 06 Oct 2026 17:14:46.479 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1821913:M 06 Oct 2026 17:14:46.479 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+1821913:M 06 Oct 2026 17:14:46.479 * Valkey version=255.255.255, bits=64, commit=00000000, modified=1, pid=1821913, just started
+1821913:M 06 Oct 2026 17:14:46.479 * Configuration loaded
+1821913:M 06 Oct 2026 17:14:46.479 * monotonic clock: POSIX clock_gettime
+1821913:M 06 Oct 2026 17:14:46.480 * Running mode=standalone, port=15422.
+1821913:M 06 Oct 2026 17:14:46.480 * Server initialized
+1821913:M 06 Oct 2026 17:14:46.480 * Ready to accept connections tcp
+1821913:M 06 Oct 2026 17:14:53.352 # WARNING: the new maxmemory value set via CONFIG SET (209715200) is smaller than the current memory usage (1339089264). This will result in key eviction and/or the inability to accept new write commands depending on the maxmemory-policy.
+1821913:signal-handler (1791321323) Received SIGTERM scheduling shutdown...
+1821913:M 06 Oct 2026 17:15:23.571 * User requested shutdown...
+1821913:M 06 Oct 2026 17:15:23.571 # Valkey is now ready to exit, bye bye...
