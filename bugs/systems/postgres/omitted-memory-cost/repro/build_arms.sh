@@ -1,7 +1,6 @@
 #!/bin/sh
 # Build the two arms (fix's parent, fix) with the project's release build script, one at a time, under the machine lock.
-SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
-REPO_ROOT=$(cd "$SCRIPT_DIR/../../../../.." && pwd)
+REPO_ROOT=$(cd "$(dirname "$0")/../../../../.." && pwd)  # this script is in bugs/systems/<system>/<bug>/repro/
 set -eu
 W=$REPO_ROOT
 LOCK=${CLIFF_DATA:-$HOME/.cache/cliffhunter-bugs}/locks/machine.lock

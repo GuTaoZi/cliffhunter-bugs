@@ -7,7 +7,7 @@
 #   3. the measured campaign (campaign.sh), then the tables (tables.py -> results.md).
 # Any failure stops the session, so the lock is not held for nothing.
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
-REPO_ROOT=$(cd "$SCRIPT_DIR/../../../../.." && pwd)
+REPO_ROOT=$(cd "$(dirname "$0")/../../../../.." && pwd)  # this script is in bugs/systems/<system>/<bug>/repro/
 set -eu
 D=$SCRIPT_DIR
 B=${CLIFF_DATA:-$HOME/.cache/cliffhunter-bugs}/build

@@ -3,7 +3,7 @@
 #   rank 9 (allow_ingest_behind): parent 00d697bdc532, fix eca47fb6960e
 #   rank 8 (preserve_internal_time_seconds): parent 6dbb6f30e604, fix f7b791b213b2
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
-REPO_ROOT=$(cd "$SCRIPT_DIR/../../../../.." && pwd)
+REPO_ROOT=$(cd "$(dirname "$0")/../../../../.." && pwd)  # this script is in bugs/systems/<system>/<bug>/repro/
 D=$SCRIPT_DIR
 R=$REPO_ROOT
 echo "$(date -Is) start"
