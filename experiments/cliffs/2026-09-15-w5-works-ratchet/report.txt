@@ -1,0 +1,68 @@
+
+================================================================================================================
+== collection docs
+   1,000,000 docs. a=0 -> 980,000 docs; b=0 -> 980,000 docs; 1,000 rare values x 20 docs per class
+   E find({a:i,b:0}) -> 20 results | H find({a:0,b:j}) -> 20 results
+   getting the plan wrong costs 49,000x the documents, per query
+   multiset per epoch: 10 E + 10 H, x3 epochs = 60 queries
+   ALL orders below are permutations of that identical multiset
+================================================================================================================
+
+  order         docs (profiler)  docs (executor)  server ms  replans  catastrophic        final cache entry
+  --------------------------------------------------------------------------------------------------------
+  alternating             1,200            1,380         58       58             0          b_1/ACTIVE w=21
+  blocked_EH              1,200            1,380          5        5             0          b_1/ACTIVE w=21
+  blocked_HE              1,200            1,380          5        5             0          a_1/ACTIVE w=21
+  shuffled                1,200            1,380         35       35             0          a_1/ACTIVE w=21
+
+  O3 relation (a fixed multiset should be order-insensitive):
+    documents scanned    worst/best =    1.0x   -> HOLDS
+    server time          worst/best =   11.6x   -> VIOLATED, 11.6x
+    replan count         worst/best =   11.6x   -> VIOLATED, 11.6x
+    final cache state    2 distinct across 4 orders       -> VIOLATED
+        alternating  -> b_1/ACTIVE w=21
+        blocked_EH   -> b_1/ACTIVE w=21
+        blocked_HE   -> a_1/ACTIVE w=21
+        shuffled     -> a_1/ACTIVE w=21
+
+  where the cost lands, by parameter class (documents examined):
+    order                       E                H
+    alternating             600/30            600/30
+    blocked_EH              600/30            600/30
+    blocked_HE              600/30            600/30
+    shuffled                600/30            600/30
+    (cells are 'documents examined / number of queries' for that class)
+
+================================================================================================================
+== collection docs_bar
+   1,000,000 docs. a=0 -> 780,000 docs; b=0 -> 780,000 docs; 1,000 rare values x 20 docs per class
+   E find({a:i,b:0}) -> 20 results | H find({a:0,b:j}) -> 20 results | M find({a:9001,b:9002}) -> 5 results (a=MA 200,000 docs, b=MB 200,000 docs)
+   getting the plan wrong costs 39,000x the documents, per query
+   multiset per epoch: 9 E + 9 H + 2 M, x3 epochs = 60 queries
+   ALL orders below are permutations of that identical multiset
+================================================================================================================
+
+  order         docs (profiler)  docs (executor)  server ms  replans  catastrophic        final cache entry
+  --------------------------------------------------------------------------------------------------------
+  M_first            22,260,540       22,260,720     11,338        0            33      a_1/ACTIVE w=200001
+  M_last              1,201,080        1,201,260      1,747       53             6        a_1/inactive w=84
+  M_middle            1,201,080        1,201,260      1,708       52             6          b_1/ACTIVE w=21
+  shuffled            1,201,080        1,201,260      1,646       26             6          a_1/ACTIVE w=21
+
+  O3 relation (a fixed multiset should be order-insensitive):
+    documents scanned    worst/best =   18.5x   -> VIOLATED, 18.5x
+    server time          worst/best =    6.9x   -> VIOLATED, 6.9x
+    replan count         worst/best =   53.0x   -> VIOLATED, 53.0x
+    final cache state    4 distinct across 4 orders       -> VIOLATED
+        M_first      -> a_1/ACTIVE w=200001
+        M_last       -> a_1/inactive w=84
+        M_middle     -> b_1/ACTIVE w=21
+        shuffled     -> a_1/ACTIVE w=21
+
+  where the cost lands, by parameter class (documents examined):
+    order                       E                H                M
+    M_first                 540/27     21,060,000/27      1,200,000/6 
+    M_last                  540/27            540/27      1,200,000/6 
+    M_middle                540/27            540/27      1,200,000/6 
+    shuffled                540/27            540/27      1,200,000/6 
+    (cells are 'documents examined / number of queries' for that class)

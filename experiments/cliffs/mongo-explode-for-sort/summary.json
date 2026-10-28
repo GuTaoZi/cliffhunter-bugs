@@ -1,0 +1,161 @@
+{
+ "mongod": "9.1.0",
+ "flags": [
+  "-O2",
+  "-DNDEBUG"
+ ],
+ "documents": 1000000,
+ "load_s": 6.2,
+ "points": {
+  "100": {
+   "keys": [
+    109
+   ],
+   "plan": [
+    "FETCH",
+    "IXSCAN",
+    "LIMIT",
+    "SORT_MERGE"
+   ],
+   "latency_ms_median": 0.66,
+   "latency_ms_range": [
+    0.65,
+    0.67
+   ],
+   "server_cpu_s_5q_median": 0.0
+  },
+  "150": {
+   "keys": [
+    159
+   ],
+   "plan": [
+    "FETCH",
+    "IXSCAN",
+    "LIMIT",
+    "SORT_MERGE"
+   ],
+   "latency_ms_median": 0.92,
+   "latency_ms_range": [
+    0.91,
+    0.93
+   ],
+   "server_cpu_s_5q_median": 0.01
+  },
+  "190": {
+   "keys": [
+    199
+   ],
+   "plan": [
+    "FETCH",
+    "IXSCAN",
+    "LIMIT",
+    "SORT_MERGE"
+   ],
+   "latency_ms_median": 1.11,
+   "latency_ms_range": [
+    1.08,
+    1.2
+   ],
+   "server_cpu_s_5q_median": 0.01
+  },
+  "199": {
+   "keys": [
+    208
+   ],
+   "plan": [
+    "FETCH",
+    "IXSCAN",
+    "LIMIT",
+    "SORT_MERGE"
+   ],
+   "latency_ms_median": 1.12,
+   "latency_ms_range": [
+    1.11,
+    1.17
+   ],
+   "server_cpu_s_5q_median": 0.01
+  },
+  "200": {
+   "keys": [
+    209
+   ],
+   "plan": [
+    "FETCH",
+    "IXSCAN",
+    "LIMIT",
+    "SORT_MERGE"
+   ],
+   "latency_ms_median": 1.17,
+   "latency_ms_range": [
+    1.13,
+    1.19
+   ],
+   "server_cpu_s_5q_median": 0.0
+  },
+  "201": {
+   "keys": [
+    804001
+   ],
+   "plan": [
+    "FETCH",
+    "IXSCAN",
+    "SORT"
+   ],
+   "latency_ms_median": 431.06,
+   "latency_ms_range": [
+    429.95,
+    431.47
+   ],
+   "server_cpu_s_5q_median": 2.17
+  },
+  "202": {
+   "keys": [
+    808001
+   ],
+   "plan": [
+    "FETCH",
+    "IXSCAN",
+    "SORT"
+   ],
+   "latency_ms_median": 432.27,
+   "latency_ms_range": [
+    432.15,
+    433.18
+   ],
+   "server_cpu_s_5q_median": 2.17
+  },
+  "210": {
+   "keys": [
+    840001
+   ],
+   "plan": [
+    "FETCH",
+    "IXSCAN",
+    "SORT"
+   ],
+   "latency_ms_median": 449.32,
+   "latency_ms_range": [
+    449.21,
+    450.29
+   ],
+   "server_cpu_s_5q_median": 2.26
+  },
+  "250": {
+   "keys": [
+    1000000
+   ],
+   "plan": [
+    "FETCH",
+    "IXSCAN",
+    "SORT"
+   ],
+   "latency_ms_median": 535.97,
+   "latency_ms_range": [
+    535.49,
+    536.3
+   ],
+   "server_cpu_s_5q_median": 2.68
+  }
+ },
+ "peak_rss_mb": 471.4
+}

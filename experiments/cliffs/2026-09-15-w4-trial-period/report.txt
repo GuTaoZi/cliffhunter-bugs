@@ -1,0 +1,207 @@
+
+================================================================================================
+== dataset docs
+   3,000,000 docs; 101 match find({a:1,b:5}) (verified 101) at recordId [50,000,50,101)
+   perfect-prefix plan = a_1 (the plan whose first 101 documents examined are ALL matches)
+================================================================================================
+
+  ground truth -- each plan forced to completion with hint():
+    plan      docs examined  returned  median ms
+    a_1           2,950,000       101     1401.8
+    b_1              50,101       101       27.2
+    => cheapest is b_1; a_1 costs 58.9x the documents and 51.5x the latency
+
+  sweep of internalQueryPlanEvaluationMaxResults:
+
+    maxResults = 50   winner = a_1   58.9x WORSE  (52.1x optimal latency)
+      candidate     works    adv  trial docs  productivity  score (server)   predicted  eof
+      a_1              50     50          50      1.000000        2.000200    2.000000    0
+      b_1              50      0          50      0.000000        1.000200    1.000000    0
+      a_1+b_1          50      0           0      0.000000        1.000100    1.000000    0
+      stopped by: FULL BATCH (a plan reached 50 results)
+      productivity gap 1.000000: the prefix race separated the plans DECISIVELY -- and wrongly
+      the EOF bonus never fired: the full-batch condition stopped the trial before the cheap plan could reach the end of its range
+      tieForBest() on the FINAL scores = False (epsilon 1e-10) -> the SERVER-13675 'do not cache ties' policy does NOT fire here
+      executed: docs=2,950,000 ret=101 median=1418.7ms
+      cached  : [{"plan": "ixscan:a_1", "isActive": true, "works": 50, "scores": null}]
+
+    maxResults = 101   winner = a_1   58.9x WORSE  (52.1x optimal latency)
+      candidate     works    adv  trial docs  productivity  score (server)   predicted  eof
+      a_1             101    101         101      1.000000        2.000200    2.000000    0
+      b_1             101      0         101      0.000000        1.000200    1.000000    0
+      a_1+b_1         101      0           0      0.000000        1.000100    1.000000    0
+      stopped by: FULL BATCH (a plan reached 101 results)
+      productivity gap 1.000000: the prefix race separated the plans DECISIVELY -- and wrongly
+      the EOF bonus never fired: the full-batch condition stopped the trial before the cheap plan could reach the end of its range
+      tieForBest() on the FINAL scores = False (epsilon 1e-10) -> the SERVER-13675 'do not cache ties' policy does NOT fire here
+      executed: docs=2,950,000 ret=101 median=1418.7ms
+      cached  : [{"plan": "ixscan:a_1", "isActive": true, "works": 101, "scores": null}]
+
+    maxResults = 102   winner = b_1   OPTIMAL  (0.9x optimal latency)
+      candidate     works    adv  trial docs  productivity  score (server)   predicted  eof
+      b_1          50,102    101      50,101      0.002016        2.002216    1.002016    1
+      a_1          50,102    101      50,102      0.002016        1.002216    1.002016    0
+      a_1+b_1      50,102     51          51      0.001018        1.001118    1.001018    0
+      stopped by: EOF (a plan exhausted its index range)
+      productivity gap 0.000000 < 0.0003: the prefix race was a TIE, so the +1 EOF bonus decided it
+      tieForBest() on the FINAL scores = False (epsilon 1e-10) -> the SERVER-13675 'do not cache ties' policy does NOT fire here
+      executed: docs=50,101 ret=101 median=25.6ms
+      cached  : [{"plan": "ixscan:b_1", "isActive": true, "works": 50102, "scores": null}]
+
+    maxResults = 1,000   winner = b_1   OPTIMAL  (0.9x optimal latency)
+      candidate     works    adv  trial docs  productivity  score (server)   predicted  eof
+      b_1          50,102    101      50,101      0.002016        2.002216    1.002016    1
+      a_1          50,102    101      50,102      0.002016        1.002216    1.002016    0
+      a_1+b_1      50,102     51          51      0.001018        1.001118    1.001018    0
+      stopped by: EOF (a plan exhausted its index range)
+      productivity gap 0.000000 < 0.0003: the prefix race was a TIE, so the +1 EOF bonus decided it
+      tieForBest() on the FINAL scores = False (epsilon 1e-10) -> the SERVER-13675 'do not cache ties' policy does NOT fire here
+      executed: docs=50,101 ret=101 median=25.8ms
+      cached  : [{"plan": "ixscan:b_1", "isActive": true, "works": 50102, "scores": null}]
+
+    maxResults = 100,000   winner = b_1   OPTIMAL  (0.9x optimal latency)
+      candidate     works    adv  trial docs  productivity  score (server)   predicted  eof
+      b_1          50,102    101      50,101      0.002016        2.002216    1.002016    1
+      a_1          50,102    101      50,102      0.002016        1.002216    1.002016    0
+      a_1+b_1      50,102     51          51      0.001018        1.001118    1.001018    0
+      stopped by: EOF (a plan exhausted its index range)
+      productivity gap 0.000000 < 0.0003: the prefix race was a TIE, so the +1 EOF bonus decided it
+      tieForBest() on the FINAL scores = False (epsilon 1e-10) -> the SERVER-13675 'do not cache ties' policy does NOT fire here
+      executed: docs=50,101 ret=101 median=25.5ms
+      cached  : [{"plan": "ixscan:b_1", "isActive": true, "works": 50102, "scores": null}]
+
+================================================================================================
+== dataset docs_k1000
+   3,000,000 docs; 1,000 match find({a:1,b:5}) (verified 1,000) at recordId [50,000,51,000)
+   perfect-prefix plan = a_1 (the plan whose first 1,000 documents examined are ALL matches)
+================================================================================================
+
+  ground truth -- each plan forced to completion with hint():
+    plan      docs examined  returned  median ms
+    a_1           2,950,000      1000     1415.6
+    b_1              51,000      1000       31.4
+    => cheapest is b_1; a_1 costs 57.8x the documents and 45.1x the latency
+
+  sweep of internalQueryPlanEvaluationMaxResults:
+
+    maxResults = 101   winner = a_1   57.8x WORSE  (45.6x optimal latency)
+      candidate     works    adv  trial docs  productivity  score (server)   predicted  eof
+      a_1             101    101         101      1.000000        2.000200    2.000000    0
+      b_1             101      0         101      0.000000        1.000200    1.000000    0
+      a_1+b_1         101      0           0      0.000000        1.000100    1.000000    0
+      stopped by: FULL BATCH (a plan reached 101 results)
+      productivity gap 1.000000: the prefix race separated the plans DECISIVELY -- and wrongly
+      the EOF bonus never fired: the full-batch condition stopped the trial before the cheap plan could reach the end of its range
+      tieForBest() on the FINAL scores = False (epsilon 1e-10) -> the SERVER-13675 'do not cache ties' policy does NOT fire here
+      executed: docs=2,950,000 ret=1000 median=1430.5ms
+      cached  : [{"plan": "ixscan:a_1", "isActive": true, "works": 101, "scores": null}]
+
+    maxResults = 1,000   winner = a_1   57.8x WORSE  (45.7x optimal latency)
+      candidate     works    adv  trial docs  productivity  score (server)   predicted  eof
+      a_1           1,000  1,000       1,000      1.000000        2.000200    2.000000    0
+      b_1           1,000      0       1,000      0.000000        1.000200    1.000000    0
+      a_1+b_1       1,000      0           0      0.000000        1.000100    1.000000    0
+      stopped by: FULL BATCH (a plan reached 1,000 results)
+      productivity gap 1.000000: the prefix race separated the plans DECISIVELY -- and wrongly
+      the EOF bonus never fired: the full-batch condition stopped the trial before the cheap plan could reach the end of its range
+      tieForBest() on the FINAL scores = False (epsilon 1e-10) -> the SERVER-13675 'do not cache ties' policy does NOT fire here
+      executed: docs=2,950,000 ret=1000 median=1433.3ms
+      cached  : [{"plan": "ixscan:a_1", "isActive": true, "works": 1000, "scores": null}]
+
+    maxResults = 1,001   winner = b_1   OPTIMAL  (1.0x optimal latency)
+      candidate     works    adv  trial docs  productivity  score (server)   predicted  eof
+      b_1          51,001  1,000      51,000      0.019607        2.019807    1.019607    1
+      a_1          51,001  1,000      51,001      0.019607        1.019807    1.019607    0
+      a_1+b_1      51,001    500         500      0.009804        1.009904    1.009804    0
+      stopped by: EOF (a plan exhausted its index range)
+      productivity gap 0.000000 < 0.0003: the prefix race was a TIE, so the +1 EOF bonus decided it
+      tieForBest() on the FINAL scores = False (epsilon 1e-10) -> the SERVER-13675 'do not cache ties' policy does NOT fire here
+      executed: docs=51,000 ret=1000 median=30.2ms
+      cached  : [{"plan": "ixscan:b_1", "isActive": true, "works": 51001, "scores": null}]
+
+    maxResults = 100,000   winner = b_1   OPTIMAL  (1.0x optimal latency)
+      candidate     works    adv  trial docs  productivity  score (server)   predicted  eof
+      b_1          51,001  1,000      51,000      0.019607        2.019807    1.019607    1
+      a_1          51,001  1,000      51,001      0.019607        1.019807    1.019607    0
+      a_1+b_1      51,001    500         500      0.009804        1.009904    1.009804    0
+      stopped by: EOF (a plan exhausted its index range)
+      productivity gap 0.000000 < 0.0003: the prefix race was a TIE, so the +1 EOF bonus decided it
+      tieForBest() on the FINAL scores = False (epsilon 1e-10) -> the SERVER-13675 'do not cache ties' policy does NOT fire here
+      executed: docs=51,000 ret=1000 median=30.0ms
+      cached  : [{"plan": "ixscan:b_1", "isActive": true, "works": 51001, "scores": null}]
+
+================================================================================================
+== dataset docs_mirror  (mirror)
+   3,000,000 docs; 101 match find({a:1,b:5}) (verified 101) at recordId [50,000,50,101)
+   perfect-prefix plan = b_1 (the plan whose first 101 documents examined are ALL matches)
+================================================================================================
+
+  ground truth -- each plan forced to completion with hint():
+    plan      docs examined  returned  median ms
+    a_1              50,101       101       26.0
+    b_1           2,950,000       101     1407.9
+    => cheapest is a_1; b_1 costs 58.9x the documents and 54.1x the latency
+
+  sweep of internalQueryPlanEvaluationMaxResults:
+
+    maxResults = 101   winner = b_1   58.9x WORSE  (54.8x optimal latency)
+      candidate     works    adv  trial docs  productivity  score (server)   predicted  eof
+      b_1             101    101         101      1.000000        2.000200    2.000000    0
+      a_1             101      0         101      0.000000        1.000200    1.000000    0
+      a_1+b_1         101      0           0      0.000000        1.000100    1.000000    0
+      stopped by: FULL BATCH (a plan reached 101 results)
+      productivity gap 1.000000: the prefix race separated the plans DECISIVELY -- and wrongly
+      the EOF bonus never fired: the full-batch condition stopped the trial before the cheap plan could reach the end of its range
+      tieForBest() on the FINAL scores = False (epsilon 1e-10) -> the SERVER-13675 'do not cache ties' policy does NOT fire here
+      executed: docs=2,950,000 ret=101 median=1426.4ms
+      cached  : [{"plan": "ixscan:b_1", "isActive": true, "works": 101, "scores": null}]
+
+    maxResults = 102   winner = a_1   OPTIMAL  (1.0x optimal latency)
+      candidate     works    adv  trial docs  productivity  score (server)   predicted  eof
+      a_1          50,102    101      50,101      0.002016        2.002216    1.002016    1
+      b_1          50,102    101      50,102      0.002016        1.002216    1.002016    0
+      a_1+b_1      50,102     51          51      0.001018        1.001118    1.001018    0
+      stopped by: EOF (a plan exhausted its index range)
+      productivity gap 0.000000 < 0.0003: the prefix race was a TIE, so the +1 EOF bonus decided it
+      tieForBest() on the FINAL scores = False (epsilon 1e-10) -> the SERVER-13675 'do not cache ties' policy does NOT fire here
+      executed: docs=50,101 ret=101 median=26.1ms
+      cached  : [{"plan": "ixscan:a_1", "isActive": true, "works": 50102, "scores": null}]
+
+    maxResults = 1,000   winner = a_1   OPTIMAL  (1.0x optimal latency)
+      candidate     works    adv  trial docs  productivity  score (server)   predicted  eof
+      a_1          50,102    101      50,101      0.002016        2.002216    1.002016    1
+      b_1          50,102    101      50,102      0.002016        1.002216    1.002016    0
+      a_1+b_1      50,102     51          51      0.001018        1.001118    1.001018    0
+      stopped by: EOF (a plan exhausted its index range)
+      productivity gap 0.000000 < 0.0003: the prefix race was a TIE, so the +1 EOF bonus decided it
+      tieForBest() on the FINAL scores = False (epsilon 1e-10) -> the SERVER-13675 'do not cache ties' policy does NOT fire here
+      executed: docs=50,101 ret=101 median=26.2ms
+      cached  : [{"plan": "ixscan:a_1", "isActive": true, "works": 50102, "scores": null}]
+
+    maxResults = 100,000   winner = a_1   OPTIMAL  (1.0x optimal latency)
+      candidate     works    adv  trial docs  productivity  score (server)   predicted  eof
+      a_1          50,102    101      50,101      0.002016        2.002216    1.002016    1
+      b_1          50,102    101      50,102      0.002016        1.002216    1.002016    0
+      a_1+b_1      50,102     51          51      0.001018        1.001118    1.001018    0
+      stopped by: EOF (a plan exhausted its index range)
+      productivity gap 0.000000 < 0.0003: the prefix race was a TIE, so the +1 EOF bonus decided it
+      tieForBest() on the FINAL scores = False (epsilon 1e-10) -> the SERVER-13675 'do not cache ties' policy does NOT fire here
+      executed: docs=50,101 ret=101 median=25.7ms
+      cached  : [{"plan": "ixscan:a_1", "isActive": true, "works": 50102, "scores": null}]
+
+================================================================================================
+== condition (c): invariance -- is the cliff a property of the CONSTANT?
+================================================================================================
+  dataset       matches  knob that trips it  cliff (docs)  cliff (latency)
+  docs              101              <= 101         58.9x            52.1x
+  docs_k1000      1,000            <= 1,000         57.8x            45.7x
+  docs_mirror       101              <= 101         58.9x            54.8x
+
+  Read this table as: the knob does not set the SIZE of the cliff, it sets how many
+  matching documents a workload needs in order to fall off it. Raising the constant
+  10x left the cliff the same depth and simply moved which workload trips it.
+  The rule is: a workload falls off the cliff whenever
+      (number of matching documents) <= internalQueryPlanEvaluationMaxResults
+  and the matches are positioned early in the bad plan's index order. Since the
+  match count is a property of the DATA and the knob is a server constant, no
+  setting of the knob excludes the bad regime -- which is condition (c).

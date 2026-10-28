@@ -1,0 +1,27 @@
+{"rep": 0, "n": 201, "keys": 804001, "docs": 10, "explain_ms": 503, "plan": ["FETCH", "IXSCAN", "SORT"], "latency_ms": 429.95, "server_cpu_s_5q": 2.18, "peak_rss_mb": 471.4}
+{"rep": 0, "n": 202, "keys": 808001, "docs": 10, "explain_ms": 478, "plan": ["FETCH", "IXSCAN", "SORT"], "latency_ms": 432.15, "server_cpu_s_5q": 2.17, "peak_rss_mb": 471.4}
+{"rep": 0, "n": 210, "keys": 840001, "docs": 10, "explain_ms": 498, "plan": ["FETCH", "IXSCAN", "SORT"], "latency_ms": 449.21, "server_cpu_s_5q": 2.24, "peak_rss_mb": 471.4}
+{"rep": 0, "n": 200, "keys": 209, "docs": 10, "explain_ms": 2, "plan": ["FETCH", "IXSCAN", "LIMIT", "SORT_MERGE"], "latency_ms": 1.19, "server_cpu_s_5q": 0.0, "peak_rss_mb": 471.4}
+{"rep": 0, "n": 199, "keys": 208, "docs": 10, "explain_ms": 1, "plan": ["FETCH", "IXSCAN", "LIMIT", "SORT_MERGE"], "latency_ms": 1.12, "server_cpu_s_5q": 0.01, "peak_rss_mb": 471.4}
+{"rep": 0, "n": 100, "keys": 109, "docs": 10, "explain_ms": 0, "plan": ["FETCH", "IXSCAN", "LIMIT", "SORT_MERGE"], "latency_ms": 0.65, "server_cpu_s_5q": 0.0, "peak_rss_mb": 471.4}
+{"rep": 0, "n": 250, "keys": 1000000, "docs": 10, "explain_ms": 598, "plan": ["FETCH", "IXSCAN", "SORT"], "latency_ms": 535.49, "server_cpu_s_5q": 2.69, "peak_rss_mb": 471.4}
+{"rep": 0, "n": 150, "keys": 159, "docs": 10, "explain_ms": 1, "plan": ["FETCH", "IXSCAN", "LIMIT", "SORT_MERGE"], "latency_ms": 0.93, "server_cpu_s_5q": 0.01, "peak_rss_mb": 471.4}
+{"rep": 0, "n": 190, "keys": 199, "docs": 10, "explain_ms": 1, "plan": ["FETCH", "IXSCAN", "LIMIT", "SORT_MERGE"], "latency_ms": 1.08, "server_cpu_s_5q": 0.0, "peak_rss_mb": 471.4}
+{"rep": 1, "n": 210, "keys": 840001, "docs": 10, "explain_ms": 498, "plan": ["FETCH", "IXSCAN", "SORT"], "latency_ms": 449.32, "server_cpu_s_5q": 2.26, "peak_rss_mb": 471.4}
+{"rep": 1, "n": 201, "keys": 804001, "docs": 10, "explain_ms": 477, "plan": ["FETCH", "IXSCAN", "SORT"], "latency_ms": 431.47, "server_cpu_s_5q": 2.15, "peak_rss_mb": 471.4}
+{"rep": 1, "n": 190, "keys": 199, "docs": 10, "explain_ms": 1, "plan": ["FETCH", "IXSCAN", "LIMIT", "SORT_MERGE"], "latency_ms": 1.11, "server_cpu_s_5q": 0.01, "peak_rss_mb": 471.4}
+{"rep": 1, "n": 200, "keys": 209, "docs": 10, "explain_ms": 1, "plan": ["FETCH", "IXSCAN", "LIMIT", "SORT_MERGE"], "latency_ms": 1.17, "server_cpu_s_5q": 0.0, "peak_rss_mb": 471.4}
+{"rep": 1, "n": 202, "keys": 808001, "docs": 10, "explain_ms": 478, "plan": ["FETCH", "IXSCAN", "SORT"], "latency_ms": 432.27, "server_cpu_s_5q": 2.18, "peak_rss_mb": 471.4}
+{"rep": 1, "n": 100, "keys": 109, "docs": 10, "explain_ms": 0, "plan": ["FETCH", "IXSCAN", "LIMIT", "SORT_MERGE"], "latency_ms": 0.67, "server_cpu_s_5q": 0.0, "peak_rss_mb": 471.4}
+{"rep": 1, "n": 250, "keys": 1000000, "docs": 10, "explain_ms": 591, "plan": ["FETCH", "IXSCAN", "SORT"], "latency_ms": 535.97, "server_cpu_s_5q": 2.68, "peak_rss_mb": 471.4}
+{"rep": 1, "n": 150, "keys": 159, "docs": 10, "explain_ms": 1, "plan": ["FETCH", "IXSCAN", "LIMIT", "SORT_MERGE"], "latency_ms": 0.92, "server_cpu_s_5q": 0.0, "peak_rss_mb": 471.4}
+{"rep": 1, "n": 199, "keys": 208, "docs": 10, "explain_ms": 1, "plan": ["FETCH", "IXSCAN", "LIMIT", "SORT_MERGE"], "latency_ms": 1.17, "server_cpu_s_5q": 0.01, "peak_rss_mb": 471.4}
+{"rep": 2, "n": 190, "keys": 199, "docs": 10, "explain_ms": 1, "plan": ["FETCH", "IXSCAN", "LIMIT", "SORT_MERGE"], "latency_ms": 1.2, "server_cpu_s_5q": 0.01, "peak_rss_mb": 471.4}
+{"rep": 2, "n": 199, "keys": 208, "docs": 10, "explain_ms": 1, "plan": ["FETCH", "IXSCAN", "LIMIT", "SORT_MERGE"], "latency_ms": 1.11, "server_cpu_s_5q": 0.0, "peak_rss_mb": 471.4}
+{"rep": 2, "n": 202, "keys": 808001, "docs": 10, "explain_ms": 478, "plan": ["FETCH", "IXSCAN", "SORT"], "latency_ms": 433.18, "server_cpu_s_5q": 2.17, "peak_rss_mb": 471.4}
+{"rep": 2, "n": 100, "keys": 109, "docs": 10, "explain_ms": 0, "plan": ["FETCH", "IXSCAN", "LIMIT", "SORT_MERGE"], "latency_ms": 0.66, "server_cpu_s_5q": 0.0, "peak_rss_mb": 471.4}
+{"rep": 2, "n": 250, "keys": 1000000, "docs": 10, "explain_ms": 592, "plan": ["FETCH", "IXSCAN", "SORT"], "latency_ms": 536.3, "server_cpu_s_5q": 2.67, "peak_rss_mb": 471.4}
+{"rep": 2, "n": 150, "keys": 159, "docs": 10, "explain_ms": 1, "plan": ["FETCH", "IXSCAN", "LIMIT", "SORT_MERGE"], "latency_ms": 0.91, "server_cpu_s_5q": 0.01, "peak_rss_mb": 471.4}
+{"rep": 2, "n": 201, "keys": 804001, "docs": 10, "explain_ms": 476, "plan": ["FETCH", "IXSCAN", "SORT"], "latency_ms": 431.06, "server_cpu_s_5q": 2.17, "peak_rss_mb": 471.4}
+{"rep": 2, "n": 200, "keys": 209, "docs": 10, "explain_ms": 1, "plan": ["FETCH", "IXSCAN", "LIMIT", "SORT_MERGE"], "latency_ms": 1.13, "server_cpu_s_5q": 0.0, "peak_rss_mb": 471.4}
+{"rep": 2, "n": 210, "keys": 840001, "docs": 10, "explain_ms": 497, "plan": ["FETCH", "IXSCAN", "SORT"], "latency_ms": 450.29, "server_cpu_s_5q": 2.26, "peak_rss_mb": 471.4}

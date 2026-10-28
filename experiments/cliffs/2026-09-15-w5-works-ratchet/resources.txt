@@ -1,0 +1,31 @@
+collection docs_bar; identical multiset per order, only arrival order differs
+
+ranker         order          CPU ms   wall s   docs scanned   keys scanned  replans  peak RSS MB          final cache entry
+----------------------------------------------------------------------------------------------------------------------------
+multiPlanning  M_first       10892.7     11.6     22,260,540     22,260,540        0       2382.8        a_1/ACTIVE w=200001
+multiPlanning  M_last         1716.0      2.4      1,201,080      1,201,080       53       2382.5          a_1/inactive w=84
+multiPlanning  M_middle       1687.8      2.4      1,201,080      1,201,080       52       2382.7            b_1/ACTIVE w=21
+automaticCE    M_first         834.2      1.6          1,110      2,165,043        0       2382.9                     -none-
+automaticCE    M_last          802.2      1.5          1,110      2,102,403        0       2383.1                     -none-
+automaticCE    M_middle        622.8      1.3          1,110      2,133,723        0       2383.2                     -none-
+
+multiPlanning: worst order costs 6.5x the CPU of the best (M_first vs M_middle) for the SAME multiset
+  documents scanned: 22,260,540 vs 1,201,080 (18.5x)
+  peak RSS across orders: 2382.5-2382.8 MB (spread +0.3 MB) -- no order holds more memory; the
+    cost of the wrong steady state is CPU and scanning, not footprint
+
+automaticCE: worst order costs 1.3x the CPU of the best (M_first vs M_middle) for the SAME multiset
+  documents scanned: 1,110 vs 1,110 (1.0x)
+  peak RSS across orders: 2382.9-2383.2 MB (spread +0.3 MB) -- no order holds more memory; the
+    cost of the wrong steady state is CPU and scanning, not footprint
+
+order SENSITIVITY, worst/best CPU within a ranker:
+  multiPlanning : 6.5x   <- order-dependent
+  automaticCE   : 1.3x   <- order-insensitive
+  and automaticCE is 13.1x cheaper than the worst multiPlanning order, scanning 20,055x fewer documents.
+  CBR creates no plan cache entry at all for this shape, which is why it has no
+  order-dependent state to get wrong -- the fix is structural, not a better constant.
+
+Caveat: peak RSS is dominated by the pinned WiredTiger cache, so per-query
+structures below a few MB are under the measurement floor. Reported, not assumed away.
+[{"ranker": "multiPlanning", "order": "M_first", "cpu_ms": 10892.687, "wall_s": 11.559428606997244, "peak_mb": 2382.8125, "peak_rise_mb": 1.19140625, "docs": 22260540, "exec_keys": 22260540, "replans": 0, "final": {"present": true, "isActive": true, "works": 200001, "plan": "a_1"}}, {"ranker": "multiPlanning", "order": "M_last", "cpu_ms": 1715.978, "wall_s": 2.424071602996264, "peak_mb": 2382.5078125, "peak_rise_mb": 0.0, "docs": 1201080, "exec_keys": 1201080, "replans": 53, "final": {"present": true, "isActive": false, "works": 84, "plan": "a_1"}}, {"ranker": "multiPlanning", "order": "M_middle", "cpu_ms": 1687.822, "wall_s": 2.4191969930034247, "peak_mb": 2382.703125, "peak_rise_mb": 0.0, "docs": 1201080, "exec_keys": 1201080, "replans": 52, "final": {"present": true, "isActive": true, "works": 21, "plan": "b_1"}}, {"ranker": "automaticCE", "order": "M_first", "cpu_ms": 834.179, "wall_s": 1.5837473240026156, "peak_mb": 2382.875, "peak_rise_mb": 0.43359375, "docs": 1110, "exec_keys": 2165043, "replans": 0, "final": {"present": false}}, {"ranker": "automaticCE", "order": "M_last", "cpu_ms": 802.246, "wall_s": 1.5232442889973754, "peak_mb": 2383.0625, "peak_rise_mb": 0.23828125, "docs": 1110, "exec_keys": 2102403, "replans": 0, "final": {"present": false}}, {"ranker": "automaticCE", "order": "M_middle", "cpu_ms": 622.762, "wall_s": 1.3114823680007248, "peak_mb": 2383.1953125, "peak_rise_mb": 0.18359375, "docs": 1110, "exec_keys": 2133723, "replans": 0, "final": {"present": false}}]
