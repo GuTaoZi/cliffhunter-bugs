@@ -1,0 +1,30 @@
+2026/10/06-17:28:14.393603 1c2acb [DEBUG] [che/clock_cache.cc:1512] Slot occupancy stats: Overall 59% (129107/217000), Min/Max/Window = 41%/86%/500, MaxRun{Pos/Neg} = 51/18
+2026/10/06-17:28:14.399073 1c2acb [DEBUG] [che/clock_cache.cc:3557] Head occupancy stats: Overall 43% (94712/217000), Min/Max/Window = 31%/68%/500, MaxRun{Pos/Neg} = 25/26
+2026/10/06-17:28:14.399085 1c2acb [DEBUG] [che/clock_cache.cc:3559] Entries at home count: 62266
+2026/10/06-17:28:14.399088 1c2acb [DEBUG] [che/clock_cache.cc:3561] Yield count: 16633
+Using seed = 1845963
+Population complete (129137 entries, 8314.75 average charge)
+----------------------------
+RocksDB version     : 8.10
+Cache impl name     : AutoHyperClockCache
+DMutex impl name    : pthread_mutex_t
+Number of threads   : 12
+Ops per thread      : 2000000
+Cache size          : 1.00 GB
+Num shard bits      : 5
+Max key             : 524288
+Resident ratio      : 0.25
+Skew degree         : 5
+Populate cache      : 1
+Lookup+Insert pct   : 82%
+Insert percentage   : 2%
+Lookup percentage   : 10%
+Erase percentage    : 1%
+Gather stats        : disabled
+----------------------------
+Complete in 81.082 s; Rough parallel ops/sec = 295997
+Thread ops/sec = 24695
+Lookup hit ratio: 0.674023
+Final load factor: 0.594963 (129107 / 217000)
+Final pinned count: 222823
+

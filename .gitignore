@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+# Run outputs and linked drivers, written next to the scripts (no repro/ directory has subdirectories of its own)
+bugs/systems/*/*/repro/*/
+bugs/systems/*/*/repro/*.log
+bugs/systems/*/*/repro/*.flags
+bugs/systems/*/*/repro/librocksdb-*.a
+bugs/systems/*/*/repro/print-*.mk
+bugs/systems/*/*/repro/link-*.out
+bugs/systems/*/*/repro/bottom_loop-*
+bugs/systems/*/*/repro/*_driver-*
+# Raw logs of new MongoDB runs
+experiments/existing-tools/*/raw/

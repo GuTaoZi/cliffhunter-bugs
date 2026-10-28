@@ -1,0 +1,99 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 9K of event 'cpu/cycles/P'
+# Event count (approx.): 71196185582
+#
+# Children      Self  Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+# ........  ........  ...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    99.89%     0.00%  [.] __GI___clone3
+    99.36%     0.00%  [.] start_thread
+    99.30%     0.00%  [.] mongo::transport::(anonymous namespace)::runFunc(void*)
+    99.30%     0.00%  [.] mongo::transport::service_executor_synchronous_detail::ServiceExecutorSyncImpl::SharedState::schedule(mongo::unique_function<void (mongo::Status)>, std::basic_string_view<char, std::char_traits<char> >)::{lambda()#1}::operator()() const
+    99.29%     0.01%  [.] mongo::unique_function<void (mongo::Status)>::_makeImpl<mongo::transport::SessionWorkflow::Impl::_captureContext(mongo::unique_function<void (mongo::Status)>)::{lambda(mongo::Status)#1}>(mongo::transport::SessionWorkflow::Impl::_captureContext(mongo::unique_function<void (mongo::Status)>)::{lambda(mongo::Status)#1}&&)::SpecificImpl::call(mongo::Status&&)
+    99.28%     0.00%  [.] mongo::unique_function<void (mongo::Status)>::_makeImpl<mongo::transport::SessionWorkflow::Impl::_scheduleIteration()::{lambda(mongo::Status)#1}>(mongo::transport::SessionWorkflow::Impl::_scheduleIteration()::{lambda(mongo::Status)#1}&&)::SpecificImpl::call(mongo::Status&&)
+    99.14%     0.02%  [.] mongo::transport::SessionWorkflow::Impl::_doOneIteration()
+    98.33%     0.00%  [.] mongo::future_details::FutureImpl<std::unique_ptr<mongo::transport::SessionWorkflow::Impl::WorkItem, std::default_delete<mongo::transport::SessionWorkflow::Impl::WorkItem> > >::then<mongo::transport::SessionWorkflow::Impl::_doOneIteration()::{lambda(auto:1)#1}>(mongo::transport::SessionWorkflow::Impl::_doOneIteration()::{lambda(auto:1)#1}&&) &&::{lambda(std::unique_ptr<mongo::transport::SessionWorkflow::Impl::WorkItem, std::default_delete<mongo::transport::SessionWorkflow::Impl::WorkItem> >&&)#1}::operator()(std::unique_ptr<mongo::transport::SessionWorkflow::Impl::WorkItem, std::default_delete<mongo::transport::SessionWorkflow::Impl::WorkItem> >&&) const [clone .isra.0]
+    98.33%     0.00%  [.] mongo::transport::SessionWorkflow::Impl::_dispatchWork()
+    98.24%     0.02%  [.] mongo::ServiceEntryPointShardRole::handleRequest(mongo::OperationContext*, mongo::Message const&, mongo::Date_t)
+    96.08%     0.00%  [.] mongo::(anonymous namespace)::ExecCommandDatabase::_commandExec()
+    96.05%     0.01%  [.] mongo::(anonymous namespace)::RunCommandImpl::run()
+    96.03%     0.00%  [.] mongo::CommandHelpers::runCommandInvocation(mongo::OperationContext*, mongo::CommandInvocation*, mongo::rpc::ReplyBuilderInterface*)
+    94.97%     0.01%  [.] mongo::(anonymous namespace)::FindCmd::Invocation::run(mongo::OperationContext*, mongo::rpc::ReplyBuilderInterface*)
+    94.46%     0.00%  [.] mongo::exec_deferred_engine_choice::getExecutorFindDeferredEngineChoice(mongo::OperationContext*, mongo::MultipleCollectionAccessor const&, std::unique_ptr<mongo::CanonicalQuery, std::default_delete<mongo::CanonicalQuery> >, mongo::PlanYieldPolicy::YieldPolicy, std::function<std::unique_ptr<mongo::QueryPlannerParams, std::default_delete<mongo::QueryPlannerParams> > (mongo::CanonicalQuery const&, unsigned long, boost::optional<mongo::QueryPlannerParams::ReplanningData>)> const&, unsigned long, mongo::Pipeline*)
+    94.46%     0.00%  [.] mongo::getExecutorFind(mongo::OperationContext*, mongo::MultipleCollectionAccessor const&, std::unique_ptr<mongo::CanonicalQuery, std::default_delete<mongo::CanonicalQuery> >, mongo::PlanYieldPolicy::YieldPolicy, unsigned long, mongo::Pipeline*, bool, boost::optional<mongo::TraversalPreference>)
+    94.44%     0.00%  [.] mongo::exec_deferred_engine_choice::planRanking(mongo::OperationContext*, mongo::MultipleCollectionAccessor const&, std::unique_ptr<mongo::CanonicalQuery, std::default_delete<mongo::CanonicalQuery> >&, mongo::PlanYieldPolicy::YieldPolicy, unsigned long, mongo::Pipeline*, std::function<std::unique_ptr<mongo::QueryPlannerParams, std::default_delete<mongo::QueryPlannerParams> > (mongo::CanonicalQuery const&, unsigned long, boost::optional<mongo::QueryPlannerParams::ReplanningData>)> const&)
+    94.39%     0.00%  [.] mongo::retryMakePlanner(std::unique_ptr<mongo::QueryPlannerParams, std::default_delete<mongo::QueryPlannerParams> >, std::function<std::unique_ptr<mongo::QueryPlannerParams, std::default_delete<mongo::QueryPlannerParams> > (mongo::CanonicalQuery const&, unsigned long, boost::optional<mongo::QueryPlannerParams::ReplanningData>)> const&, std::function<std::unique_ptr<mongo::PlannerInterface, std::default_delete<mongo::PlannerInterface> > (std::unique_ptr<mongo::QueryPlannerParams, std::default_delete<mongo::QueryPlannerParams> >)> const&, mongo::CanonicalQuery*, unsigned long, mongo::Pipeline*)
+    94.39%     0.00%  [.] std::_Function_handler<std::unique_ptr<mongo::PlannerInterface, std::default_delete<mongo::PlannerInterface> > (std::unique_ptr<mongo::QueryPlannerParams, std::default_delete<mongo::QueryPlannerParams> >), mongo::exec_deferred_engine_choice::planRanking(mongo::OperationContext*, mongo::MultipleCollectionAccessor const&, std::unique_ptr<mongo::CanonicalQuery, std::default_delete<mongo::CanonicalQuery> >&, mongo::PlanYieldPolicy::YieldPolicy, unsigned long, mongo::Pipeline*, std::function<std::unique_ptr<mongo::QueryPlannerParams, std::default_delete<mongo::QueryPlannerParams> > (mongo::CanonicalQuery const&, unsigned long, boost::optional<mongo::QueryPlannerParams::ReplanningData>)> const&)::{lambda(std::unique_ptr<mongo::QueryPlannerParams, std::default_delete<mongo::QueryPlannerParams> >)#1}>::_M_invoke(std::_Any_data const&, std::unique_ptr<mongo::QueryPlannerParams, std::default_delete<mongo::QueryPlannerParams> >&&)
+    94.37%     0.00%  [.] mongo::exec_deferred_engine_choice::preparePlanner(mongo::OperationContext*, mongo::CanonicalQuery*, std::shared_ptr<mongo::QueryPlannerParams>, mongo::PlanYieldPolicy::YieldPolicy, mongo::MultipleCollectionAccessor const&, mongo::Pipeline*)
+    93.91%     0.02%  [.] mongo::classic_runtime_planner::CachedPlanner::doPlan(mongo::PlanYieldPolicy*)
+    93.90%     0.00%  [.] mongo::classic_runtime_planner::ClassicPlannerInterface::plan()
+    93.89%     0.22%  [.] mongo::CachedPlanStage::pickBestPlan(mongo::QueryPlannerParams const&, mongo::PlanYieldPolicy*)
+    93.59%     1.81%  [.] mongo::PlanStage::work(unsigned long*)
+    91.16%     0.23%  [.] mongo::LimitStage::doWork(unsigned long*)
+    88.66%     0.35%  [.] mongo::ProjectionStage::doWork(unsigned long*)
+    85.47%     0.89%  [.] mongo::FetchStage::doWork(unsigned long*)
+    46.99%     2.58%  [.] mongo::WorkingSetCommon::fetch(mongo::OperationContext*, mongo::WorkingSet*, unsigned long, mongo::SeekableRecordCursor*, mongo::CollectionPtr const&, mongo::NamespaceString const&)
+    42.86%     0.18%  [.] mongo::WiredTigerRecordStoreCursorBase::seekExact(mongo::RecordId const&)
+    42.54%     3.29%  [.] mongo::WiredTigerRecordStoreCursorBase::seekExactCommon(mongo::RecordId const&)
+    33.10%     1.93%  [.] __curfile_search
+    27.99%     2.27%  [.] __wt_btcur_search
+    24.21%     2.51%  [.] mongo::IndexScan::doWork(unsigned long*)
+    18.84%     5.09%  [.] __wt_row_search
+    16.08%     0.39%  [.] mongo::(anonymous namespace)::WiredTigerIndexCursorBase::nextKeyValueView(mongo::RecoveryUnit&)
+    15.63%     0.82%  [.] mongo::(anonymous namespace)::WiredTigerIndexCursorBase::advanceNext(mongo::RecoveryUnit&)
+    11.55%     1.08%  [.] __curfile_next
+    10.27%     5.14%  [.] __wt_btcur_next
+    10.05%     0.02%  [.] mongo::SkipStage::doWork(unsigned long*)
+     9.10%     0.31%  [.] mongo::FetchStage::returnIfMatches(mongo::WorkingSetMember*, unsigned long, unsigned long*)
+     7.12%     7.11%  [.] __wt_search_insert
+     6.84%     0.45%  [.] mongo::Filter::passes(mongo::WorkingSetMember*, mongo::MatchExpression const*)
+     5.72%     0.38%  [.] mongo::exec::matcher::MatchExpressionEvaluator::visitPathExpression(mongo::PathMatchExpression const*)
+     5.14%     0.55%  [.] mongo::key_string::toBson(std::span<char const, 18446744073709551615ul>, mongo::Ordering, std::span<char const, 18446744073709551615ul>, mongo::key_string::Version)
+     4.28%     4.01%  [.] __row_search_warm_leaf_candidates
+     3.99%     1.05%  [.] __wti_cursor_valid
+     3.57%     0.93%  [.] mongo::ScopedTimer::ScopedTimer(mongo::Duration<std::ratio<1l, 1000000000l> >*, mongo::ClockSource*)
+     3.34%     1.06%  [.] mongo::key_string::toBsonSafe(std::span<char const, 18446744073709551615ul>, mongo::Ordering, mongo::key_string::TypeBits::ReaderBase&, mongo::BSONObjBuilder&)
+     3.31%     0.27%  [.] __wt_cursor_set_key
+     3.20%     1.29%  [.] operator delete[](void*, unsigned long)
+     3.00%     1.47%  [.] __wti_cursor_set_keyv
+     2.98%     0.26%  [.] mongo::WorkingSetMatchableDocument::allocateIterator(mongo::ElementPath const*) const
+     2.85%     1.03%  [.] __wt_txn_read
+     2.74%     0.30%  [.] mongo::BSONElementIterator::reset(mongo::ElementPath const*, mongo::BSONObj const&)
+     2.44%     0.61%  [.] mongo::(anonymous namespace)::WiredTigerIndexCursorBase::updatePosition(mongo::RecoveryUnit&, std::span<char const, 18446744073709551615ul>, std::span<char const, 18446744073709551615ul>)
+     2.35%     2.19%  [.] __wt_row_leaf_key.constprop.0
+     2.32%     0.50%  [.] mongo::getFieldDottedOrArray(mongo::BSONObj const&, mongo::FieldRef const&, unsigned long*, unsigned long)
+     2.25%     2.14%  [.] tcmalloc::tcmalloc_internal::TCMallocPolicy<tcmalloc::tcmalloc_internal::CppOomPolicy, tcmalloc::tcmalloc_internal::DefaultAlignPolicy, tcmalloc::tcmalloc_internal::AllocationAccessHotPolicy, tcmalloc::tcmalloc_internal::InvokeHooksPolicy, tcmalloc::tcmalloc_internal::NonSizeReturningPolicy, tcmalloc::tcmalloc_internal::LocalNumaPartitionPolicy>::pointer_type tcmalloc::tcmalloc_internal::alloc_small_sampled_hooks_or_perthread<tcmalloc::tcmalloc_internal::TCMallocPolicy<tcmalloc::tcmalloc_internal::CppOomPolicy, tcmalloc::tcmalloc_internal::DefaultAlignPolicy, tcmalloc::tcmalloc_internal::AllocationAccessHotPolicy, tcmalloc::tcmalloc_internal::InvokeHooksPolicy, tcmalloc::tcmalloc_internal::NonSizeReturningPolicy, tcmalloc::tcmalloc_internal::LocalNumaPartitionPolicy> >(unsigned long, unsigned long, tcmalloc::tcmalloc_internal::TCMallocPolicy<tcmalloc::tcmalloc_internal::CppOomPolicy, tcmalloc::tcmalloc_internal::DefaultAlignPolicy, tcmalloc::tcmalloc_internal::AllocationAccessHotPolicy, tcmalloc::tcmalloc_internal::InvokeHooksPolicy, tcmalloc::tcmalloc_internal::NonSizeReturningPolicy, tcmalloc::tcmalloc_internal::LocalNumaPartitionPolicy>, unsigned long) [clone .isra.0]
+     2.14%     0.87%  [.] void mongo::key_string::(anonymous namespace)::toBsonValue<mongo::BSONObjBuilder::ValueStream>(unsigned char, mongo::BufReader*, mongo::key_string::TypeBits::ReaderBase*, bool, mongo::key_string::Version, mongo::BSONObjBuilder::ValueStream&&, unsigned int)
+     2.11%     2.03%  [.] __wt_compare_bounds
+     2.11%     1.91%  [.] __wt_lex_compare_short.isra.0
+     2.07%     0.76%  [.] mongo::WorkingSetMember::resetDocument(mongo::SnapshotId, mongo::BSONObj const&)
+     1.97%     1.78%  [.] tcmalloc::tcmalloc_internal::FreeWithHooksOrPerThread(void*, unsigned long)
+     1.93%     0.52%  [.] mongo::WorkingSetMember::clear()
+     1.80%     1.78%  [.] mongo::BSONObj::getField(std::basic_string_view<char, std::char_traits<char> >) const
+     1.78%     1.21%  [.] mongo::key_string::withoutRecordIdLongAtEnd(std::span<char const, 18446744073709551615ul>, mongo::RecordId*)
+     1.76%     1.68%  [.] __wt_session_gen_leave
+     1.66%     1.62%  [.] __wt_session_gen_enter
+     1.66%     0.26%  [.] mongo::(anonymous namespace)::getRecordData(__wt_cursor*)
+     1.64%     0.70%  [.] __wt_txn_read
+     1.56%     0.00%  [.] mongo::profile_collection::profile(mongo::OperationContext*, mongo::NetworkOp)
+     1.48%     0.86%  [.] __wt_value_return_buf
+     1.42%     0.22%  [.] __wt_cursor_get_value
+     1.34%     1.00%  [.] mongo::DocumentStorage::reset(mongo::BSONObj const&, bool)
+     1.27%     0.96%  [.] __wt_txn_read_upd_list_internal
+     1.26%     0.00%  [.] void mongo::profile_collection::(anonymous namespace)::doProfile<mongo::OperationContext*, mongo::NamespaceString>(mongo::OperationContext*, mongo::NamespaceString const&, mongo::BSONObj const&, std::variant<mongo::Duration<std::ratio<1l, 1000l> >, mongo::profile_collection::(anonymous namespace)::NoTimeoutTag>)
+     1.23%     1.17%  [.] __wti_cursor_get_valuev
+     1.21%     0.71%  [.] mongo::BSONElementIterator::more()
+     1.18%     1.06%  [.] operator new[](unsigned long)
+     1.13%     1.11%  [.] __wt_stat_usecs_hist_incr_opread
+     1.11%     0.26%  [.] __cursor_valid_insert.constprop.0
+     1.08%     0.88%  [.] mongo::ScopedTimer::CsState::~CsState()
+     1.00%     0.89%  [.] tcmalloc::tcmalloc_internal::TCMallocPolicy<tcmalloc::tcmalloc_internal::CppOomPolicy, tcmalloc::tcmalloc_internal::DefaultAlignPolicy, tcmalloc::tcmalloc_internal::AllocationAccessHotPolicy, tcmalloc::tcmalloc_internal::InvokeHooksPolicy, tcmalloc::tcmalloc_internal::NonSizeReturningPolicy, tcmalloc::tcmalloc_internal::LocalNumaPartitionPolicy>::pointer_type tcmalloc::tcmalloc_internal::slow_alloc_small<tcmalloc::tcmalloc_internal::TCMallocPolicy<tcmalloc::tcmalloc_internal::CppOomPolicy, tcmalloc::tcmalloc_internal::DefaultAlignPolicy, tcmalloc::tcmalloc_internal::AllocationAccessHotPolicy, tcmalloc::tcmalloc_internal::InvokeHooksPolicy, tcmalloc::tcmalloc_internal::NonSizeReturningPolicy, tcmalloc::tcmalloc_internal::LocalNumaPartitionPolicy> >(unsigned long, unsigned int, tcmalloc::tcmalloc_internal::TCMallocPolicy<tcmalloc::tcmalloc_internal::CppOomPolicy, tcmalloc::tcmalloc_internal::DefaultAlignPolicy, tcmalloc::tcmalloc_internal::AllocationAccessHotPolicy, tcmalloc::tcmalloc_internal::InvokeHooksPolicy, tcmalloc::tcmalloc_internal::NonSizeReturningPolicy, tcmalloc::tcmalloc_internal::LocalNumaPartitionPolicy>) [clone .isra.0]
+
+
+#
+# (Tip: To see callchains in a more compact form: perf report -g folded)
+#

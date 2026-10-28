@@ -1,0 +1,13 @@
+6081:M 27 Oct 2026 15:55:00.780 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+6081:M 27 Oct 2026 15:55:00.780 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+6081:M 27 Oct 2026 15:55:00.780 * Valkey version=255.255.255, bits=64, commit=00000000, modified=1, pid=6081, just started
+6081:M 27 Oct 2026 15:55:00.780 * Configuration loaded
+6081:M 27 Oct 2026 15:55:00.811 * monotonic clock: X86 TSC @ 2600 ticks/us
+6081:M 27 Oct 2026 15:55:00.811 * Running mode=standalone, port=15426.
+6081:M 27 Oct 2026 15:55:00.812 * Module 'lua' loaded from libvalkeylua.so
+6081:M 27 Oct 2026 15:55:00.812 * Server initialized
+6081:M 27 Oct 2026 15:55:00.812 * Ready to accept connections tcp
+6081:signal-handler (1793130911) Received SIGTERM scheduling shutdown...
+6081:M 27 Oct 2026 15:55:11.147 * User requested shutdown...
+6081:M 27 Oct 2026 15:55:11.147 * Module lua unloaded
+6081:M 27 Oct 2026 15:55:11.147 # Valkey is now ready to exit, bye bye...

@@ -1,0 +1,77 @@
+1746560:M 06 Oct 2026 17:10:20.487 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1746560:M 06 Oct 2026 17:10:20.487 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+1746560:M 06 Oct 2026 17:10:20.487 * Valkey version=255.255.255, bits=64, commit=00000000, modified=1, pid=1746560, just started
+1746560:M 06 Oct 2026 17:10:20.487 * Configuration loaded
+1746560:M 06 Oct 2026 17:10:20.487 * monotonic clock: POSIX clock_gettime
+1746560:M 06 Oct 2026 17:10:20.487 * Running mode=standalone, port=15421.
+1746560:M 06 Oct 2026 17:10:20.488 * Server initialized
+1746560:M 06 Oct 2026 17:10:20.488 * Ready to accept connections tcp
+1746560:signal-handler (1791321032) Received SIGTERM scheduling shutdown...
+1746560:M 06 Oct 2026 17:10:32.847 * User requested shutdown...
+1746560:M 06 Oct 2026 17:10:32.847 # Valkey is now ready to exit, bye bye...
+1750180:M 06 Oct 2026 17:10:32.866 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1750180:M 06 Oct 2026 17:10:32.866 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+1750180:M 06 Oct 2026 17:10:32.866 * Valkey version=255.255.255, bits=64, commit=00000000, modified=1, pid=1750180, just started
+1750180:M 06 Oct 2026 17:10:32.866 * Configuration loaded
+1750180:M 06 Oct 2026 17:10:32.866 * monotonic clock: POSIX clock_gettime
+1750180:M 06 Oct 2026 17:10:32.867 * Running mode=standalone, port=15421.
+1750180:M 06 Oct 2026 17:10:32.867 * Server initialized
+1750180:M 06 Oct 2026 17:10:32.867 * Ready to accept connections tcp
+1750180:signal-handler (1791321044) Received SIGTERM scheduling shutdown...
+1750180:M 06 Oct 2026 17:10:44.126 * User requested shutdown...
+1750180:M 06 Oct 2026 17:10:44.126 # Valkey is now ready to exit, bye bye...
+1753153:M 06 Oct 2026 17:10:44.148 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1753153:M 06 Oct 2026 17:10:44.148 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+1753153:M 06 Oct 2026 17:10:44.148 * Valkey version=255.255.255, bits=64, commit=00000000, modified=1, pid=1753153, just started
+1753153:M 06 Oct 2026 17:10:44.148 * Configuration loaded
+1753153:M 06 Oct 2026 17:10:44.148 * monotonic clock: POSIX clock_gettime
+1753153:M 06 Oct 2026 17:10:44.148 * Running mode=standalone, port=15421.
+1753153:M 06 Oct 2026 17:10:44.149 * Server initialized
+1753153:M 06 Oct 2026 17:10:44.149 * Ready to accept connections tcp
+1753153:signal-handler (1791321055) Received SIGTERM scheduling shutdown...
+1753153:M 06 Oct 2026 17:10:55.589 * User requested shutdown...
+1753153:M 06 Oct 2026 17:10:55.589 # Valkey is now ready to exit, bye bye...
+1757459:M 06 Oct 2026 17:10:55.611 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1757459:M 06 Oct 2026 17:10:55.611 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+1757459:M 06 Oct 2026 17:10:55.611 * Valkey version=255.255.255, bits=64, commit=00000000, modified=1, pid=1757459, just started
+1757459:M 06 Oct 2026 17:10:55.611 * Configuration loaded
+1757459:M 06 Oct 2026 17:10:55.611 * monotonic clock: POSIX clock_gettime
+1757459:M 06 Oct 2026 17:10:55.611 * Running mode=standalone, port=15421.
+1757459:M 06 Oct 2026 17:10:55.612 * Server initialized
+1757459:M 06 Oct 2026 17:10:55.612 * Ready to accept connections tcp
+1757459:signal-handler (1791321068) Received SIGTERM scheduling shutdown...
+1757459:M 06 Oct 2026 17:11:08.300 * User requested shutdown...
+1757459:M 06 Oct 2026 17:11:08.300 # Valkey is now ready to exit, bye bye...
+1761468:M 06 Oct 2026 17:11:08.329 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1761468:M 06 Oct 2026 17:11:08.329 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+1761468:M 06 Oct 2026 17:11:08.329 * Valkey version=255.255.255, bits=64, commit=00000000, modified=1, pid=1761468, just started
+1761468:M 06 Oct 2026 17:11:08.329 * Configuration loaded
+1761468:M 06 Oct 2026 17:11:08.330 * monotonic clock: POSIX clock_gettime
+1761468:M 06 Oct 2026 17:11:08.330 * Running mode=standalone, port=15421.
+1761468:M 06 Oct 2026 17:11:08.330 * Server initialized
+1761468:M 06 Oct 2026 17:11:08.330 * Ready to accept connections tcp
+1761468:signal-handler (1791321085) Received SIGTERM scheduling shutdown...
+1761468:M 06 Oct 2026 17:11:25.611 * User requested shutdown...
+1761468:M 06 Oct 2026 17:11:25.611 # Valkey is now ready to exit, bye bye...
+1768101:M 06 Oct 2026 17:11:25.633 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1768101:M 06 Oct 2026 17:11:25.633 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+1768101:M 06 Oct 2026 17:11:25.633 * Valkey version=255.255.255, bits=64, commit=00000000, modified=1, pid=1768101, just started
+1768101:M 06 Oct 2026 17:11:25.633 * Configuration loaded
+1768101:M 06 Oct 2026 17:11:25.634 * monotonic clock: POSIX clock_gettime
+1768101:M 06 Oct 2026 17:11:25.634 * Running mode=standalone, port=15421.
+1768101:M 06 Oct 2026 17:11:25.634 * Server initialized
+1768101:M 06 Oct 2026 17:11:25.634 * Ready to accept connections tcp
+1768101:signal-handler (1791321094) Received SIGTERM scheduling shutdown...
+1768101:M 06 Oct 2026 17:11:34.796 * User requested shutdown...
+1768101:M 06 Oct 2026 17:11:34.796 # Valkey is now ready to exit, bye bye...
+1771223:M 06 Oct 2026 17:11:34.831 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1771223:M 06 Oct 2026 17:11:34.831 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+1771223:M 06 Oct 2026 17:11:34.831 * Valkey version=255.255.255, bits=64, commit=00000000, modified=1, pid=1771223, just started
+1771223:M 06 Oct 2026 17:11:34.831 * Configuration loaded
+1771223:M 06 Oct 2026 17:11:34.832 * monotonic clock: POSIX clock_gettime
+1771223:M 06 Oct 2026 17:11:34.832 * Running mode=standalone, port=15421.
+1771223:M 06 Oct 2026 17:11:34.832 * Server initialized
+1771223:M 06 Oct 2026 17:11:34.832 * Ready to accept connections tcp
+1771223:signal-handler (1791321104) Received SIGTERM scheduling shutdown...
+1771223:M 06 Oct 2026 17:11:44.820 * User requested shutdown...
+1771223:M 06 Oct 2026 17:11:44.820 # Valkey is now ready to exit, bye bye...

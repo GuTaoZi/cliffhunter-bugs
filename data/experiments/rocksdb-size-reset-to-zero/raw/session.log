@@ -1,0 +1,46 @@
+2026-10-27T15:25:40-04:00 start
+parent 924616526a14 rc 0 $CLIFF_DATA/build/rocksdb-924616526a14
+fix 04b2c16f9b81 rc 0 $CLIFF_DATA/build/rocksdb-04b2c16f9b81
+ression: Snappy
+Compression sampling rate: 0
+Memtablerep: SkipListFactory
+Perf Level: 1
+------------------------------------------------
+Initializing RocksDB Options from the specified file
+Initializing RocksDB Options from command-line flags
+DB path: [$CLIFF_DATA/repro/rocksdb-size-reset-to-zero/db]
+fillseq      :       3.438 micros/op 290864 ops/sec;  150.9 MB/s
+               
+... finished 1400000 ops                              
+... finished 1500000 ops                              
+... finished 1600000 ops                              
+... finished 1700000 ops                              
+... finished 1800000 ops                              
+... finished 1900000 ops                              
+... finished 2000000 ops                              
+
+{"arm": "parent", "rep": 1, "mb_per_s": 166.4, "micros_per_op": 306500.755, "user_s": 10.55, "sys_s": 0.89, "peak_rss_mb": 27.6171875}
+{"arm": "fix", "rep": 1, "mb_per_s": 242.7, "micros_per_op": 210655.958, "user_s": 21.29, "sys_s": 0.29, "peak_rss_mb": 27.3828125}
+{"arm": "fix", "rep": 2, "mb_per_s": 243.7, "micros_per_op": 209838.182, "user_s": 21.17, "sys_s": 0.33, "peak_rss_mb": 27.62890625}
+{"arm": "parent", "rep": 2, "mb_per_s": 197.4, "micros_per_op": 259121.402, "user_s": 11.05, "sys_s": 1.11, "peak_rss_mb": 27.5859375}
+{"arm": "parent", "rep": 3, "mb_per_s": 192.3, "micros_per_op": 265866.779, "user_s": 11.29, "sys_s": 0.99, "peak_rss_mb": 27.421875}
+{"arm": "fix", "rep": 3, "mb_per_s": 252.1, "micros_per_op": 202916.216, "user_s": 21.09, "sys_s": 0.31, "peak_rss_mb": 27.33203125}
+{"arm": "fix", "rep": 4, "mb_per_s": 246.4, "micros_per_op": 207530.234, "user_s": 21.45, "sys_s": 0.33, "peak_rss_mb": 27.265625}
+{"arm": "parent", "rep": 4, "mb_per_s": 193.3, "micros_per_op": 264503.991, "user_s": 11.65, "sys_s": 1.1, "peak_rss_mb": 27.671875}
+{"arm": "parent", "rep": 5, "mb_per_s": 193.2, "micros_per_op": 264660.652, "user_s": 11.66, "sys_s": 1.05, "peak_rss_mb": 28.515625}
+{"arm": "fix", "rep": 5, "mb_per_s": 269.1, "micros_per_op": 189151.906, "user_s": 19.38, "sys_s": 0.31, "peak_rss_mb": 27.640625}
+# rocksdb size-reset-to-zero: parent 924616526a14 vs fix 04b2c16f9b81
+
+seekrandom, use_direct_reads=true, seek_nexts=100,000, 2,000,000 keys (32 B + 512 B), 30 s per run; mean, sd [min, max] over repetitions.
+
+| metric | parent | fix | fix / parent |
+|---|---|---|---|
+| mb_per_s | 188.5 sd 11 [166.4, 197.4] (n=5) | 250.8 sd 9.7 [242.7, 269.1] (n=5) | 1.33 |
+| micros_per_op | 2.721e+05 sd 1.7e+04 [2.591e+05, 3.065e+05] (n=5) | 2.04e+05 sd 7.9e+03 [1.892e+05, 2.107e+05] (n=5) | 0.75 |
+| ops_per_s | 3 sd 0 [3, 3] (n=5) | 4.2 sd 0.4 [4, 5] (n=5) | 1.40 |
+| wall_s | 30.32 sd 0.18 [30.09, 30.51] (n=5) | 30.15 sd 0.048 [30.06, 30.19] (n=5) | 0.99 |
+| user_s | 11.24 sd 0.41 [10.55, 11.66] (n=5) | 20.88 sd 0.76 [19.38, 21.45] (n=5) | 1.86 |
+| sys_s | 1.028 sd 0.081 [0.89, 1.11] (n=5) | 0.314 sd 0.015 [0.29, 0.33] (n=5) | 0.31 |
+| peak_rss_mb | 27.76 sd 0.39 [27.42, 28.52] (n=5) | 27.45 sd 0.16 [27.27, 27.64] (n=5) | 0.99 |
+2026-10-27T15:32:39-04:00 end
+rank 11 session: wall 1526.59 s, CPU 1729.79+132.52 s, peak 895012 KB

@@ -1,0 +1,52 @@
+{
+ "arm": "parent",
+ "policy": "noeviction",
+ "n": 4194304,
+ "margin": 8388608,
+ "k": 300000,
+ "rep": 2,
+ "binary": "$CLIFF_DATA/build/redis-2f41a3856845/src/src/redis-server",
+ "used_before": 361964192,
+ "maxmemory": 370352800,
+ "table_sizes_before": [
+  4194304
+ ],
+ "table_sizes_after": [
+  4194304,
+  8388608
+ ],
+ "dbsize_after": 4194305,
+ "evicted_keys": 0,
+ "used_memory_after": 429074896,
+ "used_memory_peak_since_start": 429196984,
+ "server": {
+  "wall_s": 11.2183,
+  "cpu_s": 0.54,
+  "peak_rss_mb": 370.8,
+  "polls": 557,
+  "root_pid": 4036071,
+  "workload_exit": 0
+ },
+ "count": 300000,
+ "batch": 100,
+ "insert_wall_s": 1.146005630493164,
+ "settle_s": 10.009092569351196,
+ "batches": 3000,
+ "lat_mean_ms": 0.33753474674207,
+ "lat_p50_ms": 0.34812200465239584,
+ "lat_p99_ms": 0.6015359977027401,
+ "lat_p999_ms": 2.3085930006345734,
+ "lat_max_ms": 2.316552010597661,
+ "oom_rejected": 299999,
+ "other_errors": 0,
+ "trace_peak_used_memory": 429156016,
+ "trace_max_over_maxmemory": 58803216,
+ "final_snapshot": {
+  "t": 1792719758.2789345,
+  "used_memory": 429156008,
+  "evicted_keys": 0,
+  "keys": 4194305,
+  "slots": 12582912,
+  "rehashing": true
+ }
+}
