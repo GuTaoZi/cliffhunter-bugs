@@ -1,0 +1,529 @@
+2026/10/28-12:38:39.072429 708e71d45940 RocksDB version: 4.11.0
+2026/10/28-12:38:39.072454 708e71d45940 Git sha rocksdb_build_git_sha:
+2026/10/28-12:38:39.072455 708e71d45940 Compile date Jan  1 1980
+2026/10/28-12:38:39.072456 708e71d45940 DB SUMMARY
+2026/10/28-12:38:39.072460 708e71d45940 SST files in /dev/shm/ch-rdb37-fix/db dir, Total Num: 0, files: 
+2026/10/28-12:38:39.072461 708e71d45940 Write Ahead Log file in /dev/shm/ch-rdb37-fix/db: 
+2026/10/28-12:38:39.072462 708e71d45940          Options.error_if_exists: 0
+2026/10/28-12:38:39.072463 708e71d45940        Options.create_if_missing: 1
+2026/10/28-12:38:39.072463 708e71d45940          Options.paranoid_checks: 1
+2026/10/28-12:38:39.072464 708e71d45940                      Options.env: 0x5623023a5700
+2026/10/28-12:38:39.072464 708e71d45940                 Options.info_log: 0x56231ed54370
+2026/10/28-12:38:39.072465 708e71d45940           Options.max_open_files: -1
+2026/10/28-12:38:39.072465 708e71d45940 Options.max_file_opening_threads: 16
+2026/10/28-12:38:39.072466 708e71d45940       Options.max_total_wal_size: 0
+2026/10/28-12:38:39.072466 708e71d45940        Options.disableDataSync: 0
+2026/10/28-12:38:39.072467 708e71d45940              Options.use_fsync: 0
+2026/10/28-12:38:39.072467 708e71d45940      Options.max_log_file_size: 0
+2026/10/28-12:38:39.072468 708e71d45940 Options.max_manifest_file_size: 18446744073709551615
+2026/10/28-12:38:39.072468 708e71d45940      Options.log_file_time_to_roll: 0
+2026/10/28-12:38:39.072469 708e71d45940      Options.keep_log_file_num: 1000
+2026/10/28-12:38:39.072469 708e71d45940   Options.recycle_log_file_num: 0
+2026/10/28-12:38:39.072470 708e71d45940        Options.allow_os_buffer: 1
+2026/10/28-12:38:39.072470 708e71d45940       Options.allow_mmap_reads: 0
+2026/10/28-12:38:39.072471 708e71d45940       Options.allow_fallocate: 1
+2026/10/28-12:38:39.072471 708e71d45940      Options.allow_mmap_writes: 0
+2026/10/28-12:38:39.072472 708e71d45940          Options.create_missing_column_families: 0
+2026/10/28-12:38:39.072472 708e71d45940                              Options.db_log_dir: 
+2026/10/28-12:38:39.072473 708e71d45940                                 Options.wal_dir: /dev/shm/ch-rdb37-fix/db
+2026/10/28-12:38:39.072473 708e71d45940                Options.table_cache_numshardbits: 4
+2026/10/28-12:38:39.072473 708e71d45940     Options.delete_obsolete_files_period_micros: 21600000000
+2026/10/28-12:38:39.072474 708e71d45940              Options.base_background_compactions: 1
+2026/10/28-12:38:39.072474 708e71d45940              Options.max_background_compactions: 1
+2026/10/28-12:38:39.072475 708e71d45940                      Options.max_subcompactions: 1
+2026/10/28-12:38:39.072475 708e71d45940                  Options.max_background_flushes: 1
+2026/10/28-12:38:39.072476 708e71d45940                         Options.WAL_ttl_seconds: 0
+2026/10/28-12:38:39.072476 708e71d45940                       Options.WAL_size_limit_MB: 0
+2026/10/28-12:38:39.072477 708e71d45940             Options.manifest_preallocation_size: 4194304
+2026/10/28-12:38:39.072477 708e71d45940                          Options.allow_os_buffer: 1
+2026/10/28-12:38:39.072477 708e71d45940                         Options.allow_mmap_reads: 0
+2026/10/28-12:38:39.072478 708e71d45940                        Options.allow_mmap_writes: 0
+2026/10/28-12:38:39.072478 708e71d45940                      Options.is_fd_close_on_exec: 1
+2026/10/28-12:38:39.072479 708e71d45940                    Options.stats_dump_period_sec: 600
+2026/10/28-12:38:39.072479 708e71d45940                    Options.advise_random_on_open: 1
+2026/10/28-12:38:39.072480 708e71d45940                     Options.db_write_buffer_size: 0d
+2026/10/28-12:38:39.072480 708e71d45940          Options.access_hint_on_compaction_start: NORMAL
+2026/10/28-12:38:39.072481 708e71d45940   Options.new_table_reader_for_compaction_inputs: 1
+2026/10/28-12:38:39.072481 708e71d45940                Options.compaction_readahead_size: 0d
+2026/10/28-12:38:39.072482 708e71d45940                Options.random_access_max_buffer_size: 1048576d
+2026/10/28-12:38:39.072482 708e71d45940               Options.writable_file_max_buffer_size: 1048576d
+2026/10/28-12:38:39.072483 708e71d45940                       Options.use_adaptive_mutex: 0
+2026/10/28-12:38:39.072484 708e71d45940                             Options.rate_limiter: (nil)
+2026/10/28-12:38:39.072484 708e71d45940      Options.sst_file_manager.rate_bytes_per_sec: 0
+2026/10/28-12:38:39.072485 708e71d45940                           Options.bytes_per_sync: 0
+2026/10/28-12:38:39.072485 708e71d45940                       Options.wal_bytes_per_sync: 0
+2026/10/28-12:38:39.072486 708e71d45940                        Options.wal_recovery_mode: 2
+2026/10/28-12:38:39.072486 708e71d45940                   Options.enable_thread_tracking: 0
+2026/10/28-12:38:39.072487 708e71d45940          Options.allow_concurrent_memtable_write: 0
+2026/10/28-12:38:39.072487 708e71d45940       Options.enable_write_thread_adaptive_yield: 0
+2026/10/28-12:38:39.072487 708e71d45940              Options.write_thread_max_yield_usec: 100
+2026/10/28-12:38:39.072488 708e71d45940             Options.write_thread_slow_yield_usec: 3
+2026/10/28-12:38:39.072488 708e71d45940                                Options.row_cache: None
+2026/10/28-12:38:39.072489 708e71d45940        Options.wal_filter: None
+2026/10/28-12:38:39.072489 708e71d45940                     Options.avoid_flush_during_recovery: 0
+2026/10/28-12:38:39.072490 708e71d45940 Compression algorithms supported:
+2026/10/28-12:38:39.072490 708e71d45940 	Snappy supported: 1
+2026/10/28-12:38:39.072491 708e71d45940 	Zlib supported: 1
+2026/10/28-12:38:39.072491 708e71d45940 	Bzip supported: 1
+2026/10/28-12:38:39.072492 708e71d45940 	LZ4 supported: 1
+2026/10/28-12:38:39.072492 708e71d45940 Fast CRC32 supported: 0
+2026/10/28-12:38:39.072504 708e71d45940 Creating manifest 1 
+2026/10/28-12:38:39.073485 708e71d45940 Recovering from manifest file: MANIFEST-000001
+2026/10/28-12:38:39.073496 708e71d45940 --------------- Options for column family [default]:
+2026/10/28-12:38:39.073497 708e71d45940               Options.comparator: rocksdb.InternalKeyComparator:leveldb.BytewiseComparator
+2026/10/28-12:38:39.073497 708e71d45940           Options.merge_operator: None
+2026/10/28-12:38:39.073498 708e71d45940        Options.compaction_filter: None
+2026/10/28-12:38:39.073498 708e71d45940        Options.compaction_filter_factory: None
+2026/10/28-12:38:39.073499 708e71d45940         Options.memtable_factory: SkipListFactory
+2026/10/28-12:38:39.073500 708e71d45940            Options.table_factory: BlockBasedTable
+2026/10/28-12:38:39.073508 708e71d45940            table_factory options:   flush_block_policy_factory: FlushBlockBySizePolicyFactory (0x56231ed16af0)
+  cache_index_and_filter_blocks: 0
+  pin_l0_filter_and_index_blocks_in_cache: 0
+  index_type: 0
+  hash_index_allow_collision: 1
+  checksum: 1
+  no_block_cache: 1
+  block_cache: (nil)
+  block_cache_compressed: (nil)
+  block_size: 4096
+  block_size_deviation: 10
+  block_restart_interval: 16
+  index_block_restart_interval: 1
+  filter_policy: nullptr
+  whole_key_filtering: 1
+  skip_table_builder_flush: 0
+  format_version: 2
+2026/10/28-12:38:39.073508 708e71d45940        Options.write_buffer_size: 4194304
+2026/10/28-12:38:39.073509 708e71d45940  Options.max_write_buffer_number: 3
+2026/10/28-12:38:39.073510 708e71d45940          Options.compression: NoCompression
+2026/10/28-12:38:39.073510 708e71d45940                  Options.bottommost_compression: Disabled
+2026/10/28-12:38:39.073511 708e71d45940       Options.prefix_extractor: nullptr
+2026/10/28-12:38:39.073511 708e71d45940             Options.num_levels: 7
+2026/10/28-12:38:39.073512 708e71d45940        Options.min_write_buffer_number_to_merge: 1
+2026/10/28-12:38:39.073512 708e71d45940     Options.max_write_buffer_number_to_maintain: 0
+2026/10/28-12:38:39.073513 708e71d45940            Options.compression_opts.window_bits: -14
+2026/10/28-12:38:39.073513 708e71d45940                  Options.compression_opts.level: -1
+2026/10/28-12:38:39.073514 708e71d45940               Options.compression_opts.strategy: 0
+2026/10/28-12:38:39.073514 708e71d45940         Options.compression_opts.max_dict_bytes: 0
+2026/10/28-12:38:39.073517 708e71d45940      Options.level0_file_num_compaction_trigger: 4
+2026/10/28-12:38:39.073517 708e71d45940          Options.level0_slowdown_writes_trigger: 6
+2026/10/28-12:38:39.073517 708e71d45940              Options.level0_stop_writes_trigger: 1000000
+2026/10/28-12:38:39.073518 708e71d45940                   Options.target_file_size_base: 2097152
+2026/10/28-12:38:39.073518 708e71d45940             Options.target_file_size_multiplier: 1
+2026/10/28-12:38:39.073519 708e71d45940                Options.max_bytes_for_level_base: 10485760
+2026/10/28-12:38:39.073519 708e71d45940 Options.level_compaction_dynamic_level_bytes: 0
+2026/10/28-12:38:39.073520 708e71d45940          Options.max_bytes_for_level_multiplier: 10
+2026/10/28-12:38:39.073520 708e71d45940 Options.max_bytes_for_level_multiplier_addtl[0]: 1
+2026/10/28-12:38:39.073521 708e71d45940 Options.max_bytes_for_level_multiplier_addtl[1]: 1
+2026/10/28-12:38:39.073521 708e71d45940 Options.max_bytes_for_level_multiplier_addtl[2]: 1
+2026/10/28-12:38:39.073522 708e71d45940 Options.max_bytes_for_level_multiplier_addtl[3]: 1
+2026/10/28-12:38:39.073522 708e71d45940 Options.max_bytes_for_level_multiplier_addtl[4]: 1
+2026/10/28-12:38:39.073523 708e71d45940 Options.max_bytes_for_level_multiplier_addtl[5]: 1
+2026/10/28-12:38:39.073523 708e71d45940 Options.max_bytes_for_level_multiplier_addtl[6]: 1
+2026/10/28-12:38:39.073523 708e71d45940       Options.max_sequential_skip_in_iterations: 8
+2026/10/28-12:38:39.073524 708e71d45940              Options.expanded_compaction_factor: 25
+2026/10/28-12:38:39.073524 708e71d45940                Options.source_compaction_factor: 1
+2026/10/28-12:38:39.073525 708e71d45940          Options.max_grandparent_overlap_factor: 10
+2026/10/28-12:38:39.073525 708e71d45940                        Options.arena_block_size: 524288
+2026/10/28-12:38:39.073526 708e71d45940   Options.soft_pending_compaction_bytes_limit: 68719476736
+2026/10/28-12:38:39.073526 708e71d45940   Options.hard_pending_compaction_bytes_limit: 137438953472
+2026/10/28-12:38:39.073527 708e71d45940       Options.rate_limit_delay_max_milliseconds: 1000
+2026/10/28-12:38:39.073527 708e71d45940                Options.disable_auto_compactions: 1
+2026/10/28-12:38:39.073528 708e71d45940           Options.verify_checksums_in_compaction: 1
+2026/10/28-12:38:39.073528 708e71d45940                         Options.compaction_style: 0
+2026/10/28-12:38:39.073528 708e71d45940                           Options.compaction_pri: 0
+2026/10/28-12:38:39.073529 708e71d45940  Options.compaction_options_universal.size_ratio: 1
+2026/10/28-12:38:39.073529 708e71d45940 Options.compaction_options_universal.min_merge_width: 2
+2026/10/28-12:38:39.073530 708e71d45940 Options.compaction_options_universal.max_merge_width: 4294967295
+2026/10/28-12:38:39.073530 708e71d45940 Options.compaction_options_universal.max_size_amplification_percent: 200
+2026/10/28-12:38:39.073531 708e71d45940 Options.compaction_options_universal.compression_size_percent: -1
+2026/10/28-12:38:39.073531 708e71d45940 Options.compaction_options_fifo.max_table_files_size: 1073741824
+2026/10/28-12:38:39.073532 708e71d45940                   Options.table_properties_collectors: 
+2026/10/28-12:38:39.073532 708e71d45940                   Options.inplace_update_support: 0
+2026/10/28-12:38:39.073532 708e71d45940                 Options.inplace_update_num_locks: 10000
+2026/10/28-12:38:39.073533 708e71d45940               Options.min_partial_merge_operands: 2
+2026/10/28-12:38:39.073533 708e71d45940               Options.memtable_prefix_bloom_size_ratio: 0.000000
+2026/10/28-12:38:39.073534 708e71d45940   Options.memtable_huge_page_size: 0
+2026/10/28-12:38:39.073535 708e71d45940                           Options.bloom_locality: 0
+2026/10/28-12:38:39.073535 708e71d45940                    Options.max_successive_merges: 0
+2026/10/28-12:38:39.073536 708e71d45940                Options.optimize_filters_for_hits: 0
+2026/10/28-12:38:39.073536 708e71d45940                Options.paranoid_file_checks: 0
+2026/10/28-12:38:39.073537 708e71d45940                Options.report_bg_io_stats: 0
+2026/10/28-12:38:39.073991 708e71d45940 Recovered from manifest file:/dev/shm/ch-rdb37-fix/db/MANIFEST-000001 succeeded,manifest_file_number is 1, next_file_number is 3, last_sequence is 0, log_number is 0,prev_log_number is 0,max_column_family is 0
+2026/10/28-12:38:39.073992 708e71d45940 Column family [default] (ID 0), log number is 0
+2026/10/28-12:38:39.074233 708e71d45940 DB pointer 0x56231ed320d0
+2026/10/28-12:38:39.078831 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 0.
+2026/10/28-12:38:39.078920 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.078912) Calling FlushMemTableToOutputFile with column family [default], flush slots available 1, compaction slots allowed 1, compaction slots scheduled 1
+2026/10/28-12:38:39.078924 708e6cdf66c0 [default] [JOB 2] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.078937 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519078934, "job": 2, "event": "flush_started", "num_memtables": 1, "num_entries": 3894, "num_deletes": 0, "memory_usage": 4066384}
+2026/10/28-12:38:39.078939 708e6cdf66c0 [default] [JOB 2] Level-0 flush table #6: started
+2026/10/28-12:38:39.081262 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 1.
+2026/10/28-12:38:39.083709 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 2.
+2026/10/28-12:38:39.083711 708e6c5f56c0 [WARN] [default] Stopping writes because we have 3 immutable memtables (waiting for flush), max_write_buffer_number is set to 3
+2026/10/28-12:38:39.085154 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519085149, "cf_name": "default", "job": 2, "event": "table_file_creation", "file_number": 6, "file_size": 4023812, "table_properties": {"data_size": 3995254, "index_size": 27716, "filter_size": 0, "raw_key_size": 93456, "raw_average_key_size": 24, "raw_value_size": 3894000, "raw_average_value_size": 1000, "num_data_blocks": 974, "num_entries": 3894, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2026/10/28-12:38:39.085160 708e6cdf66c0 [default] [JOB 2] Level-0 flush table #6: 4023812 bytes OK
+2026/10/28-12:38:39.085169 708e6cdf66c0 Creating manifest 7
+2026/10/28-12:38:39.086098 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.085164) [default] Level-0 commit table #6 started
+2026/10/28-12:38:39.086099 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.086079) [default] Level-0 commit table #6: memtable #1 done
+2026/10/28-12:38:39.086100 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.086084) EVENT_LOG_v1 {"time_micros": 1793205519086082, "job": 2, "event": "flush_finished", "lsm_state": [1, 0, 0, 0, 0, 0, 0], "immutable_memtables": 2}
+2026/10/28-12:38:39.086101 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.086093) [default] Level summary: base level 1 max bytes base 10485760 files[1 0 0 0 0 0 0] max score 0.25
+2026/10/28-12:38:39.086120 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.086116) Calling FlushMemTableToOutputFile with column family [default], flush slots available 1, compaction slots allowed 1, compaction slots scheduled 1
+2026/10/28-12:38:39.086121 708e6cdf66c0 [default] [JOB 3] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.086122 708e6cdf66c0 [default] [JOB 3] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.086124 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519086123, "job": 3, "event": "flush_started", "num_memtables": 2, "num_entries": 7788, "num_deletes": 0, "memory_usage": 8132616}
+2026/10/28-12:38:39.086125 708e6cdf66c0 [default] [JOB 3] Level-0 flush table #8: started
+2026/10/28-12:38:39.087498 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 2.
+2026/10/28-12:38:39.087500 708e6c5f56c0 [WARN] [default] Stopping writes because we have 3 immutable memtables (waiting for flush), max_write_buffer_number is set to 3
+2026/10/28-12:38:39.097684 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519097678, "cf_name": "default", "job": 3, "event": "table_file_creation", "file_number": 8, "file_size": 8047309, "table_properties": {"data_size": 7990518, "index_size": 55949, "filter_size": 0, "raw_key_size": 186912, "raw_average_key_size": 24, "raw_value_size": 7788000, "raw_average_value_size": 1000, "num_data_blocks": 1947, "num_entries": 7788, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2026/10/28-12:38:39.097688 708e6cdf66c0 [default] [JOB 3] Level-0 flush table #8: 8047309 bytes OK
+2026/10/28-12:38:39.097713 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.097691) [default] Level-0 commit table #8 started
+2026/10/28-12:38:39.097714 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.097702) [default] Level-0 commit table #8: memtable #1 done
+2026/10/28-12:38:39.097715 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.097703) [default] Level-0 commit table #8: memtable #2 done
+2026/10/28-12:38:39.097715 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.097705) EVENT_LOG_v1 {"time_micros": 1793205519097703, "job": 3, "event": "flush_finished", "lsm_state": [2, 0, 0, 0, 0, 0, 0], "immutable_memtables": 1}
+2026/10/28-12:38:39.097716 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.097710) [default] Level summary: base level 1 max bytes base 10485760 files[2 0 0 0 0 0 0] max score 0.50
+2026/10/28-12:38:39.097728 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.097725) Calling FlushMemTableToOutputFile with column family [default], flush slots available 1, compaction slots allowed 1, compaction slots scheduled 1
+2026/10/28-12:38:39.097728 708e6cdf66c0 [default] [JOB 4] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.097731 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519097729, "job": 4, "event": "flush_started", "num_memtables": 1, "num_entries": 3893, "num_deletes": 0, "memory_usage": 4066184}
+2026/10/28-12:38:39.097731 708e6cdf66c0 [default] [JOB 4] Level-0 flush table #9: started
+2026/10/28-12:38:39.099048 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 1.
+2026/10/28-12:38:39.100366 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 2.
+2026/10/28-12:38:39.100369 708e6c5f56c0 [WARN] [default] Stopping writes because we have 3 immutable memtables (waiting for flush), max_write_buffer_number is set to 3
+2026/10/28-12:38:39.103073 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519103070, "cf_name": "default", "job": 4, "event": "table_file_creation", "file_number": 9, "file_size": 4022822, "table_properties": {"data_size": 3994248, "index_size": 27732, "filter_size": 0, "raw_key_size": 93432, "raw_average_key_size": 24, "raw_value_size": 3893000, "raw_average_value_size": 1000, "num_data_blocks": 974, "num_entries": 3893, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2026/10/28-12:38:39.103077 708e6cdf66c0 [default] [JOB 4] Level-0 flush table #9: 4022822 bytes OK
+2026/10/28-12:38:39.103097 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.103079) [default] Level-0 commit table #9 started
+2026/10/28-12:38:39.103098 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.103089) [default] Level-0 commit table #9: memtable #1 done
+2026/10/28-12:38:39.103098 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.103091) EVENT_LOG_v1 {"time_micros": 1793205519103089, "job": 4, "event": "flush_finished", "lsm_state": [3, 0, 0, 0, 0, 0, 0], "immutable_memtables": 2}
+2026/10/28-12:38:39.103099 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.103095) [default] Level summary: base level 1 max bytes base 10485760 files[3 0 0 0 0 0 0] max score 0.75
+2026/10/28-12:38:39.103109 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.103108) Calling FlushMemTableToOutputFile with column family [default], flush slots available 1, compaction slots allowed 1, compaction slots scheduled 1
+2026/10/28-12:38:39.103110 708e6cdf66c0 [default] [JOB 5] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.103110 708e6cdf66c0 [default] [JOB 5] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.103112 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519103111, "job": 5, "event": "flush_started", "num_memtables": 2, "num_entries": 7786, "num_deletes": 0, "memory_usage": 8132464}
+2026/10/28-12:38:39.103113 708e6cdf66c0 [default] [JOB 5] Level-0 flush table #10: started
+2026/10/28-12:38:39.104425 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 2.
+2026/10/28-12:38:39.104427 708e6c5f56c0 [WARN] [default] Stopping writes because we have 3 immutable memtables (waiting for flush), max_write_buffer_number is set to 3
+2026/10/28-12:38:39.113292 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519113287, "cf_name": "default", "job": 5, "event": "table_file_creation", "file_number": 10, "file_size": 8045268, "table_properties": {"data_size": 7988477, "index_size": 55949, "filter_size": 0, "raw_key_size": 186864, "raw_average_key_size": 24, "raw_value_size": 7786000, "raw_average_value_size": 1000, "num_data_blocks": 1947, "num_entries": 7786, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2026/10/28-12:38:39.113295 708e6cdf66c0 [default] [JOB 5] Level-0 flush table #10: 8045268 bytes OK
+2026/10/28-12:38:39.113309 708e6cdf66c0 [WARN] [default] Increasing compaction threads because we have 4 level-0 files 
+2026/10/28-12:38:39.113354 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.113297) [default] Level-0 commit table #10 started
+2026/10/28-12:38:39.113355 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.113306) [default] Level-0 commit table #10: memtable #1 done
+2026/10/28-12:38:39.113356 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.113306) [default] Level-0 commit table #10: memtable #2 done
+2026/10/28-12:38:39.113356 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.113308) EVENT_LOG_v1 {"time_micros": 1793205519113307, "job": 5, "event": "flush_finished", "lsm_state": [4, 0, 0, 0, 0, 0, 0], "immutable_memtables": 1}
+2026/10/28-12:38:39.113357 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.113352) [default] Level summary: base level 1 max bytes base 10485760 files[4 0 0 0 0 0 0] max score 1.00
+2026/10/28-12:38:39.113365 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.113363) Calling FlushMemTableToOutputFile with column family [default], flush slots available 1, compaction slots allowed 1, compaction slots scheduled 0
+2026/10/28-12:38:39.113366 708e6cdf66c0 [default] [JOB 6] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.113368 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519113367, "job": 6, "event": "flush_started", "num_memtables": 1, "num_entries": 3894, "num_deletes": 0, "memory_usage": 4066248}
+2026/10/28-12:38:39.113369 708e6cdf66c0 [default] [JOB 6] Level-0 flush table #11: started
+2026/10/28-12:38:39.113427 708e6d5f76c0 [WARN] ------- DUMPING STATS -------
+2026/10/28-12:38:39.113434 708e6d5f76c0 [WARN] 
+** Compaction Stats [default] **
+Level    Files   Size(MB) Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      4/0      23.02   1.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0    690.2         0         4    0.008       0      0
+ Sum      4/0      23.02   0.0      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0    690.2         0         4    0.008       0      0
+ Int      0/0       0.00   0.0      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0    690.2         0         4    0.008       0      0
+Uptime(secs): 0.0 total, 0.0 interval
+AddFile(GB): cumulative 0.000, interval 0.000
+Cumulative compaction: 0.02 GB write, 576.91 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Interval compaction: 0.02 GB write, 576.91 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 4 memtable_compaction, 0 memtable_slowdown, interval 4 total count
+
+** DB Stats **
+Uptime(secs): 0.0 total, 0.0 interval
+Cumulative writes: 27K writes, 27K keys, 27K batches, 1.0 writes per batch, ingest: 0.00 GB, 0.00 MB/s
+Cumulative WAL: 0 writes, 0 syncs, 0.00 writes per sync, written: 0.00 GB, 0.00 MB/s
+Cumulative stall: 00:00:0.024 H:M:S, 61.0 percent
+Interval writes: 27K writes, 27K keys, 27K batches, 1.0 writes per batch, ingest: 0.00 MB, 0.00 MB/s
+Interval WAL: 0 writes, 0 syncs, 0.00 writes per sync, written: 0.00 MB, 0.00 MB/s
+Interval stall: 00:00:0.024 H:M:S, 61.0 percent
+** Level 0 read latency histogram (micros):
+Count: 16 Average: 1.5625  StdDev: 1.90
+Min: 0  Median: 0.7273  Max: 5
+Percentiles: P50: 0.73 P75: 2.50 P99: 4.95 P99.9: 4.99 P99.99: 5.00
+------------------------------------------------------
+[       0,       1 )       11  68.750%  68.750% ##############
+[       2,       3 )        2  12.500%  81.250% ###
+[       4,       5 )        3  18.750% 100.000% ####
+
+2026/10/28-12:38:39.113478 708e6d5f76c0 [WARN] STATISTICS:
+ rocksdb.block.cache.miss COUNT : 0
+rocksdb.block.cache.hit COUNT : 0
+rocksdb.block.cache.add COUNT : 0
+rocksdb.block.cache.add.failures COUNT : 0
+rocksdb.block.cache.index.miss COUNT : 0
+rocksdb.block.cache.index.hit COUNT : 0
+rocksdb.block.cache.index.bytes.insert COUNT : 0
+rocksdb.block.cache.index.bytes.evict COUNT : 0
+rocksdb.block.cache.filter.miss COUNT : 0
+rocksdb.block.cache.filter.hit COUNT : 0
+rocksdb.block.cache.filter.bytes.insert COUNT : 0
+rocksdb.block.cache.filter.bytes.evict COUNT : 0
+rocksdb.block.cache.data.miss COUNT : 0
+rocksdb.block.cache.data.hit COUNT : 0
+rocksdb.block.cache.bytes.read COUNT : 0
+rocksdb.block.cache.bytes.write COUNT : 0
+rocksdb.bloom.filter.useful COUNT : 0
+rocksdb.persistent.cache.hit COUNT : 0
+rocksdb.persistent.cache.miss COUNT : 0
+rocksdb.memtable.hit COUNT : 0
+rocksdb.memtable.miss COUNT : 0
+rocksdb.l0.hit COUNT : 0
+rocksdb.l1.hit COUNT : 0
+rocksdb.l2andup.hit COUNT : 0
+rocksdb.compaction.key.drop.new COUNT : 0
+rocksdb.compaction.key.drop.obsolete COUNT : 0
+rocksdb.compaction.key.drop.user COUNT : 0
+rocksdb.number.keys.written COUNT : 27263
+rocksdb.number.keys.read COUNT : 0
+rocksdb.number.keys.updated COUNT : 0
+rocksdb.bytes.written COUNT : 0
+rocksdb.bytes.read COUNT : 0
+rocksdb.number.db.seek COUNT : 0
+rocksdb.number.db.next COUNT : 0
+rocksdb.number.db.prev COUNT : 0
+rocksdb.number.db.seek.found COUNT : 0
+rocksdb.number.db.next.found COUNT : 0
+rocksdb.number.db.prev.found COUNT : 0
+rocksdb.db.iter.bytes.read COUNT : 0
+rocksdb.no.file.closes COUNT : 0
+rocksdb.no.file.opens COUNT : 4
+rocksdb.no.file.errors COUNT : 0
+rocksdb.l0.slowdown.micros COUNT : 0
+rocksdb.memtable.compaction.micros COUNT : 0
+rocksdb.l0.num.files.stall.micros COUNT : 0
+rocksdb.stall.micros COUNT : 24332
+rocksdb.db.mutex.wait.micros COUNT : 0
+rocksdb.rate.limit.delay.millis COUNT : 0
+rocksdb.num.iterators COUNT : 0
+rocksdb.number.multiget.get COUNT : 0
+rocksdb.number.multiget.keys.read COUNT : 0
+rocksdb.number.multiget.bytes.read COUNT : 0
+rocksdb.number.deletes.filtered COUNT : 0
+rocksdb.number.merge.failures COUNT : 0
+rocksdb.sequence.number COUNT : 27270
+rocksdb.bloom.filter.prefix.checked COUNT : 0
+rocksdb.bloom.filter.prefix.useful COUNT : 0
+rocksdb.number.reseeks.iteration COUNT : 0
+rocksdb.getupdatessince.calls COUNT : 0
+rocksdb.block.cachecompressed.miss COUNT : 0
+rocksdb.block.cachecompressed.hit COUNT : 0
+rocksdb.block.cachecompressed.add COUNT : 0
+rocksdb.block.cachecompressed.add.failures COUNT : 0
+rocksdb.wal.synced COUNT : 0
+rocksdb.wal.bytes COUNT : 0
+rocksdb.write.self COUNT : 27274
+rocksdb.write.other COUNT : 0
+rocksdb.write.timeout COUNT : 0
+rocksdb.write.wal COUNT : 0
+rocksdb.compact.read.bytes COUNT : 0
+rocksdb.compact.write.bytes COUNT : 0
+rocksdb.flush.write.bytes COUNT : 24139565
+rocksdb.number.direct.load.table.properties COUNT : 0
+rocksdb.number.superversion_acquires COUNT : 0
+rocksdb.number.superversion_releases COUNT : 0
+rocksdb.number.superversion_cleanups COUNT : 0
+rocksdb.number.block.compressed COUNT : 0
+rocksdb.number.block.decompressed COUNT : 0
+rocksdb.number.block.not_compressed COUNT : 0
+rocksdb.merge.operation.time.nanos COUNT : 0
+rocksdb.filter.operation.time.nanos COUNT : 0
+rocksdb.row.cache.hit COUNT : 0
+rocksdb.row.cache.miss COUNT : 0
+rocksdb.db.get.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.db.write.micros statistics Percentiles :=> 50 : 0.509384 95 : 0.967829 99 : 1.580682
+rocksdb.compaction.times.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.subcompaction.setup.times.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.table.sync.micros statistics Percentiles :=> 50 : 7.000000 95 : 11.000000 99 : 11.000000
+rocksdb.compaction.outfile.sync.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.wal.file.sync.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.manifest.file.sync.micros statistics Percentiles :=> 50 : 0.600000 95 : 1.700000 99 : 1.940000
+rocksdb.table.open.io.micros statistics Percentiles :=> 50 : 55.000000 95 : 68.000000 99 : 68.000000
+rocksdb.db.multiget.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.read.block.compaction.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.read.block.get.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.write.raw.block.micros statistics Percentiles :=> 50 : 3.113990 95 : 3.919080 99 : 3.990643
+rocksdb.l0.slowdown.count statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.memtable.compaction.count statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.num.files.stall.count statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.hard.rate.limit.delay.count statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.soft.rate.limit.delay.count statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.numfiles.in.singlecompaction statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.db.seek.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.db.write.stall statistics Percentiles :=> 50 : 3000.000000 95 : 10232.000000 99 : 10232.000000
+rocksdb.sst.read.micros statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.num.subcompactions.scheduled statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.bytes.per.read statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.bytes.per.write statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.bytes.per.multiget statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.bytes.compressed statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.bytes.decompressed statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.compression.times.nanos statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+rocksdb.decompression.times.nanos statistics Percentiles :=> 50 : 0.000000 95 : 0.000000 99 : 0.000000
+2026/10/28-12:38:39.113492 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.113488) Compaction nothing to do
+2026/10/28-12:38:39.114764 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 1.
+2026/10/28-12:38:39.114766 708e6c5f56c0 [WARN] [default] Increasing compaction threads because we have 4 level-0 files 
+2026/10/28-12:38:39.114783 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.114780) Compaction nothing to do
+2026/10/28-12:38:39.116068 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 2.
+2026/10/28-12:38:39.116070 708e6c5f56c0 [WARN] [default] Stopping writes because we have 3 immutable memtables (waiting for flush), max_write_buffer_number is set to 3
+2026/10/28-12:38:39.116083 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.116082) Compaction nothing to do
+2026/10/28-12:38:39.118308 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519118305, "cf_name": "default", "job": 6, "event": "table_file_creation", "file_number": 11, "file_size": 4023843, "table_properties": {"data_size": 3995269, "index_size": 27732, "filter_size": 0, "raw_key_size": 93456, "raw_average_key_size": 24, "raw_value_size": 3894000, "raw_average_value_size": 1000, "num_data_blocks": 974, "num_entries": 3894, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2026/10/28-12:38:39.118312 708e6cdf66c0 [default] [JOB 6] Level-0 flush table #11: 4023843 bytes OK
+2026/10/28-12:38:39.118326 708e6cdf66c0 [WARN] [default] Increasing compaction threads because we have 5 level-0 files 
+2026/10/28-12:38:39.118334 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.118314) [default] Level-0 commit table #11 started
+2026/10/28-12:38:39.118335 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.118323) [default] Level-0 commit table #11: memtable #1 done
+2026/10/28-12:38:39.118335 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.118325) EVENT_LOG_v1 {"time_micros": 1793205519118324, "job": 6, "event": "flush_finished", "lsm_state": [5, 0, 0, 0, 0, 0, 0], "immutable_memtables": 2}
+2026/10/28-12:38:39.118336 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.118331) [default] Level summary: base level 1 max bytes base 10485760 files[5 0 0 0 0 0 0] max score 1.25
+2026/10/28-12:38:39.118345 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.118341) Calling FlushMemTableToOutputFile with column family [default], flush slots available 1, compaction slots allowed 1, compaction slots scheduled 0
+2026/10/28-12:38:39.118346 708e6cdf66c0 [default] [JOB 10] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.118346 708e6cdf66c0 [default] [JOB 10] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.118348 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519118347, "job": 10, "event": "flush_started", "num_memtables": 2, "num_entries": 7787, "num_deletes": 0, "memory_usage": 8132488}
+2026/10/28-12:38:39.118349 708e6cdf66c0 [default] [JOB 10] Level-0 flush table #12: started
+2026/10/28-12:38:39.118350 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.118348) Compaction nothing to do
+2026/10/28-12:38:39.119636 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 2.
+2026/10/28-12:38:39.119638 708e6c5f56c0 [WARN] [default] Stopping writes because we have 3 immutable memtables (waiting for flush), max_write_buffer_number is set to 3
+2026/10/28-12:38:39.119654 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.119653) Compaction nothing to do
+2026/10/28-12:38:39.127601 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519127597, "cf_name": "default", "job": 10, "event": "table_file_creation", "file_number": 12, "file_size": 8046288, "table_properties": {"data_size": 7989497, "index_size": 55949, "filter_size": 0, "raw_key_size": 186888, "raw_average_key_size": 24, "raw_value_size": 7787000, "raw_average_value_size": 1000, "num_data_blocks": 1947, "num_entries": 7787, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2026/10/28-12:38:39.127604 708e6cdf66c0 [default] [JOB 10] Level-0 flush table #12: 8046288 bytes OK
+2026/10/28-12:38:39.127617 708e6cdf66c0 [WARN] [default] Increasing compaction threads because we have 6 level-0 files 
+2026/10/28-12:38:39.127624 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.127606) [default] Level-0 commit table #12 started
+2026/10/28-12:38:39.127624 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.127614) [default] Level-0 commit table #12: memtable #1 done
+2026/10/28-12:38:39.127625 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.127614) [default] Level-0 commit table #12: memtable #2 done
+2026/10/28-12:38:39.127625 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.127616) EVENT_LOG_v1 {"time_micros": 1793205519127614, "job": 10, "event": "flush_finished", "lsm_state": [6, 0, 0, 0, 0, 0, 0], "immutable_memtables": 1}
+2026/10/28-12:38:39.127626 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.127621) [default] Level summary: base level 1 max bytes base 10485760 files[6 0 0 0 0 0 0] max score 1.50
+2026/10/28-12:38:39.127636 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.127634) Calling FlushMemTableToOutputFile with column family [default], flush slots available 1, compaction slots allowed 1, compaction slots scheduled 0
+2026/10/28-12:38:39.127636 708e6cdf66c0 [default] [JOB 14] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.127638 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519127637, "job": 14, "event": "flush_started", "num_memtables": 1, "num_entries": 3893, "num_deletes": 0, "memory_usage": 4065456}
+2026/10/28-12:38:39.127639 708e6cdf66c0 [default] [JOB 14] Level-0 flush table #13: started
+2026/10/28-12:38:39.127639 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.127638) Compaction nothing to do
+2026/10/28-12:38:39.128932 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 1.
+2026/10/28-12:38:39.128935 708e6c5f56c0 [WARN] [default] Increasing compaction threads because we have 6 level-0 files 
+2026/10/28-12:38:39.128950 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.128949) Compaction nothing to do
+2026/10/28-12:38:39.130212 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 2.
+2026/10/28-12:38:39.130214 708e6c5f56c0 [WARN] [default] Stopping writes because we have 3 immutable memtables (waiting for flush), max_write_buffer_number is set to 3
+2026/10/28-12:38:39.130229 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.130228) Compaction nothing to do
+2026/10/28-12:38:39.131966 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519131963, "cf_name": "default", "job": 14, "event": "table_file_creation", "file_number": 13, "file_size": 4022823, "table_properties": {"data_size": 3994249, "index_size": 27732, "filter_size": 0, "raw_key_size": 93432, "raw_average_key_size": 24, "raw_value_size": 3893000, "raw_average_value_size": 1000, "num_data_blocks": 974, "num_entries": 3893, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2026/10/28-12:38:39.131970 708e6cdf66c0 [default] [JOB 14] Level-0 flush table #13: 4022823 bytes OK
+2026/10/28-12:38:39.131982 708e6cdf66c0 [WARN] [default] Increasing compaction threads because we have 7 level-0 files 
+2026/10/28-12:38:39.131989 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.131972) [default] Level-0 commit table #13 started
+2026/10/28-12:38:39.131989 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.131979) [default] Level-0 commit table #13: memtable #1 done
+2026/10/28-12:38:39.131990 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.131980) EVENT_LOG_v1 {"time_micros": 1793205519131980, "job": 14, "event": "flush_finished", "lsm_state": [7, 0, 0, 0, 0, 0, 0], "immutable_memtables": 2}
+2026/10/28-12:38:39.131990 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.131987) [default] Level summary: base level 1 max bytes base 10485760 files[7 0 0 0 0 0 0] max score 1.75
+2026/10/28-12:38:39.131999 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.131995) Calling FlushMemTableToOutputFile with column family [default], flush slots available 1, compaction slots allowed 1, compaction slots scheduled 0
+2026/10/28-12:38:39.131999 708e6cdf66c0 [default] [JOB 17] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.132000 708e6cdf66c0 [default] [JOB 17] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.132002 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519132001, "job": 17, "event": "flush_started", "num_memtables": 2, "num_entries": 7786, "num_deletes": 0, "memory_usage": 8132800}
+2026/10/28-12:38:39.132002 708e6cdf66c0 [default] [JOB 17] Level-0 flush table #14: started
+2026/10/28-12:38:39.132003 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.132001) Compaction nothing to do
+2026/10/28-12:38:39.133294 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 2.
+2026/10/28-12:38:39.133296 708e6c5f56c0 [WARN] [default] Stopping writes because we have 3 immutable memtables (waiting for flush), max_write_buffer_number is set to 3
+2026/10/28-12:38:39.133309 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.133308) Compaction nothing to do
+2026/10/28-12:38:39.140776 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519140772, "cf_name": "default", "job": 17, "event": "table_file_creation", "file_number": 14, "file_size": 8045267, "table_properties": {"data_size": 7988476, "index_size": 55949, "filter_size": 0, "raw_key_size": 186864, "raw_average_key_size": 24, "raw_value_size": 7786000, "raw_average_value_size": 1000, "num_data_blocks": 1947, "num_entries": 7786, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2026/10/28-12:38:39.140779 708e6cdf66c0 [default] [JOB 17] Level-0 flush table #14: 8045267 bytes OK
+2026/10/28-12:38:39.140791 708e6cdf66c0 [WARN] [default] Increasing compaction threads because we have 8 level-0 files 
+2026/10/28-12:38:39.140799 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.140781) [default] Level-0 commit table #14 started
+2026/10/28-12:38:39.140800 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.140789) [default] Level-0 commit table #14: memtable #1 done
+2026/10/28-12:38:39.140800 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.140789) [default] Level-0 commit table #14: memtable #2 done
+2026/10/28-12:38:39.140801 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.140791) EVENT_LOG_v1 {"time_micros": 1793205519140790, "job": 17, "event": "flush_finished", "lsm_state": [8, 0, 0, 0, 0, 0, 0], "immutable_memtables": 1}
+2026/10/28-12:38:39.140802 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.140797) [default] Level summary: base level 1 max bytes base 10485760 files[8 0 0 0 0 0 0] max score 2.00
+2026/10/28-12:38:39.140810 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.140807) Calling FlushMemTableToOutputFile with column family [default], flush slots available 1, compaction slots allowed 1, compaction slots scheduled 0
+2026/10/28-12:38:39.140811 708e6cdf66c0 [default] [JOB 20] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.140812 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519140812, "job": 20, "event": "flush_started", "num_memtables": 1, "num_entries": 3893, "num_deletes": 0, "memory_usage": 4066256}
+2026/10/28-12:38:39.140813 708e6cdf66c0 [default] [JOB 20] Level-0 flush table #15: started
+2026/10/28-12:38:39.140816 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.140814) Compaction nothing to do
+2026/10/28-12:38:39.142096 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 1.
+2026/10/28-12:38:39.142098 708e6c5f56c0 [WARN] [default] Increasing compaction threads because we have 8 level-0 files 
+2026/10/28-12:38:39.142114 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.142113) Compaction nothing to do
+2026/10/28-12:38:39.143369 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 2.
+2026/10/28-12:38:39.143371 708e6c5f56c0 [WARN] [default] Stopping writes because we have 3 immutable memtables (waiting for flush), max_write_buffer_number is set to 3
+2026/10/28-12:38:39.143383 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.143382) Compaction nothing to do
+2026/10/28-12:38:39.145215 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519145212, "cf_name": "default", "job": 20, "event": "table_file_creation", "file_number": 15, "file_size": 4022822, "table_properties": {"data_size": 3994248, "index_size": 27732, "filter_size": 0, "raw_key_size": 93432, "raw_average_key_size": 24, "raw_value_size": 3893000, "raw_average_value_size": 1000, "num_data_blocks": 974, "num_entries": 3893, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2026/10/28-12:38:39.145219 708e6cdf66c0 [default] [JOB 20] Level-0 flush table #15: 4022822 bytes OK
+2026/10/28-12:38:39.145230 708e6cdf66c0 [WARN] [default] Increasing compaction threads because we have 9 level-0 files 
+2026/10/28-12:38:39.145237 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.145220) [default] Level-0 commit table #15 started
+2026/10/28-12:38:39.145237 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.145228) [default] Level-0 commit table #15: memtable #1 done
+2026/10/28-12:38:39.145238 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.145229) EVENT_LOG_v1 {"time_micros": 1793205519145228, "job": 20, "event": "flush_finished", "lsm_state": [9, 0, 0, 0, 0, 0, 0], "immutable_memtables": 2}
+2026/10/28-12:38:39.145238 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.145235) [default] Level summary: base level 1 max bytes base 10485760 files[9 0 0 0 0 0 0] max score 2.25
+2026/10/28-12:38:39.145247 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.145244) Calling FlushMemTableToOutputFile with column family [default], flush slots available 1, compaction slots allowed 1, compaction slots scheduled 0
+2026/10/28-12:38:39.145248 708e6cdf66c0 [default] [JOB 24] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.145248 708e6cdf66c0 [default] [JOB 24] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.145250 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519145249, "job": 24, "event": "flush_started", "num_memtables": 2, "num_entries": 7785, "num_deletes": 0, "memory_usage": 8131824}
+2026/10/28-12:38:39.145250 708e6cdf66c0 [default] [JOB 24] Level-0 flush table #16: started
+2026/10/28-12:38:39.145251 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.145250) Compaction nothing to do
+2026/10/28-12:38:39.146543 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 2.
+2026/10/28-12:38:39.146545 708e6c5f56c0 [WARN] [default] Stopping writes because we have 3 immutable memtables (waiting for flush), max_write_buffer_number is set to 3
+2026/10/28-12:38:39.146558 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.146557) Compaction nothing to do
+2026/10/28-12:38:39.154081 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519154078, "cf_name": "default", "job": 24, "event": "table_file_creation", "file_number": 16, "file_size": 8044247, "table_properties": {"data_size": 7987456, "index_size": 55949, "filter_size": 0, "raw_key_size": 186840, "raw_average_key_size": 24, "raw_value_size": 7785000, "raw_average_value_size": 1000, "num_data_blocks": 1947, "num_entries": 7785, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2026/10/28-12:38:39.154083 708e6cdf66c0 [default] [JOB 24] Level-0 flush table #16: 8044247 bytes OK
+2026/10/28-12:38:39.154095 708e6cdf66c0 [WARN] [default] Increasing compaction threads because we have 10 level-0 files 
+2026/10/28-12:38:39.154103 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.154085) [default] Level-0 commit table #16 started
+2026/10/28-12:38:39.154103 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.154092) [default] Level-0 commit table #16: memtable #1 done
+2026/10/28-12:38:39.154104 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.154093) [default] Level-0 commit table #16: memtable #2 done
+2026/10/28-12:38:39.154104 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.154094) EVENT_LOG_v1 {"time_micros": 1793205519154093, "job": 24, "event": "flush_finished", "lsm_state": [10, 0, 0, 0, 0, 0, 0], "immutable_memtables": 1}
+2026/10/28-12:38:39.154105 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.154100) [default] Level summary: base level 1 max bytes base 10485760 files[10 0 0 0 0 0 0] max score 2.50
+2026/10/28-12:38:39.154112 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.154110) Compaction nothing to do
+2026/10/28-12:38:39.154114 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.154112) Calling FlushMemTableToOutputFile with column family [default], flush slots available 1, compaction slots allowed 1, compaction slots scheduled 0
+2026/10/28-12:38:39.154126 708e6cdf66c0 [default] [JOB 28] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.154128 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519154127, "job": 28, "event": "flush_started", "num_memtables": 1, "num_entries": 3893, "num_deletes": 0, "memory_usage": 4066400}
+2026/10/28-12:38:39.154129 708e6cdf66c0 [default] [JOB 28] Level-0 flush table #17: started
+2026/10/28-12:38:39.155398 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 1.
+2026/10/28-12:38:39.155400 708e6c5f56c0 [WARN] [default] Increasing compaction threads because we have 10 level-0 files 
+2026/10/28-12:38:39.155414 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.155412) Compaction nothing to do
+2026/10/28-12:38:39.156678 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 2.
+2026/10/28-12:38:39.156680 708e6c5f56c0 [WARN] [default] Stopping writes because we have 3 immutable memtables (waiting for flush), max_write_buffer_number is set to 3
+2026/10/28-12:38:39.156699 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.156698) Compaction nothing to do
+2026/10/28-12:38:39.158454 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519158451, "cf_name": "default", "job": 28, "event": "table_file_creation", "file_number": 17, "file_size": 4022822, "table_properties": {"data_size": 3994248, "index_size": 27732, "filter_size": 0, "raw_key_size": 93432, "raw_average_key_size": 24, "raw_value_size": 3893000, "raw_average_value_size": 1000, "num_data_blocks": 974, "num_entries": 3893, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2026/10/28-12:38:39.158458 708e6cdf66c0 [default] [JOB 28] Level-0 flush table #17: 4022822 bytes OK
+2026/10/28-12:38:39.158470 708e6cdf66c0 [WARN] [default] Increasing compaction threads because we have 11 level-0 files 
+2026/10/28-12:38:39.158477 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.158459) [default] Level-0 commit table #17 started
+2026/10/28-12:38:39.158478 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.158467) [default] Level-0 commit table #17: memtable #1 done
+2026/10/28-12:38:39.158478 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.158469) EVENT_LOG_v1 {"time_micros": 1793205519158468, "job": 28, "event": "flush_finished", "lsm_state": [11, 0, 0, 0, 0, 0, 0], "immutable_memtables": 2}
+2026/10/28-12:38:39.158479 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.158475) [default] Level summary: base level 1 max bytes base 10485760 files[11 0 0 0 0 0 0] max score 2.75
+2026/10/28-12:38:39.158486 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.158484) Compaction nothing to do
+2026/10/28-12:38:39.158489 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.158486) Calling FlushMemTableToOutputFile with column family [default], flush slots available 1, compaction slots allowed 1, compaction slots scheduled 0
+2026/10/28-12:38:39.158491 708e6cdf66c0 [default] [JOB 32] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.158492 708e6cdf66c0 [default] [JOB 32] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.158493 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519158492, "job": 32, "event": "flush_started", "num_memtables": 2, "num_entries": 7787, "num_deletes": 0, "memory_usage": 8132720}
+2026/10/28-12:38:39.158494 708e6cdf66c0 [default] [JOB 32] Level-0 flush table #18: started
+2026/10/28-12:38:39.159770 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 2.
+2026/10/28-12:38:39.159772 708e6c5f56c0 [WARN] [default] Stopping writes because we have 3 immutable memtables (waiting for flush), max_write_buffer_number is set to 3
+2026/10/28-12:38:39.159785 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.159784) Compaction nothing to do
+2026/10/28-12:38:39.167449 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519167445, "cf_name": "default", "job": 32, "event": "table_file_creation", "file_number": 18, "file_size": 8046226, "table_properties": {"data_size": 7989467, "index_size": 55917, "filter_size": 0, "raw_key_size": 186888, "raw_average_key_size": 24, "raw_value_size": 7787000, "raw_average_value_size": 1000, "num_data_blocks": 1947, "num_entries": 7787, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2026/10/28-12:38:39.167451 708e6cdf66c0 [default] [JOB 32] Level-0 flush table #18: 8046226 bytes OK
+2026/10/28-12:38:39.167464 708e6cdf66c0 [WARN] [default] Increasing compaction threads because we have 12 level-0 files 
+2026/10/28-12:38:39.167471 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.167453) [default] Level-0 commit table #18 started
+2026/10/28-12:38:39.167471 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.167461) [default] Level-0 commit table #18: memtable #1 done
+2026/10/28-12:38:39.167472 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.167461) [default] Level-0 commit table #18: memtable #2 done
+2026/10/28-12:38:39.167472 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.167463) EVENT_LOG_v1 {"time_micros": 1793205519167462, "job": 32, "event": "flush_finished", "lsm_state": [12, 0, 0, 0, 0, 0, 0], "immutable_memtables": 1}
+2026/10/28-12:38:39.167473 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.167468) [default] Level summary: base level 1 max bytes base 10485760 files[12 0 0 0 0 0 0] max score 3.00
+2026/10/28-12:38:39.167486 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.167483) Calling FlushMemTableToOutputFile with column family [default], flush slots available 1, compaction slots allowed 1, compaction slots scheduled 0
+2026/10/28-12:38:39.167487 708e6cdf66c0 [default] [JOB 35] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.167488 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519167488, "job": 35, "event": "flush_started", "num_memtables": 1, "num_entries": 3895, "num_deletes": 0, "memory_usage": 4066352}
+2026/10/28-12:38:39.167489 708e6cdf66c0 [default] [JOB 35] Level-0 flush table #19: started
+2026/10/28-12:38:39.167493 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.167490) Compaction nothing to do
+2026/10/28-12:38:39.168780 708e6c5f56c0 [default] New memtable created with log file: #3. Immutable memtables: 1.
+2026/10/28-12:38:39.168782 708e6c5f56c0 [WARN] [default] Increasing compaction threads because we have 12 level-0 files 
+2026/10/28-12:38:39.168801 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.168798) Compaction nothing to do
+2026/10/28-12:38:39.169983 708e71d45940 [default] New memtable created with log file: #3. Immutable memtables: 2.
+2026/10/28-12:38:39.169997 708e71d45940 [WARN] [default] Stopping writes because we have 3 immutable memtables (waiting for flush), max_write_buffer_number is set to 3
+2026/10/28-12:38:39.170020 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.170018) Compaction nothing to do
+2026/10/28-12:38:39.172047 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519172043, "cf_name": "default", "job": 35, "event": "table_file_creation", "file_number": 19, "file_size": 4024864, "table_properties": {"data_size": 3996290, "index_size": 27732, "filter_size": 0, "raw_key_size": 93480, "raw_average_key_size": 24, "raw_value_size": 3895000, "raw_average_value_size": 1000, "num_data_blocks": 974, "num_entries": 3895, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2026/10/28-12:38:39.172049 708e6cdf66c0 [default] [JOB 35] Level-0 flush table #19: 4024864 bytes OK
+2026/10/28-12:38:39.172062 708e6cdf66c0 [WARN] [default] Increasing compaction threads because we have 13 level-0 files 
+2026/10/28-12:38:39.172068 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.172051) [default] Level-0 commit table #19 started
+2026/10/28-12:38:39.172069 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.172059) [default] Level-0 commit table #19: memtable #1 done
+2026/10/28-12:38:39.172070 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.172061) EVENT_LOG_v1 {"time_micros": 1793205519172060, "job": 35, "event": "flush_finished", "lsm_state": [13, 0, 0, 0, 0, 0, 0], "immutable_memtables": 2}
+2026/10/28-12:38:39.172070 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.172066) [default] Level summary: base level 1 max bytes base 10485760 files[13 0 0 0 0 0 0] max score 3.25
+2026/10/28-12:38:39.172080 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.172076) Calling FlushMemTableToOutputFile with column family [default], flush slots available 1, compaction slots allowed 1, compaction slots scheduled 0
+2026/10/28-12:38:39.172081 708e6cdf66c0 [default] [JOB 38] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.172082 708e6cdf66c0 [default] [JOB 38] Flushing memtable with next log file: 3
+2026/10/28-12:38:39.172083 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519172082, "job": 38, "event": "flush_started", "num_memtables": 2, "num_entries": 6026, "num_deletes": 0, "memory_usage": 6294872}
+2026/10/28-12:38:39.172084 708e6cdf66c0 [default] [JOB 38] Level-0 flush table #20: started
+2026/10/28-12:38:39.172087 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.172085) Compaction nothing to do
+2026/10/28-12:38:39.178942 708e6cdf66c0 EVENT_LOG_v1 {"time_micros": 1793205519178939, "cf_name": "default", "job": 38, "event": "table_file_creation", "file_number": 20, "file_size": 6226741, "table_properties": {"data_size": 6182710, "index_size": 43189, "filter_size": 0, "raw_key_size": 144624, "raw_average_key_size": 24, "raw_value_size": 6026000, "raw_average_value_size": 1000, "num_data_blocks": 1507, "num_entries": 6026, "filter_policy_name": "", "kDeletedKeys": "0", "kMergeOperands": "0"}}
+2026/10/28-12:38:39.178945 708e6cdf66c0 [default] [JOB 38] Level-0 flush table #20: 6226741 bytes OK
+2026/10/28-12:38:39.178958 708e6cdf66c0 [WARN] [default] Increasing compaction threads because we have 14 level-0 files 
+2026/10/28-12:38:39.178964 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.178946) [default] Level-0 commit table #20 started
+2026/10/28-12:38:39.178965 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.178955) [default] Level-0 commit table #20: memtable #1 done
+2026/10/28-12:38:39.178965 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.178955) [default] Level-0 commit table #20: memtable #2 done
+2026/10/28-12:38:39.178966 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.178957) EVENT_LOG_v1 {"time_micros": 1793205519178956, "job": 38, "event": "flush_finished", "lsm_state": [14, 0, 0, 0, 0, 0, 0], "immutable_memtables": 0}
+2026/10/28-12:38:39.178966 708e6cdf66c0 (Original Log Time 2026/10/28-12:38:39.178962) [default] Level summary: base level 1 max bytes base 10485760 files[14 0 0 0 0 0 0] max score 3.50
+2026/10/28-12:38:39.178975 708e6d5f76c0 (Original Log Time 2026/10/28-12:38:39.178974) Compaction nothing to do

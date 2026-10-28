@@ -1,0 +1,11 @@
+2080612:C 28 Oct 2026 12:28:52.603 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2080612:C 28 Oct 2026 12:28:52.603 # Redis version=999.999.999, bits=64, commit=00000000, modified=0, pid=2080612, just started
+2080612:C 28 Oct 2026 12:28:52.603 # Configuration loaded
+2080612:M 28 Oct 2026 12:28:52.603 * Running mode=standalone, port=15441.
+2080612:M 28 Oct 2026 12:28:52.603 # Server initialized
+2080612:M 28 Oct 2026 12:28:52.603 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+2080612:M 28 Oct 2026 12:28:52.603 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+2080612:M 28 Oct 2026 12:28:52.604 * Ready to accept connections
+2080612:signal-handler (1793204943) Received SIGTERM scheduling shutdown...
+2080612:M 28 Oct 2026 12:29:03.757 # User requested shutdown...
+2080612:M 28 Oct 2026 12:29:03.757 # Redis is now ready to exit, bye bye...
