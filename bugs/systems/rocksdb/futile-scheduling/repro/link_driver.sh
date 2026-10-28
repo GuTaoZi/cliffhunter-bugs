@@ -4,6 +4,7 @@
 #   link_driver.sh SHA12   -> ./futile_driver-SHA12 (+ .flags)
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 set -eu
+INENV=$(cd "$(dirname "$0")/../../../../../tools/reproduce" && pwd)/inenv.sh  # Nix or the host's tools
 D=$SCRIPT_DIR
 SHA=$1
 B=${CLIFF_DATA:-$HOME/.cache/cliffhunter-bugs}/build/rocksdb-$SHA/src
@@ -18,5 +19,6 @@ PCXX=$(sed -n 's/^PLATFORM_CXXFLAGS=//p' "$B/make_config.mk")
 # Release RocksDB (DEBUG_LEVEL=0) is built with -fno-rtti; the driver subclasses EnvWrapper, so it must match.
 CXXF="-O2 -DNDEBUG -fno-rtti -fno-omit-frame-pointer -include cstdint -std=c++11 $PCXX"
 echo "$CXXF" > "$D/futile_driver-$SHA.flags"
-nix-shell -p gcc gflags snappy lz4 zstd zlib bzip2 --run "g++ --version | head -1; g++ $CXXF -I$B/include -o $D/futile_driver-$SHA $D/futile_driver.cc $D/librocksdb-$SHA.a -lpthread -lrt -lsnappy -lgflags -lz -lbz2 -llz4 -lzstd -ldl"
+PLD=$(sed -n 's/^PLATFORM_LDFLAGS=//p' "$B/make_config.mk")  # the build's own link flags (io_uring, when it used it)
+"$INENV" "gcc gflags snappy lz4 zstd zlib bzip2" "g++ --version | head -1; g++ $CXXF -I$B/include -o $D/futile_driver-$SHA $D/futile_driver.cc $D/librocksdb-$SHA.a -lpthread -lrt -lsnappy -lgflags -lz -lbz2 -llz4 -lzstd -ldl $PLD"
 ls -la "$D/futile_driver-$SHA"
