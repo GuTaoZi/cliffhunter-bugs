@@ -1,12 +1,12 @@
 # cliffhunter-bugs
 
-Reproduced performance bugs in Redis, Valkey, memcached, PostgreSQL, RocksDB and MongoDB, each with the scripts that reproduce it, the patch or commits it compares, its results and its raw data.
+Reproduced performance bugs that show in latency in Redis, Valkey, PostgreSQL, RocksDB and MongoDB, each with the scripts that reproduce it, the patch or commits it compares, its results and its raw data. Bugs whose cost is only CPU, memory or availability are on the `archive/non-latency` branch.
 
 Every bug here sits in a heuristic: the program measures something (a size, a count, a time), keeps it, and compares it with a bound to choose among options that are all correct, and the choice feeds back into what it measures next. Every one is already public: fixed upstream, a ticket the vendor holds, or a documented server parameter. Each was reproduced on release builds, the two arms interleaved (the buggy parent and the fix; for MongoDB, two arrival orders of the same queries, or the two sides of a bound), and each result reports the latency or throughput, the CPU and the peak memory.
 
 The six MongoDB bugs are measured side by side, with where their time goes and where a timer belongs, in [`docs/mongodb-latency-bugs.md`](docs/mongodb-latency-bugs.md).
 
-24 bugs:
+13 bugs:
 
 | # | bug | effect | measured | how | upstream |
 |---|---|---|---|---|---|
@@ -23,17 +23,6 @@ The six MongoDB bugs are measured side by side, with where their time goes and w
 | 11 | [rocksdb/size-reset-to-zero](bugs/systems/rocksdb/size-reset-to-zero/README.md) | latency, moderate | scan throughput 188.5 vs 250.8 MB/s (272 vs 204 ms per 100,000-entry scan, 1.33x), system CPU 3.3x | buggy parent vs the fix | fixed upstream in 04b2c16f9 |
 | 12 | [rocksdb/useless-repeated-switching](bugs/systems/rocksdb/useless-repeated-switching/README.md) | latency, weak | 283-317 vs 0 write stops, stall time 1.81x, throughput unchanged | buggy parent vs the fix | fixed upstream in 91166012c |
 | 13 | [valkey/blind-to-target-overload](bugs/systems/valkey/blind-to-target-overload/README.md) | latency, moderate | p99 latency of 100-insert batches 2.52 vs 0.47 ms (5.4x), worst batch 2.8x, server CPU 2.0x, burst 1.28x; median unchanged | buggy parent vs the fix | fixed upstream in 262b371da0d2 |
-| 14 | [memcached/stuck-tail-blockers](bugs/systems/memcached/stuck-tail-blockers/README.md) | availability, strong | every write to the slab class refused (2,000 of 2,000; 20,000 of 20,000) vs 0 and 3 with the fix; latency lower only because refusals are immediate | buggy parent vs the fix | fixed upstream in f2a4e5b491ed |
-| 15 | [memcached/zero-stuck-backoff](bugs/systems/memcached/zero-stuck-backoff/README.md) | cpu, strong | idle server CPU 99.86% vs 0.00% of a core | buggy parent vs the fix | fixed upstream in 675d89d784df |
-| 16 | [rocksdb/marking-ignores-progress](bugs/systems/rocksdb/marking-ignores-progress/README.md) | cpu, strong | an idle database runs 429 compactions per 30 s (986 MB rewritten, 26.8 s CPU, 89% of a core; MANIFEST 940 B to 53 KB) vs none | buggy parent vs the fix | fixed upstream in f7b791b21 |
-| 17 | [rocksdb/marking-ignores-progress-3](bugs/systems/rocksdb/marking-ignores-progress-3/README.md) | cpu, strong | an idle database runs 218 compactions per 30 s (1.38 GB rewritten, 21.2 s CPU, 71% of a core; MANIFEST 881 B to 28 KB) vs none | buggy parent vs the fix | fixed upstream in eca47fb69 |
-| 18 | [redis/truncated-wait-time](bugs/systems/redis/truncated-wait-time/README.md) | cpu, small | idle CPU 4.8x (hz 10) and 9.3x (hz 100), at most 1.3% of a core | buggy parent vs the fix | fixed upstream in 175a9e3199f7 |
-| 19 | [rocksdb/futile-scheduling](bugs/systems/rocksdb/futile-scheduling/README.md) | cpu, small | 219 / 423 / 2,274 no-op compactions per 20 s (0 / 100 / 1,000 marked column families) vs 0; compaction pool 0.36 s CPU per 20 s and ReleaseSnapshot 2.3x at 1,000; put latency unchanged | buggy parent vs the fix | fixed upstream in 416943bf2 |
-| 20 | [valkey/self-reinforcing-sampling-skew](bugs/systems/valkey/self-reinforcing-sampling-skew/README.md) | cpu, weak | CPU 2.2x, but the 95% interval touches 1 | buggy parent vs the fix | fixed upstream in 45d03e616421 |
-| 21 | [postgres/uncounted-memory](bugs/systems/postgres/uncounted-memory/README.md) | memory, strong | RSS 5.41x (time 1.14x) | buggy parent vs the fix | fixed upstream in 85adc584e2b |
-| 22 | [redis/threshold-blocks-idle-free](bugs/systems/redis/threshold-blocks-idle-free/README.md) | memory, strong | accounted memory 1.98x, RSS 1.07x | buggy parent vs the fix | fixed upstream in 0a9377535b6f |
-| 23 | [rocksdb/masked-second-trigger](bugs/systems/rocksdb/masked-second-trigger/README.md) | memory, strong | peak RSS 2,627 vs 364 MB; the fix throttles writes, so the buggy version is faster | buggy parent vs the fix | fixed upstream in 18eeb7b90e45 |
-| 24 | [valkey/memory-guard-blocks-shrink](bugs/systems/valkey/memory-guard-blocks-shrink/README.md) | memory, strong | lowering maxmemory keeps 0.7% as many keys, CPU 1.58x | buggy parent vs the fix | fixed upstream in 130ea3973ba9 |
 
 ## Set up
 

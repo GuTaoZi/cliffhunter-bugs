@@ -1,1 +1,0 @@
-{"wall_s": 30.000, "cpu_s": 0.000, "peak_rss_mb": 21.4, "compactions_in_window": 2, "compactions_total": 6, "compaction_output_mb_in_window": 0.0, "compact_write_mb_total": 2.3, "manifest_bytes_before": 1540, "manifest_bytes_after": 1660, "reasons_total": "1:1,2:5"}

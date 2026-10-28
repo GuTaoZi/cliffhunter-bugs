@@ -1,2 +1,0 @@
-g++ (GCC) 15.3.0
--rwxr-xr-x 1 user users 130698624 Oct 27 15:05 $CLIFF_DATA/repro/rocksdb-futile-scheduling/futile_driver-b7e1c5213f00

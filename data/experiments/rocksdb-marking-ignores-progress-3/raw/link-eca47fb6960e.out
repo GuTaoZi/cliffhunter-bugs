@@ -1,2 +1,0 @@
-g++ (GCC) 15.3.0
--rwxr-xr-x 1 user users 212271240 Oct 27 15:37 $CLIFF_DATA/repro/rocksdb-bottommost-loop/bottom_loop-eca47fb6960e
