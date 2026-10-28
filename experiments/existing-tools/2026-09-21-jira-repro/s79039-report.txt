@@ -1,0 +1,81 @@
+============================================================================================================================
+== SERVER-79039  'Plan cache entries can be evicted and replanned continuously for certain workload patterns'
+==   reported 2023-07-17, Closed / Won't Do, 10 watchers, 0 comments, no fixVersion
+============================================================================================================================
+   1,000,000 docs in ch_s79039.docs, indexes {a:1} and {b:1}
+   C  find({a:1..1000, b:0})  -> 5 results, IXSCAN{a} EOF at ~6 works   => replan bar 60
+   E  find({a:900001, b:0})   -> 3 results, IXSCAN{a} EOF at ~50,001 works
+   BOTH classes want the same plan. Neither is mis-planned. The only thing that
+   differs between them is how much work that one plan costs: 8,333x.
+   same-shape premise: planCacheKey C=51C56FDD E=51C56FDD -> one entry, verified
+
+============================================================================================================================
+  multiset per epoch: 6 C + 6 E, x4 epochs = 48 queries.  ALL orders are permutations of it.  3 independent repeat(s).
+============================================================================================================================
+  order             docs examined      server ms       optimizer us       planning works     replans    wasteful
+  ------------------------------------------------------------------------------------------------------------------------
+  alternating       1,200,120+-0     1,715+-18    1,722,968+-16,668      3,600,504+-0    23+-0    23+-0
+  blocked_CE        1,200,120+-0     1,634+-49    1,641,589+-46,797      3,600,162+-0     4+-0     4+-0
+  blocked_EC        1,200,120+-0       766+-43      139,714+-5,978        300,006+-0     0+-0     0+-0
+  shuffled          1,200,120+-0     1,617+-30    1,623,640+-27,880      3,600,306+-0    11+-0    11+-0
+
+  O3 relation (identical multiset -> identical steady state and cost):
+    documents examined             worst/best =     1.0x   -> HOLDS
+    executor docs (server-wide)    worst/best =     1.0x   -> HOLDS
+    server time                    worst/best =     2.2x   -> VIOLATED, 2.2x
+    optimizer CPU (us)             worst/best =    12.3x   -> VIOLATED, 12.3x
+    multi-planning invocations     worst/best =    24.0x   -> VIOLATED, 24.0x
+    planning works (discarded)     worst/best =    12.0x   -> VIOLATED, 12.0x
+    replans (+1)                   worst/best =    24.0x   -> VIOLATED, 24.0x
+    ^ the first two rows are the point: every per-operation work counter is
+      IDENTICAL across orders while optimizer cost differs by an order of magnitude.
+
+  (1) does the bar settle?  the plan cache entry's `works` after every query
+  order         distinct works values               times lowered  final entry
+  alternating   6,12                                         23.0  a_1/inactive w=12
+  blocked_CE    6,12,24,48,96,192,384                         3.0  a_1/inactive w=384
+  blocked_EC    50001                                         0.0  a_1/ACTIVE w=50001
+  shuffled      6,12,24,48                                   12.0  a_1/ACTIVE w=6
+      alternating, first 16 queries: [6, 12, 6, 12, 6, 12, 6, 12, 6, 12, 6, 12, 6, 12, 6, 12]
+      -- 'its like the higher work query never happened' (the reporter). The bar
+         never once reaches E's real cost (50001 works).
+
+  (2) are the replans wasteful?  planCache.classic.replanned_plan_is_cached_plan
+      alternating    23.0 replans,  23.0 of them re-derived the cached plan (100% wasted)
+      blocked_CE      4.0 replans,   4.0 of them re-derived the cached plan (100% wasted)
+      blocked_EC      0.0 replans,   0.0 of them re-derived the cached plan (0% wasted)
+      shuffled       11.0 replans,  11.0 of them re-derived the cached plan (100% wasted)
+
+  (3) is it a steady state, or a start-up transient?  (O3 condition (c))
+      order                epoch 0        epoch 1        epoch 2        epoch 3
+      alternating     5.0 rp/12.0 mp   6.0 rp/12.0 mp   6.0 rp/12.0 mp   6.0 rp/12.0 mp
+      blocked_CE      1.0 rp/ 8.0 mp   1.0 rp/ 7.0 mp   1.0 rp/ 7.0 mp   1.0 rp/ 7.0 mp
+      blocked_EC      0.0 rp/ 2.0 mp   0.0 rp/ 0.0 mp   0.0 rp/ 0.0 mp   0.0 rp/ 0.0 mp
+      shuffled        2.0 rp/10.0 mp   3.0 rp/ 9.0 mp   3.0 rp/ 9.0 mp   3.0 rp/ 9.0 mp
+      (rp = replans in that epoch, mp = queries that went through multi-planning)
+
+  cost by class (documents examined / server ms / multi-plannings):
+      order                      C (cheap, 5 docs)                  E (expensive)
+      alternating             120d      0ms   24mp     1,200,000d  1,715ms   24mp
+      blocked_CE              120d      0ms    5mp     1,200,000d  1,634ms   24mp
+      blocked_EC              120d      0ms    0mp     1,200,000d    766ms    2mp
+      shuffled                120d      0ms   13mp     1,200,000d  1,617ms   24mp
+
+============================================================================================================================
+  HOW MUCH TUNING?  sweep N_E (documents at the expensive parameter value), order
+  'alternating', everything else fixed. The mechanism predicts thrash exactly when
+  E's works (N_E + 1) exceeds the bar the cheap class sets, 10 x 6 = 60.
+============================================================================================================================
+       N_E    E works   bar (10xW_C)   replans   wasteful   mp_count works values seen          predicted
+  ------------------------------------------------------------------------------------------------------------------------
+        10         11             60         0          0          3 6,12                       stable    OK
+        20         21             60         0          0          3 6,12                       stable    OK
+        40         41             60         0          0          3 6,12                       stable    OK
+        55         56             60         0          0          3 6,12                       stable    OK
+        59         60             60         0          0          3 6,12                       stable    OK
+        60         61             60        17         17         36 6,12                       thrash    OK
+        70         71             60        17         17         36 6,12                       thrash    OK
+       100        101             60        17         17         36 6,12                       thrash    OK
+       500        501             60        17         17         36 6,12                       thrash    OK
+     5,000      5,001             60        17         17         36 6,12                       thrash    OK
+    50,000     50,001             60        17         17         36 6,12                       thrash    OK

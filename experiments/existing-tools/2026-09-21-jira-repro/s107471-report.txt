@@ -1,0 +1,84 @@
+======================================================================================================================
+== SERVER-107471  'Query Plan Cache Issue with Index Selection on High Disparity Index Values'
+==   reported 2025-07-14, Closed / Won't Do, 5 watchers, 0 comments, no fixVersion
+======================================================================================================================
+   1,000,000 docs in ch_s107471.docs
+   indexField1=7 -> 20,000 docs   indexField10=0 -> 999,000 docs   indexField10=93333+k -> 1 doc (1,000 such values)
+   'high disparity' = 999,000x between the two indexField10 values
+   using IXSCAN{indexField1} for the rare class costs 20,000x the documents
+
+----------------------------------------------------------------------------------------------------------------------
+  PREMISE: does .skip() change the plan cache key on 8.2.12?
+----------------------------------------------------------------------------------------------------------------------
+    P_noskip     planCacheKey=8C39E5AA   queryHash=D4D54D3E
+    P_skip       planCacheKey=8C39E5AA   queryHash=D4D54D3E
+    R_noskip     planCacheKey=8C39E5AA   queryHash=D4D54D3E
+    R_skip       planCacheKey=8C39E5AA   queryHash=D4D54D3E
+    -> premise HOLDS -- one cache entry for all four
+
+======================================================================================================================
+  ARM 'skip5000'  (P = find(F,proj).skip(5000).limit(10) x4/epoch,  R = find(F',proj).limit(10) x8/epoch, 3 epochs)
+  every order below is a permutation of the SAME multiset; 3 independent repeat(s)
+======================================================================================================================
+  order            docs examined     server ms    optimizer us   replans  catastrophic  final cache entry
+  ------------------------------------------------------------------------------------------------------------------
+  P_first             543,288+-0       644+-76      52,948+-20,839     0+-0        36+-0  indexField1_1/ACTIVE w=5274
+  R_first              63,312+-0       362+-8     362,152+-8,047     3+-0        12+-0  indexField1_1/inactive w=32
+  alternating          63,312+-0       411+-2     409,992+-1,576    11+-0        12+-0  indexField10_1/ACTIVE w=2
+  shuffled             63,312+-0       395+-1     394,680+-1,776     8+-0        12+-0  indexField10_1/ACTIVE w=2
+
+  O3 relation (identical multiset -> identical steady state and cost):
+    documents examined     worst/best =      8.6x   -> VIOLATED, 8.6x
+    server time            worst/best =      1.8x   -> VIOLATED, 1.8x
+    optimizer CPU (us)     worst/best =      7.7x   -> VIOLATED, 7.7x
+    catastrophic queries   worst/best =      2.8x   -> VIOLATED, 2.8x
+    final cache plan       2 distinct index across 4 orders -> VIOLATED
+
+  where the cost lands, per class (documents examined, mean over repeats):
+    order                 P (paginated)        R (rare, 1 doc)   plan used by R
+    P_first                   63,288+-0             480,000+-0   IXSCAN { indexField1: 1 }
+    R_first                   63,288+-0                  24+-0   IXSCAN { indexField10: 1 }
+    alternating               63,288+-0                  24+-0   IXSCAN { indexField10: 1 }
+    shuffled                  63,288+-0                  24+-0   IXSCAN { indexField10: 1 }
+
+======================================================================================================================
+  ARM 'noskip'  (P = find(F,proj).limit(10) x4/epoch,  R = find(F',proj).limit(10) x8/epoch, 3 epochs)
+  every order below is a permutation of the SAME multiset; 3 independent repeat(s)
+======================================================================================================================
+  order            docs examined     server ms    optimizer us   replans  catastrophic  final cache entry
+  ------------------------------------------------------------------------------------------------------------------
+  P_first                 144+-0         0+-0         407+-16     0+-0         0+-0  indexField10_1/ACTIVE w=10
+  R_first                 144+-0         0+-0         207+-2     0+-0         0+-0  indexField10_1/ACTIVE w=2
+  alternating             144+-0         0+-0         304+-8     0+-0         0+-0  indexField10_1/ACTIVE w=2
+  shuffled                144+-0         0+-0         300+-3     0+-0         0+-0  indexField10_1/ACTIVE w=2
+
+  O3 relation (identical multiset -> identical steady state and cost):
+    documents examined     worst/best =      1.0x   -> HOLDS
+    server time            worst/best =      0.0x   -> HOLDS
+    optimizer CPU (us)     worst/best =      2.0x   -> VIOLATED, 2.0x
+    catastrophic queries   worst/best =      1.0x   -> HOLDS
+    final cache plan       1 distinct index across 4 orders -> HOLDS
+
+  where the cost lands, per class (documents examined, mean over repeats):
+    order                 P (paginated)        R (rare, 1 doc)   plan used by R
+    P_first                      120+-0                  24+-0   IXSCAN { indexField10: 1 }
+    R_first                      120+-0                  24+-0   IXSCAN { indexField10: 1 }
+    alternating                  120+-0                  24+-0   IXSCAN { indexField10: 1 }
+    shuffled                     120+-0                  24+-0   IXSCAN { indexField10: 1 }
+
+======================================================================================================================
+  HOW MUCH TUNING? the skip sweep, order P_first, everything else held fixed
+  the mechanism predicts immunity exactly when 10 x decisionWorks > 20 000 reads
+======================================================================================================================
+     skip  decisionWorks   replan bar       R docs           R plan   replans    total docs  server ms
+  --------------------------------------------------------------------------------------------------------------
+        0             10          100           24     indexField10         0           144          0
+      100              2           20           24     indexField10         3         1,416         14
+      500              2           20           24     indexField10         3         6,468         59
+     1000              2           20           24     indexField10         3        12,792        117
+     1500              2           20           24     indexField10         3        19,104        169
+     1800              2           20           24     indexField10         3        22,896        185
+     2000          2,116       21,160      480,000      indexField1         0       505,392        681  <== immune
+     3000          3,169       31,690      480,000      indexField1         0       518,028        656  <== immune
+     5000          5,274       52,740      480,000      indexField1         0       543,288        545  <== immune
+    10000         10,537      105,370      480,000      indexField1         0       606,444        747  <== immune
