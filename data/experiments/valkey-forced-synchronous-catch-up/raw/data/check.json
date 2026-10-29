@@ -1,0 +1,44 @@
+[
+ {
+  "arm": "parent",
+  "rep": 0,
+  "size": "check",
+  "load_s": 3.4,
+  "shrink_started": true,
+  "sadd_max_ms": 10.71381289511919,
+  "sadd_max_at_cmd": 2202,
+  "sadd_top3_ms": [
+   10.71,
+   1.04,
+   1.03
+  ],
+  "raw_max_ms": 9.996,
+  "blocked_ms": 9.0,
+  "fast_command_events_ms": [],
+  "server_cpu_s": 0.26,
+  "server_peak_rss_mb": 57.55859375,
+  "ht_shrunk": "Hash table 0 stats (main hash table):\n table size: 1835008\n number of entries: 238551\nHash table 1 stats (rehashing target):\nNo stats available for empty hash tables\n",
+  "ht_after": "Hash table 0 stats (main hash table):\n table size: 458752\n number of entries: 390254\nHash table 1 stats (rehashing target):\n table size: 917504\n number of entries: 78297\n"
+ },
+ {
+  "arm": "fix",
+  "rep": 0,
+  "size": "check",
+  "load_s": 2.7,
+  "shrink_started": true,
+  "sadd_max_ms": 1.021787989884615,
+  "sadd_max_at_cmd": 0,
+  "sadd_top3_ms": [
+   1.02,
+   0.81,
+   0.76
+  ],
+  "raw_max_ms": 0.642,
+  "blocked_ms": 0,
+  "fast_command_events_ms": [],
+  "server_cpu_s": 0.23,
+  "server_peak_rss_mb": 58.484375,
+  "ht_shrunk": "Hash table 0 stats (main hash table):\n table size: 1835008\n number of entries: 238551\nHash table 1 stats (rehashing target):\nNo stats available for empty hash tables\n",
+  "ht_after": "Hash table 0 stats (main hash table):\n table size: 1835008\n number of entries: 29330\nHash table 1 stats (rehashing target):\n table size: 458752\n number of entries: 439221\n"
+ }
+]

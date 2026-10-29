@@ -1,0 +1,80 @@
+3507328:C 29 Oct 2026 13:04:51.379 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+3507328:C 29 Oct 2026 13:04:51.379 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+3507328:C 29 Oct 2026 13:04:51.379 * Redis version=255.255.255, bits=64, commit=00000000, modified=1, pid=3507328, just started
+3507328:C 29 Oct 2026 13:04:51.379 * Configuration loaded
+3507328:M 29 Oct 2026 13:04:51.379 * monotonic clock: POSIX clock_gettime
+3507328:M 29 Oct 2026 13:04:51.380 * Running mode=standalone, port=15473.
+3507328:M 29 Oct 2026 13:04:51.381 * Module 'datatype' loaded from $CLIFF_DATA/build/redis-f86575f210a9/src/tests/modules/datatype.so
+3507328:M 29 Oct 2026 13:04:51.381 * Server initialized
+3507328:M 29 Oct 2026 13:04:51.381 * Ready to accept connections tcp
+3507328:M 29 Oct 2026 13:04:51.427 - Accepted 127.0.0.1:40348
+3507328:M 29 Oct 2026 13:04:51.427 - Client closed connection id=4 addr=127.0.0.1:40348 laddr=127.0.0.1:15473 fd=11 name= age=0 idle=0 flags=A db=0 sub=0 psub=0 ssub=0 multi=-1 watch=0 qbuf=0 qbuf-free=20474 argv-mem=0 multi-mem=0 rbs=16384 rbp=16384 obl=0 oll=0 omem=0 tot-mem=37760 events=r cmd=ping user=default redir=-1 resp=2 lib-name= lib-ver= io-thread=0
+3507328:M 29 Oct 2026 13:04:51.427 - Accepted 127.0.0.1:40352
+3507328:M 29 Oct 2026 13:04:52.692 - Starting active defrag, frag=90%, frag_bytes=11112960, cpu=50%
+3507328:M 29 Oct 2026 13:04:52.838 - Active defrag done in 144ms, reallocated=55177, frag=86%, frag_bytes=10600168
+3507328:M 29 Oct 2026 13:04:52.838 - Starting active defrag, frag=86%, frag_bytes=10600168, cpu=50%
+3507328:M 29 Oct 2026 13:04:52.966 - Active defrag done in 127ms, reallocated=131, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:52.966 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=47%
+3507328:M 29 Oct 2026 13:04:53.094 - Active defrag done in 127ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:53.094 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=42%
+3507328:M 29 Oct 2026 13:04:53.222 - Active defrag done in 127ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:53.222 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=38%
+3507328:M 29 Oct 2026 13:04:53.350 - Active defrag done in 127ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:53.350 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=34%
+3507328:M 29 Oct 2026 13:04:53.478 - Active defrag done in 127ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:53.478 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=31%
+3507328:M 29 Oct 2026 13:04:53.606 - Active defrag done in 127ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:53.606 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=28%
+3507328:M 29 Oct 2026 13:04:53.734 - Active defrag done in 127ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:53.734 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=25%
+3507328:M 29 Oct 2026 13:04:53.862 - Active defrag done in 127ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:53.862 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=22%
+3507328:M 29 Oct 2026 13:04:54.091 - Active defrag done in 228ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:54.091 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=20%
+3507328:M 29 Oct 2026 13:04:54.320 - Active defrag done in 228ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:54.320 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=18%
+3507328:M 29 Oct 2026 13:04:54.549 - Active defrag done in 228ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:54.549 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=16%
+3507328:M 29 Oct 2026 13:04:54.778 - Active defrag done in 228ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:54.778 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=14%
+3507328:M 29 Oct 2026 13:04:55.007 - Active defrag done in 228ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:55.007 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=13%
+3507328:M 29 Oct 2026 13:04:55.337 - Active defrag done in 329ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:55.337 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=12%
+3507328:M 29 Oct 2026 13:04:55.666 - Active defrag done in 329ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:55.667 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=10%
+3507328:M 29 Oct 2026 13:04:55.997 - Active defrag done in 329ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:55.997 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=9%
+3507328:M 29 Oct 2026 13:04:56.327 - Active defrag done in 329ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:56.327 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=8%
+3507328:M 29 Oct 2026 13:04:56.757 - Active defrag done in 429ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:56.758 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=7%
+3507328:M 29 Oct 2026 13:04:56.974 - DB 0: 20000 keys (0 volatile) in 65536 slots HT.
+3507328:M 29 Oct 2026 13:04:57.188 - Active defrag done in 430ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:57.189 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=7%
+3507328:M 29 Oct 2026 13:04:57.619 - Active defrag done in 429ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:57.619 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=6%
+3507328:M 29 Oct 2026 13:04:58.151 - Active defrag done in 531ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:58.151 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=5%
+3507328:M 29 Oct 2026 13:04:58.783 - Active defrag done in 631ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:58.784 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=5%
+3507328:M 29 Oct 2026 13:04:59.416 - Active defrag done in 632ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:04:59.417 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=4%
+3507328:M 29 Oct 2026 13:05:00.150 - Active defrag done in 733ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:05:00.150 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=4%
+3507328:M 29 Oct 2026 13:05:00.883 - Active defrag done in 732ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:05:00.884 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=3%
+3507328:M 29 Oct 2026 13:05:01.819 - Active defrag done in 934ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:05:01.819 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=3%
+3507328:M 29 Oct 2026 13:05:02.234 - DB 0: 20000 keys (0 volatile) in 65536 slots HT.
+3507328:M 29 Oct 2026 13:05:02.856 - Active defrag done in 1035ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:05:02.856 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=3%
+3507328:M 29 Oct 2026 13:05:03.892 - Active defrag done in 1035ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:05:03.893 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=2%
+3507328:M 29 Oct 2026 13:05:05.333 - Active defrag done in 1439ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:05:05.333 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=2%
+3507328:M 29 Oct 2026 13:05:06.773 - Active defrag done in 1439ms, reallocated=0, frag=86%, frag_bytes=10596072
+3507328:M 29 Oct 2026 13:05:06.773 - Starting active defrag, frag=86%, frag_bytes=10596072, cpu=2%
+3507328:M 29 Oct 2026 13:05:07.390 - DB 0: 20000 keys (0 volatile) in 65536 slots HT.
+3507328:M 29 Oct 2026 13:05:07.644 * User requested shutdown...
+3507328:M 29 Oct 2026 13:05:07.644 # Redis is now ready to exit, bye bye...

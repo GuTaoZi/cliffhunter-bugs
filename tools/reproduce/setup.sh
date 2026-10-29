@@ -1,11 +1,11 @@
 #!/bin/sh
 # Clone the upstream repositories the builds need into $CLIFF_DATA/src (full clones: builds check out old commits).
 #
-#   tools/reproduce/setup.sh [SYSTEM...]     default: postgres redis rocksdb valkey (the kit's; any of memcached postgres redis rocksdb valkey)
+#   tools/reproduce/setup.sh [SYSTEM...]     default: memcached postgres redis rocksdb valkey wiredtiger (the kit's; any of memcached postgres redis rocksdb valkey wiredtiger)
 set -eu
 ROOT=${CLIFF_DATA:-$HOME/.cache/cliffhunter-bugs}
 mkdir -p "$ROOT/src" "$ROOT/build" "$ROOT/locks"
-SYSTEMS="$*"; [ -n "$SYSTEMS" ] || SYSTEMS="postgres redis rocksdb valkey"
+SYSTEMS="$*"; [ -n "$SYSTEMS" ] || SYSTEMS="memcached postgres redis rocksdb valkey wiredtiger"
 for s in $SYSTEMS; do
   case $s in
     memcached) url=https://github.com/memcached/memcached.git ;;
@@ -13,6 +13,7 @@ for s in $SYSTEMS; do
     redis) url=https://github.com/redis/redis.git ;;
     rocksdb) url=https://github.com/facebook/rocksdb.git ;;
     valkey) url=https://github.com/valkey-io/valkey.git ;;
+    wiredtiger) url=https://github.com/wiredtiger/wiredtiger.git ;;
     *) echo "unknown system $s"; exit 2 ;;
   esac
   [ -d "$ROOT/src/$s/.git" ] && { echo "$ROOT/src/$s (present)"; continue; }

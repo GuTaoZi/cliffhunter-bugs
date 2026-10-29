@@ -6,7 +6,8 @@
 
 BSON types covered: double, string, document, array, binary, ObjectId, bool, datetime, null, int32, timestamp,
 int64 (encoded: dict, list, str, bool, int, float, None, bytes; decoded: also ObjectId, datetime and timestamp as
-tagged tuples, decimal128 as raw bytes). Dicts keep their order, as commands need.
+tagged tuples, decimal128 as raw bytes). Dicts keep their order, as commands need. Int64(n) forces an int64 (a
+transaction's txnNumber) and UUIDBin(b) a binary of subtype 4 (a session id: {"id": UUIDBin(uuid.uuid4().bytes)}).
 """
 import socket
 import struct
@@ -18,6 +19,14 @@ class Error(Exception):
     pass
 
 
+class Int64(int):
+    """An int encoded as BSON int64 whatever its size."""
+
+
+class UUIDBin(bytes):
+    """Bytes encoded as BSON binary subtype 4 (UUID)."""
+
+
 def enc_doc(d):
     body = b"".join(enc_elem(str(k), v) for k, v in (d.items() if isinstance(d, dict) else enumerate(d)))
     return struct.pack("<i", len(body) + 5) + body + b"\x00"
@@ -27,6 +36,8 @@ def enc_elem(k, v):
     name = k.encode() + b"\x00"
     if isinstance(v, bool):
         return b"\x08" + name + (b"\x01" if v else b"\x00")
+    if isinstance(v, Int64):
+        return b"\x12" + name + struct.pack("<q", v)
     if isinstance(v, int):
         if -2**31 <= v < 2**31:
             return b"\x10" + name + struct.pack("<i", v)
@@ -42,6 +53,8 @@ def enc_elem(k, v):
         return b"\x04" + name + enc_doc(list(v))
     if v is None:
         return b"\x0a" + name
+    if isinstance(v, UUIDBin):
+        return b"\x05" + name + struct.pack("<i", len(v)) + b"\x04" + v
     if isinstance(v, bytes):
         return b"\x05" + name + struct.pack("<i", len(v)) + b"\x00" + v
     raise TypeError(f"cannot encode {type(v).__name__}")

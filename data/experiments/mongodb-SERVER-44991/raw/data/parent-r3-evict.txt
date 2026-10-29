@@ -1,0 +1,2 @@
+evict threads 8 secs 30.0 updates 1204777 per_s 40158 p50_us 30.2 p99_us 794.3 p999_us 1548.8 max_us 1962736.2
+stat rec_pages 1147594 rec_pages_eviction 1147557 application_evict_time_us 177685762 checkpoint_time_recent_ms 0 cache_bytes_inuse 13532817

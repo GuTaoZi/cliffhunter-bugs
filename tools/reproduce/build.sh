@@ -1,7 +1,7 @@
 #!/bin/sh
 # Build one system at one commit, in release mode, from a clean export of that commit.
 #
-#   tools/reproduce/build.sh SYSTEM COMMIT [PATCH]   SYSTEM: postgres | redis | valkey | memcached | rocksdb
+#   tools/reproduce/build.sh SYSTEM COMMIT [PATCH]   SYSTEM: postgres | redis | valkey | memcached | rocksdb | wiredtiger
 #
 # Source: $CLIFF_DATA/src/SYSTEM (a full clone; CLIFF_DATA defaults to ${CLIFF_DATA:-$HOME/.cache/cliffhunter-bugs}).
 # Output: $CLIFF_DATA/build/SYSTEM-<12-char sha>/  (with PATCH, a file from
@@ -16,7 +16,8 @@
 # chooses. J (default 32) is the number of parallel jobs.
 # GCC 15 defaults to C23, which breaks older C code; CSTD (default gnu11) is passed to C builds.
 # GCC >= 10 defaults to -fno-common, which breaks old code that defines globals in headers; C builds
-# pass -fcommon. Old memcached builds with -Werror; it is stripped. GCC >= 13 no longer includes
+# pass -fcommon. Old memcached builds with -Werror; it is stripped. Memcached's autogen.sh before 2015 looks only for
+# automake-1.7 to -1.14 by versioned name; AUTOMAKE and ACLOCAL name the installed unversioned ones. GCC >= 13 no longer includes
 # <cstdint> transitively, which breaks 2022-2023 RocksDB headers, nor <system_error>, which 2020 RocksDB's bundled
 # folly needs, nor <functional>, which 2016-2017 RocksDB's util/thread_local.h needs; all three are force-included.
 # RocksDB trees committed before 2018 also get <array> (table/plain_table_key_coding.h) and <sys/sysmacros.h>, which
@@ -51,7 +52,7 @@ if ! {
       "$TOOLS/inenv.sh" "gcc gnumake pkg-config" "gcc --version | head -1; make -j$J MALLOC=jemalloc CFLAGS='-std=$CSTD -fcommon' V=1" ;;
     memcached)
       "$TOOLS/inenv.sh" "gcc gnumake autoconf automake libtool libevent pkg-config perl" \
-        "gcc --version | head -1; ./autogen.sh && ./configure CFLAGS='-O2 -g -std=$CSTD -fcommon' && sed -i 's/ -Werror//g' Makefile && make -j$J" ;;
+        "gcc --version | head -1; AUTOMAKE=automake ACLOCAL=aclocal ./autogen.sh && ./configure CFLAGS='-O2 -g -std=$CSTD -fcommon' && sed -i 's/ -Werror//g' Makefile && make -j$J" ;;
     postgres)
       "$TOOLS/inenv.sh" "gcc gnumake bison flex perl pkg-config zlib" \
         "gcc --version | head -1; ./configure --prefix=$OUT/install --without-readline --without-icu --without-zlib CFLAGS='-O2 -std=$CSTD -fcommon' && make -j$J && make install" ;;
@@ -61,6 +62,16 @@ if ! {
       echo "extra_cxxflags=$INC"
       "$TOOLS/inenv.sh" "gcc gnumake gflags snappy lz4 zstd zlib bzip2 pkg-config perl" \
         "g++ --version | head -1; DEBUG_LEVEL=0 PORTABLE=1 DISABLE_WARNING_AS_ERROR=1 ROCKSDB_USE_IO_URING=0 EXTRA_CXXFLAGS='$INC' make -j$J db_bench cache_bench" ;;
+    wiredtiger)
+      # Trees before 2021 build with autotools (build_posix/reconf); later ones with CMake. Neither enables -Werror
+      # unless asked (--enable-strict, ENABLE_STRICT), so old trees build with a new compiler as written.
+      if [ -f build_posix/reconf ] && [ ! -f CMakeLists.txt ]; then
+        "$TOOLS/inenv.sh" "gcc gnumake autoconf automake libtool pkg-config" \
+          "gcc --version | head -1; sh build_posix/reconf && ./configure CFLAGS='-O2 -g -std=$CSTD -fcommon' && make -j$J V=1"
+      else
+        "$TOOLS/inenv.sh" "gcc gnumake cmake ninja python3 pkg-config" \
+          "gcc --version | head -1; cmake -G Ninja -S . -B build -DCMAKE_BUILD_TYPE=Release -DENABLE_STATIC=1 -DENABLE_SHARED=0 -DENABLE_PYTHON=0 -DENABLE_STRICT=0 -DHAVE_DIAGNOSTIC=0 -DCMAKE_C_FLAGS='-std=$CSTD -fcommon' -DCMAKE_EXPORT_COMPILE_COMMANDS=ON && ninja -C build -v -j$J wt wtperf"
+      fi ;;
     *) echo "unknown system $SYS"; exit 2 ;;
   esac
 } > "$OUT/build.log" 2>&1; then

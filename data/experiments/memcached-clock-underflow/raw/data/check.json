@@ -1,0 +1,14 @@
+[
+ {
+  "arm": "parent",
+  "lru_head": "ITEM k0000000 [64 b; 1793293448 s]",
+  "age": "0",
+  "uptime": "7"
+ },
+ {
+  "arm": "fix",
+  "lru_head": "ITEM k0009999 [64 b; 1793293394 s]",
+  "age": "5",
+  "uptime": "7"
+ }
+]

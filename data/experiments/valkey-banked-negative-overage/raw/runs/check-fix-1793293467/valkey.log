@@ -1,0 +1,14 @@
+3506874:M 29 Oct 2026 13:04:27.381 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+3506874:M 29 Oct 2026 13:04:27.381 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+3506874:M 29 Oct 2026 13:04:27.381 * Valkey version=255.255.255, bits=64, commit=00000000, modified=1, pid=3506874, just started
+3506874:M 29 Oct 2026 13:04:27.382 * Configuration loaded
+3506874:M 29 Oct 2026 13:04:27.382 * monotonic clock: POSIX clock_gettime
+3506874:M 29 Oct 2026 13:04:27.382 * Running mode=standalone, port=15474.
+3506874:M 29 Oct 2026 13:04:27.382 * Server initialized
+3506874:M 29 Oct 2026 13:04:27.382 * Ready to accept connections tcp
+3506874:M 29 Oct 2026 13:04:27.430 - Accepted 127.0.0.1:42050
+3506874:M 29 Oct 2026 13:04:27.430 - Client closed connection id=3 addr=127.0.0.1:42050 laddr=127.0.0.1:15474 fd=9 name=*redacted* age=0 idle=0 flags=N db=0 sub=0 psub=0 ssub=0 multi=-1 watch=0 qbuf=0 qbuf-free=20474 argv-mem=0 multi-mem=0 rbs=16384 rbp=16384 obl=0 oll=0 omem=0 tot-mem=37760 events=r cmd=ping user=*redacted* redir=-1 resp=2 lib-name= lib-ver= tot-net-in=14 tot-net-out=7 tot-cmds=1
+3506874:M 29 Oct 2026 13:04:27.430 - Accepted 127.0.0.1:42062
+3506874:M 29 Oct 2026 13:04:29.975 - Starting active defrag, frag=81%, frag_bytes=145380048, cpu=1%
+3506874:M 29 Oct 2026 13:04:32.917 * User requested shutdown... (user request from 'id=4 addr=127.0.0.1:42062 laddr=127.0.0.1:15474 fd=9 name=*redacted* user=*redacted* lib-name= lib-ver=')
+3506874:M 29 Oct 2026 13:04:32.917 # Valkey is now ready to exit, bye bye...
