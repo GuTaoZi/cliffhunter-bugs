@@ -1,0 +1,6 @@
+round 0 updates 31250 update_ms 271.7 checkpoint_ms 1931.5
+round 1 updates 31250 update_ms 314.8 checkpoint_ms 1825.7
+round 2 updates 31250 update_ms 311.1 checkpoint_ms 1846.9
+round 3 updates 31250 update_ms 301.2 checkpoint_ms 1916.0
+round 4 updates 31250 update_ms 317.8 checkpoint_ms 1859.1
+stat rec_pages 37924 rec_pages_eviction 31452 application_evict_time_us 86034 checkpoint_time_recent_ms 1657 cache_bytes_inuse 124851603

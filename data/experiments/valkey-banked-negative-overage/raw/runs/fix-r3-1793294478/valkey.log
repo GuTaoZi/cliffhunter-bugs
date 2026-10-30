@@ -1,0 +1,44 @@
+3515415:M 29 Oct 2026 13:21:18.519 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+3515415:M 29 Oct 2026 13:21:18.520 * oO0OoO0OoO0Oo Valkey is starting oO0OoO0OoO0Oo
+3515415:M 29 Oct 2026 13:21:18.520 * Valkey version=255.255.255, bits=64, commit=00000000, modified=1, pid=3515415, just started
+3515415:M 29 Oct 2026 13:21:18.520 * Configuration loaded
+3515415:M 29 Oct 2026 13:21:18.520 * monotonic clock: POSIX clock_gettime
+3515415:M 29 Oct 2026 13:21:18.520 * Running mode=standalone, port=15474.
+3515415:M 29 Oct 2026 13:21:18.520 * Server initialized
+3515415:M 29 Oct 2026 13:21:18.520 * Ready to accept connections tcp
+3515415:M 29 Oct 2026 13:21:18.568 - Accepted 127.0.0.1:41482
+3515415:M 29 Oct 2026 13:21:18.568 - Client closed connection id=3 addr=127.0.0.1:41482 laddr=127.0.0.1:15474 fd=9 name=*redacted* age=0 idle=0 flags=N db=0 sub=0 psub=0 ssub=0 multi=-1 watch=0 qbuf=0 qbuf-free=20474 argv-mem=0 multi-mem=0 rbs=16384 rbp=16384 obl=0 oll=0 omem=0 tot-mem=37760 events=r cmd=ping user=*redacted* redir=-1 resp=2 lib-name= lib-ver= tot-net-in=14 tot-net-out=7 tot-cmds=1
+3515415:M 29 Oct 2026 13:21:18.568 - Accepted 127.0.0.1:41490
+3515415:M 29 Oct 2026 13:21:20.716 - Accepted 127.0.0.1:41498
+3515415:M 29 Oct 2026 13:21:22.753 - Starting active defrag, frag=81%, frag_bytes=145390112, cpu=1%
+3515415:M 29 Oct 2026 13:21:24.167 - DB 15: 1000000 keys (0 volatile) in 524288 slots HT.
+3515415:M 29 Oct 2026 13:21:26.728 - Active defrag done in 3974ms, reallocated=32913, frag=81%, frag_bytes=145389208
+3515415:M 29 Oct 2026 13:21:27.096 - Starting active defrag, frag=81%, frag_bytes=145389208, cpu=1%
+3515415:M 29 Oct 2026 13:21:29.217 - DB 15: 1000000 keys (0 volatile) in 524288 slots HT.
+3515415:M 29 Oct 2026 13:21:31.045 - Active defrag done in 3948ms, reallocated=27470, frag=81%, frag_bytes=145385080
+3515415:M 29 Oct 2026 13:21:31.338 - Starting active defrag, frag=81%, frag_bytes=145385080, cpu=1%
+3515415:M 29 Oct 2026 13:21:34.267 - DB 15: 1000000 keys (0 volatile) in 524288 slots HT.
+3515415:M 29 Oct 2026 13:21:35.338 - Active defrag done in 3999ms, reallocated=21882, frag=81%, frag_bytes=145385344
+3515415:M 29 Oct 2026 13:21:35.681 - Starting active defrag, frag=81%, frag_bytes=145385344, cpu=1%
+3515415:M 29 Oct 2026 13:21:39.316 - DB 15: 1000000 keys (0 volatile) in 524288 slots HT.
+3515415:M 29 Oct 2026 13:21:39.624 - Active defrag done in 3942ms, reallocated=15596, frag=81%, frag_bytes=145381288
+3515415:M 29 Oct 2026 13:21:39.922 - Starting active defrag, frag=81%, frag_bytes=145381288, cpu=1%
+3515415:M 29 Oct 2026 13:21:43.962 - Active defrag done in 4039ms, reallocated=13465, frag=81%, frag_bytes=145381288
+3515415:M 29 Oct 2026 13:21:44.264 - Starting active defrag, frag=81%, frag_bytes=145381288, cpu=1%
+3515415:M 29 Oct 2026 13:21:44.365 - DB 15: 1000000 keys (0 volatile) in 524288 slots HT.
+3515415:M 29 Oct 2026 13:21:48.251 - Active defrag done in 3986ms, reallocated=9084, frag=81%, frag_bytes=145381288
+3515415:M 29 Oct 2026 13:21:48.607 - Starting active defrag, frag=81%, frag_bytes=145381288, cpu=1%
+3515415:M 29 Oct 2026 13:21:49.415 - DB 15: 1000000 keys (0 volatile) in 524288 slots HT.
+3515415:M 29 Oct 2026 13:21:52.539 - Active defrag done in 3931ms, reallocated=6140, frag=81%, frag_bytes=145381288
+3515415:M 29 Oct 2026 13:21:52.849 - Starting active defrag, frag=81%, frag_bytes=145381288, cpu=1%
+3515415:M 29 Oct 2026 13:21:54.465 - DB 15: 1000000 keys (0 volatile) in 524288 slots HT.
+3515415:M 29 Oct 2026 13:21:56.830 - Active defrag done in 3980ms, reallocated=5523, frag=81%, frag_bytes=145381288
+3515415:M 29 Oct 2026 13:21:57.192 - Starting active defrag, frag=81%, frag_bytes=145381288, cpu=1%
+3515415:M 29 Oct 2026 13:21:59.515 - DB 15: 1000000 keys (0 volatile) in 524288 slots HT.
+3515415:M 29 Oct 2026 13:22:01.124 - Active defrag done in 3931ms, reallocated=3713, frag=81%, frag_bytes=145381288
+3515415:M 29 Oct 2026 13:22:01.434 - Starting active defrag, frag=81%, frag_bytes=145381288, cpu=1%
+3515415:M 29 Oct 2026 13:22:04.566 - DB 15: 1000000 keys (0 volatile) in 524288 slots HT.
+3515415:M 29 Oct 2026 13:22:05.465 - Active defrag done in 4030ms, reallocated=4206, frag=81%, frag_bytes=145381288
+3515415:M 29 Oct 2026 13:22:06.716 - Client closed connection id=5 addr=127.0.0.1:41498 laddr=127.0.0.1:15474 fd=10 name=*redacted* age=46 idle=0 flags=N db=0 sub=0 psub=0 ssub=0 multi=-1 watch=0 qbuf=0 qbuf-free=20474 argv-mem=0 multi-mem=0 rbs=1024 rbp=7 obl=0 oll=0 omem=0 tot-mem=22400 events=r cmd=ping user=*redacted* redir=-1 resp=2 lib-name= lib-ver= tot-net-in=276006 tot-net-out=322007 tot-cmds=46001
+3515415:M 29 Oct 2026 13:22:06.850 * User requested shutdown... (user request from 'id=4 addr=127.0.0.1:41490 laddr=127.0.0.1:15474 fd=9 name=*redacted* user=*redacted* lib-name= lib-ver=')
+3515415:M 29 Oct 2026 13:22:06.850 # Valkey is now ready to exit, bye bye...

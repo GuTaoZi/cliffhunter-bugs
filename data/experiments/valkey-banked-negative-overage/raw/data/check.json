@@ -1,0 +1,44 @@
+[
+ {
+  "arm": "parent",
+  "frag_ratio": 1.81,
+  "frag_bytes": 145387440,
+  "keyspace": {
+   "db15": "keys=1000000,expires=0,avg_ttl=0"
+  },
+  "latency_latest": [
+   [
+    "b'command'",
+    "1793293462",
+    "653",
+    "653"
+   ],
+   [
+    "b'active-defrag-cycle'",
+    "1793293465",
+    "14",
+    "14"
+   ]
+  ],
+  "active_defrag_running": "1",
+  "defrag_starts": 1
+ },
+ {
+  "arm": "fix",
+  "frag_ratio": 1.81,
+  "frag_bytes": 145375680,
+  "keyspace": {
+   "db15": "keys=1000000,expires=0,avg_ttl=0"
+  },
+  "latency_latest": [
+   [
+    "b'command'",
+    "1793293468",
+    "631",
+    "631"
+   ]
+  ],
+  "active_defrag_running": "1",
+  "defrag_starts": 1
+ }
+]

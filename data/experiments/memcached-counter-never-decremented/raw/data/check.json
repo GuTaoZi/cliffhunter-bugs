@@ -1,0 +1,14 @@
+[
+ {
+  "arm": "parent",
+  "crawl_reply": "OK",
+  "crawl_s": 0.036,
+  "items_checked": 200000
+ },
+ {
+  "arm": "fix",
+  "crawl_reply": "OK",
+  "crawl_s": 1.157,
+  "items_checked": 200000
+ }
+]
